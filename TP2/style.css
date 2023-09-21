@@ -1,0 +1,140 @@
+:root{
+
+    /* Tamanios de fuente */
+    --h1_size: 48.8px;
+    --h2_size: 39.1px;
+    --h3_size: 31.3px;
+    --h4_size: 25px;
+    --h5_size:20px;
+    --h6_size:16px;
+    --p_large:16px;
+    --p_regular:14px;
+    --p_small:10px;
+    --texto_botones:16px;
+
+    /* Interlineados */
+
+    --p_large_interlineado:24px;
+    --p_regular_interlineado: 22px;
+    --p_small_interlineado: 16px;
+
+    /* Colores */
+
+    --color_primario: #3FBFE9;
+    --color_primario_luz1:#6FCFF9;
+    --color_primario_luz2:#9AD7FF;
+    --color_primario_sombra1:#1E608E;
+    --color_primario_sombra2:#2E90CC;
+
+    --color_secundario:#1E2022;
+    --color_secundario_luz1:#333536;
+    --color_secundario_luz2: #484A4C;
+    --color_secundario_sombra1: #090A0B;
+    --color_secundario_sombra2: #141516;
+
+    --color_acento: #FFB800;
+    --color_acento_luz1: #FFD633;
+    --color_acento_luz2: #FFEB99;
+    --color_acento_sombra2: #CC9300;
+
+    --color_success: #4BB543;
+    --color_warning: #FFCC00;
+    --color_error:#CC3300;
+
+    --color_neutroBlanco: #EEEEEE;
+    --color_neutroGris: #CCCCCC;
+    --color_neutroNegro: #131314;
+
+    /* Faltan las sombras */
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+    
+body{
+    background-color: var(--color_secundario);
+}
+
+/* Barra de navegacion*/
+
+.nav_bar{position: re;
+    display: flex;
+    justify-content:space-between;
+    background-color: var(--color_secundario_sombra1);
+}
+
+.nav_bar i{
+    color: var(--color_neutroBlanco);
+    font-size: 32px;
+
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+
+}
+  
+
+.perfil{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+   
+    
+}
+
+/* Header*/
+.head h1{|
+    position: relative;
+    color: var(--color_neutroBlanco);
+
+    
+
+}
+
+
+.header{
+    position: absolute;
+  
+    
+}
+
+
+/* Formulario de registro */
+
+
+.content_imgForm{
+    display: flex;
+    align-content: center;    
+    justify-content: center;
+
+    padding-top: 70px;
+    position: relative;
+}
+
+
+
+.content_imgForm img{
+    width: 1100px;
+    height: 983px;
+}
+
+
+.contenedor_formulario{
+    width: 500px;
+    height: 916px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 4px 7px 15px 0px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(75px);
+
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
