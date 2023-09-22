@@ -226,6 +226,7 @@ button {
 .btn-google {
     background-color: var(--color_neutroBlanco);
     color: var(--color_neutroNegro);
+    font-weight: 600;
 }
 
 .cont_o {
