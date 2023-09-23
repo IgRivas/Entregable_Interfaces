@@ -90,6 +90,10 @@ h6 {
     font-size: var(--h6_size);
 }
 
+button {
+    cursor: pointer;
+}
+
 /* Barra de navegacion*/
 
 .nav_bar {
@@ -120,29 +124,31 @@ h6 {
 
 }
 
-/* Header*/* Header*/
+/* Header*/
 .header {
-    position: relative; 
+    position: relative;
 }
 
-.header img{
-    
-}
+.header img {}
+
 .head h1 {
-    position: absolute; 
-    top: 50%; 
+    position: absolute;
+    top: 50%;
     left: 5%;
     color: var(--color_neutroBlanco);
 }
-.head h1:first-child{
-        top: 50%;
+
+.head h1:first-child {
+    top: 50%;
 }
-.head h1:last-child{
+
+.head h1:last-child {
     top: 65%;
 }
-.head h5{
-    position: absolute; 
-    top: 75%; 
+
+.head h5 {
+    position: absolute;
+    top: 75%;
     left: 5%;
     color: var(--color_neutroBlanco);
 }
@@ -151,30 +157,36 @@ h6 {
 .carrousel_container {
     display: block;
     overflow: hidden;
-;
+    ;
 }
-.card_container{
+
+.card_container {
     position: relative;
-  
+
 }
-.card{
+
+.card {
     position: absolute;
     top: 50%;
 }
-.card_img{
+
+.card_img {
     position: absolute;
 }
-.iconos_cards{
+
+.iconos_cards {
     position: absolute;
     top: -25%;
     right: -50%;
 }
-.iconos_cards i{
-   font-size: 37px;  
-   color: var(--color_acento); 
+
+.iconos_cards i {
+    font-size: 37px;
+    color: var(--color_acento);
 
 }
-.juego_gratis{
+
+.juego_gratis {
     position: absolute;
     top: 670%;
     width: 200px;
@@ -184,24 +196,26 @@ h6 {
     text-align: center;
     text-justify: center;
 }
-.juego_gratis h6{
+
+.juego_gratis h6 {
     padding-top: 3%;
 }
 
 
 /* Carrousel Li*/
-.carrouselLi{
+.carrouselLi {
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 2%;
     display: block;
     position: relative;
     overflow-y: hidden;
-    
+
 }
-.carrouselLi_container{
- 
- display: inline-block;
+
+.carrouselLi_container {
+
+    display: inline-block;
     overflow: hidden;
     overflow-x: scroll;
     width: 100%;
@@ -210,7 +224,8 @@ h6 {
     transform: translateZ(0);
     scroll-padding: 50px 50px 50px 50px;
 }
-.li_carrousel{
+
+.li_carrousel {
     width: 215px;
     height: 320px;
     display: inline-block;
@@ -220,19 +235,26 @@ h6 {
 
 /* Formulario de registro */
 
-
-.content_imgForm {
+.contenedor_registro {
     display: flex;
     align-content: center;
     justify-content: center;
+    padding: 5%;
+}
 
-    padding: 70px;
+.content_imgForm {
+    width: 1100px;
+    height: 983px;
     position: relative;
 }
 
-.content_imgForm img {
-    width: 1100px;
-    height: 983px;
+.contenedor_formulario {
+    position: absolute;
+    width: 50%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .fondo_form {
@@ -243,14 +265,6 @@ h6 {
     backdrop-filter: blur(75px);
 }
 
-.contenedor_formulario {
-    width: 500px;
-    height: 916px;
-    position: absolute;
-    top: 93%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 .contenedor_formulario .logo h4 {
     font-family: var(--fuente_titulo);
@@ -271,10 +285,6 @@ h6 {
     font-weight: 400;
     text-align: center;
     margin-top: 10px;
-}
-
-button {
-    cursor: pointer;
 }
 
 .contenedor_btn_redes_sociales {
@@ -330,4 +340,25 @@ button {
 .cont_o span {
     color: var(--color_neutroBlanco);
     font-size: var(--p_regular);
+}
+
+.contenedor_registro label {
+    color: var(--color_neutroBlanco);
+}
+
+.contenedor_registro label span {
+    color: var(--color_error);
+}
+
+.contenedor_registro form input:not([type='button']) {
+    border: 1px solid var(--color_neutroBlanco);
+    border-radius: 4px;
+    background-color: var(--color_secundario);
+    width: 334px;
+    height: 32px;
+}
+
+.contenedor_registro form .cont_input_apellido input,
+.contenedor_registro form .cont_input_nombre input {
+    width: 163px;
 }
