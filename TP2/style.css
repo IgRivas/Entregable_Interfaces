@@ -251,7 +251,7 @@ button {
 .contenedor_formulario {
     position: absolute;
     width: 50%;
-    height: 90%;
+    height: 95%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -350,6 +350,7 @@ button {
     color: var(--color_error);
 }
 
+/*
 .contenedor_registro form input:not([type='button']) {
     border: 1px solid var(--color_neutroBlanco);
     border-radius: 4px;
@@ -361,4 +362,116 @@ button {
 .contenedor_registro form .cont_input_apellido input,
 .contenedor_registro form .cont_input_nombre input {
     width: 163px;
+}
+
+*/
+
+.form_name input,
+.form_apellido input,
+.form_username input,
+.form_edad input,
+.form_mail input,
+.form_password input,
+.form_passwordRep input {
+    border: 1px solid var(--color_neutroBlanco);
+    border-radius: 4px;
+    background-color: var(--color_secundario);
+    width: 334px;
+    height: 32px;
+}
+
+.form input:hover {
+    border-color: var(--color_primario);
+}
+
+.form input {
+    color: var(--color_neutroBlanco);
+    padding: 10px;
+}
+
+.form_name input,
+.form_apellido input {
+    width: 163px;
+}
+
+.contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.form_username,
+.form_edad,
+.form_mail,
+.form_password,
+.form_passwordRep,
+.form_button,
+.captcha {
+    grid-column: 1/3;
+}
+
+.form_password input {
+    position: relative;
+}
+
+.icon_password {
+    position: absolute;
+    left: 75%;
+    bottom: 34.2%;
+}
+
+.icon_password i,
+.icon_passwordRep i {
+    color: var(--color_neutroGris);
+}
+
+.form_passwordRep input {
+    position: relative;
+}
+
+.icon_passwordRep {
+    position: absolute;
+    left: 75%;
+    bottom: 27.2%;
+}
+
+.form_button {
+    margin-top: 20px;
+}
+
+.form_button button {
+    background-color: var(--color_primario);
+    border: none;
+    border-radius: 1000px;
+    width: 334px;
+    height: 50px;
+    font-size: var(--h4_size);
+}
+
+.captcha {
+    margin-top: 20px;
+}
+
+.form_iniciaSesion {
+    text-align: center;
+    color: var(--color_neutroBlanco);
+}
+
+.form_iniciaSesion a {
+    color: var(--color_success);
 }
