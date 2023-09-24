@@ -154,11 +154,7 @@ button {
 }
 
 /*Carrousel */
-.carrousel_container {
-    display: block;
-    overflow: hidden;
-    ;
-}
+
 
 .card_container {
     position: relative;
