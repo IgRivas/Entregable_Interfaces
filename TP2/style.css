@@ -171,9 +171,6 @@ button {
 }
 
 .iconos_cards {
-    position: absolute;
-    top: -25%;
-    right: -50%;
 }
 
 .iconos_cards i {
@@ -209,24 +206,71 @@ button {
 
 }
 
-.carrouselLi_container {
+.titulo_carrousel {
+    color: var(--color_neutroBlanco);
+    position: relative;
+    padding-bottom: 5px;
+    padding-top: 15px;
 
+  }
+  
+.carrouselLi_container {
+    position: relative;
     display: inline-block;
     overflow: hidden;
     overflow-x: scroll;
     width: 100%;
     white-space: nowrap;
-    list-style: none;
-    transform: translateZ(0);
-    scroll-padding: 50px 50px 50px 50px;
+
 }
+
 
 .li_carrousel {
-    width: 215px;
-    height: 320px;
+    padding-right: 15px;
     display: inline-block;
-}
+    position: relative;
+    
+  }
+  
+  .icono_sobresaliente {
+    position: absolute;
+    width: 34px;
+    height: 46px;
+    top: 10px;
+    right: 10px;
+    color: var(--color_acento);
+    background-color: var(--color_primario);
+   border-radius: 10%;
+    padding: 5px;
+  }
+  .icono_sobresaliente i{
+    height: 27px;
+    width: 27px;
+    position: relative;
+    top: 20%;
+    right: -20%;
+  }
 
+  .recuadro_gratis {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 201px;
+    background-color: var(--color_acento);
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+    border-top: solid 2px var(--color_primario);
+    border-bottom-left-radius:9px ;
+    border-bottom-right-radius:9px ;
+  }
+  
+  .recuadro_gratis span {
+   font: var(--h6_size);
+    color: var(--color_neutroNegro);
+   
+}
+  
 
 
 /* Formulario de registro */
