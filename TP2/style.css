@@ -95,9 +95,12 @@ button {
 }
 
 /* Barra de navegacion*/
+body{
 
+}
 .nav_bar {
-    position: re;
+    width: 100%;
+    min-width: 400px;
     display: flex;
     justify-content: space-between;
     background-color: var(--color_secundario_sombra1);
@@ -111,8 +114,11 @@ button {
 
 .logo {
     display: flex;
-    justify-content: center;
+    color: var(--color_neutroBlanco);
     align-items: center;
+}
+.logo h1{
+   font: var(--h1_size);
 }
 
 
@@ -127,81 +133,54 @@ button {
 /* Header*/
 .header {
     position: relative;
+    max-width: 100%;
+
 }
 
-.header img {}
+.header img {
+    max-width: 100%;
+    max-height: 100%;
+}
 
-.head h1 {
+.head h4 {
     position: absolute;
     top: 50%;
     left: 5%;
     color: var(--color_neutroBlanco);
 }
 
-.head h1:first-child {
+.head h4:first-child {
     top: 50%;
 }
 
-.head h1:last-child {
+.head h4:last-child {
     top: 65%;
 }
 
-.head h5 {
+.head h6 {
+    padding-top: 2%;
+    max-width: 50%;
+    max-height: 100%;
     position: absolute;
     top: 75%;
     left: 5%;
     color: var(--color_neutroBlanco);
 }
 
-/*Carrousel */
 
-
-.card_container {
-    position: relative;
-
-}
-
-.card {
-    position: absolute;
-    top: 50%;
-}
-
-.card_img {
-    position: absolute;
-}
-
-.iconos_cards {}
-
-.iconos_cards i {
-    font-size: 37px;
-    color: var(--color_acento);
-
-}
-
-.juego_gratis {
-    position: absolute;
-    top: 670%;
-    width: 200px;
-    height: 30px;
-    background-color: var(--color_acento);
-    border-top: solid var(--color_primario);
-    text-align: center;
-    text-justify: center;
-}
-
-.juego_gratis h6 {
-    padding-top: 3%;
-}
 
 
 /* Carrousel Li*/
 .carrouselLi {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 2%;
     display: block;
     position: relative;
     overflow-y: hidden;
+   
+
+   
 
 }
 
@@ -211,27 +190,37 @@ button {
     padding-bottom: 5px;
     padding-top: 15px;
 
-}
-
+  }
+  
 .carrouselLi_container {
     position: relative;
     display: inline-block;
     overflow: hidden;
     overflow-x: scroll;
-    width: 100%;
+   max-width: 100%;
     white-space: nowrap;
-
-}
+    height: 195px;
+    
+  
+    }
 
 
 .li_carrousel {
     padding-right: 15px;
     display: inline-block;
     position: relative;
-
-}
-
-.icono_sobresaliente {
+    max-width: 100%;
+    max-height: 100%;
+    width: 145px;
+    
+    
+  }
+  .img_card{
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  .icono_sobresaliente {
     position: absolute;
     width: 34px;
     height: 46px;
@@ -239,36 +228,74 @@ button {
     right: 10px;
     color: var(--color_acento);
     background-color: var(--color_primario);
-    border-radius: 10%;
+   border-radius: 10%;
     padding: 5px;
-}
-
-.icono_sobresaliente i {
+  }
+  .icono_sobresaliente i{
     height: 27px;
     width: 27px;
     position: relative;
     top: 20%;
     right: -20%;
-}
+  }
 
-.recuadro_gratis {
+  .recuadro_gratis {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 201px;
+    width: 89%;
     background-color: var(--color_acento);
-    color: #ffffff;
+    color: var(--color_neutroBlanco);
     text-align: center;
-    padding: 5px;
+    padding: 2%;
     border-top: solid 2px var(--color_primario);
-    border-bottom-left-radius: 9px;
-    border-bottom-right-radius: 9px;
+    border-bottom-left-radius:9px ;
+    border-bottom-right-radius:9px ;
+  }
+  
+  .recuadro_gratis span {
+   font: var(--h6_size);
+    color: var(--color_neutroNegro);
+   
 }
 
-.recuadro_gratis span {
-    font: var(--h6_size);
-    color: var(--color_neutroNegro);
+/* publicidad*/
+.publicidad_home{
+    width: 100%;
+    height: 60px;
+    max-height: 10%;
+    background-color: var(--color_acento_sombra2);
+    border: solid 5px var(--color_primario_sombra1);
+}
 
+
+/*Carrousel destacado*/
+.carrouselLi_destacado{
+    width: 100%;
+    padding: 4%;
+    
+   
+}
+.carrouselLi_container_destacado{
+   width: 100%;
+ 
+}
+.img_card_destacado{
+    max-width: 50%;
+    max-height: 100%;
+
+}
+
+.li_carrousel_destacado{
+    max-width: 100%;
+    background-color: #3FBFE9;
+    display: flex;
+}
+.info_juego_destacado{
+   
+}
+.titulo_jugo_destacado{
+    justify-content: center;
 }
 
 
