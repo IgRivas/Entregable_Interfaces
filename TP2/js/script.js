@@ -31,8 +31,17 @@ function showLogin() {
     document.querySelector(".cont_linea").classList.toggle("showLinea");
 
     // Le cambio el texto al boton
-    document.querySelector(".btn_registrarse").textContent = "Iniciar sesion"
+    document.querySelector(".btn_registrarse").textContent = "Iniciar sesion";
 
     //Le cambio el tamaño al fondo
     document.querySelector(".content_imgForm").classList.toggle("content_imgForm_login");
+    cambiarFondoForm();
+
+    //Le cambio el titulo
+    document.querySelector(".titulo_registro").textContent = "Inicia secion en SoulsGames";
+}
+
+function cambiarFondoForm() {
+    let imagenForm = document.getElementById("imagenForm");
+    imagenForm.src = "imagenes/fondoFormularioLogin.png";
 }

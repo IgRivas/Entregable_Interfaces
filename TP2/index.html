@@ -22,7 +22,7 @@
 
             <div class="content_imgForm ">
 
-                <img src="imagenes/fondoFormulario.png" alt="">
+                <img id="imagenForm" src="imagenes/fondoFormulario.png" alt="">
 
                 <div class="contenedor_formulario fondo_form">
                     <div class="logo">
@@ -30,7 +30,7 @@
                         <img src="imagenes/logo.png" alt="">
                     </div>
 
-                    <h3>Regístrarte gratis para jugar</h3>
+                    <h3 class="titulo_registro">Regístrarte gratis para jugar</h3>
 
                     <div class="contenedor_btn_redes_sociales">
                         <button class="btn-facebook"><i class="fa-brands fa-facebook"></i>Registrate con
@@ -53,22 +53,6 @@
                         <div class="wrapper">
                             <div class="form">
                                 <form action="" class="formulario">
-
-                                    <div class="cont_input_login cont_input_login_nombre">
-                                        <label for="">Email o nombre de usuario</label>
-                                        <input type="text">
-                                    </div>
-
-                                    <div class="cont_input_login cont_input_login_password">
-                                        <label for="">Contraseña</label>
-                                        <input type="password">
-                                    </div>
-
-                                    <div class="cont_input_login cont_icon_toggle ">
-                                        <i class="fa-solid fa-toggle-on"></i>
-                                        <p>Recordarme</p>
-                                    </div>
-
 
                                     <div class="form_name">
                                         <label for="">Nombre <span>*</span></label>
@@ -109,19 +93,11 @@
                                         <button class="btn_registrarse">Registrarse</button>
                                     </div>
 
-                                    <div class="cont_input_login cont_input_login_h5">
-                                        <h5>¿Has olvidado tu contraseña?</h5>
-                                    </div>
-
                                 </form>
-
-                                <div class="cont_linea showLinea">
-                                    <div class="linea_separacion_login"></div>
-                                </div>
 
                                 <div class="form_iniciaSesion">
                                     <p>¿Ya tienes una cuenta?
-                                        <span class="btn_inicia_sesion">Inicia sesion</span>
+                                        <a href="login.html" class="btn_inicia_sesion">Inicia sesion<a>
                                     </p>
                                 </div>
                             </div>
@@ -134,7 +110,6 @@
 
     </main>
 
-    <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/e997784c98.js" crossorigin="anonymous"></script>
 </body>
 
