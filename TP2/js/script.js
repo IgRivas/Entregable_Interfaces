@@ -1,47 +1,29 @@
 "use strict"
 
-let btnIniciaSesion = document.querySelector(".btn_inicia_sesion").addEventListener("click", showLogin);
+// Desplegable categorias
+const slidebar_burguer = document.querySelector(".sidebar_burguer");
+const slidebar_perfil = document.querySelector(".sidebar_perfil");
 
-function showLogin() {
+document.querySelector(".cont_burguer").addEventListener("click", showBurguer);
+document.querySelector(".btn_cerrar_burguer").addEventListener("click", hiddenBuguer);
 
-    // Oculto los input
-    let contInputs = [
-        document.querySelector(".form_name"),
-        document.querySelector(".form_apellido"),
-        document.querySelector(".form_username"),
-        document.querySelector(".form_edad"),
-        document.querySelector(".form_mail"),
-        document.querySelector(".form_password"),
-        document.querySelector(".form_passwordRep"),
-        document.querySelector(".captcha")
-    ];
-
-    contInputs.forEach(element => {
-        element.classList.toggle("dis_none");
-    });
-
-    // Aparecen los botones de login
-    let contInputLogin = document.querySelectorAll(".cont_input_login");
-    console.log(contInputLogin);
-
-    contInputLogin.forEach(element => {
-        element.classList.toggle("showLogin");
-    });
-
-    document.querySelector(".cont_linea").classList.toggle("showLinea");
-
-    // Le cambio el texto al boton
-    document.querySelector(".btn_registrarse").textContent = "Iniciar sesion";
-
-    //Le cambio el tamaño al fondo
-    document.querySelector(".content_imgForm").classList.toggle("content_imgForm_login");
-    cambiarFondoForm();
-
-    //Le cambio el titulo
-    document.querySelector(".titulo_registro").textContent = "Inicia secion en SoulsGames";
+function showBurguer() {
+    slidebar_burguer.classList.remove("noVisible_burguer");
+    slidebar_burguer.classList.add("visible_burguer");
 }
 
-function cambiarFondoForm() {
-    let imagenForm = document.getElementById("imagenForm");
-    imagenForm.src = "imagenes/fondoFormularioLogin.png";
+function hiddenBuguer() {
+    slidebar_burguer.classList.add("noVisible_burguer");
+}
+
+document.querySelector(".cont_perfil_img").addEventListener("click", showMenuPerfil);
+document.querySelector(".btn_cerrar_perfil").addEventListener("click", hiddenMenuPerfil);
+
+function showMenuPerfil() {
+    slidebar_perfil.classList.remove("noVisible_perfil");
+
+    slidebar_perfil.classList.add("visible_perfil");
+}
+function hiddenMenuPerfil() {
+    slidebar_perfil.classList.add("noVisible_perfil");
 }
