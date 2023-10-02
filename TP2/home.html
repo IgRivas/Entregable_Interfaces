@@ -8,31 +8,112 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+<nav class="contenedor_nav">
 
-<nav class="nav_bar">
-  <div class="menu_hamburguesa">
+  <div class="sidebar_burguer">
+
+    <div class="btn_cerrar_burguer ">
+      <i class="fa-regular fa-circle-xmark"></i>
+    </div>
+
+    <ul class="cont_menu_rapido">
+      <li><i class="fa-solid fa-house"></i>Home</li>
+      <li><i class="fa-solid fa-globe"></i>Juegos nuevos</li>
+      <li><i class="fa-solid fa-fire"></i>Tendencias</li>
+      <li><i class="fa-solid fa-rotate"></i>Actualizados</li>
+    </ul>
+
+    <div class="cont_linea_separacion_sidebar_burguer">
+      <!-- linea -->
+      <div class="linea_separacion_sidebar_burguer"></div>
+    </div>
+
+
+    <ul class="cont_menu_categorias">
+      <li><i class="fa-solid fa-gun"></i>Accion</li>
+      <li><i class="fa-solid fa-compass"></i>Aventura</li>
+      <li><i class="fa-solid fa-car-side"></i>Carrera</li>
+      <li><i class="fa-solid fa-puzzle-piece"></i>Juegos de mesa</li>
+      <li><i class="fa-solid fa-basketball"></i>Deporte</li>
+    </ul>
+
+
+    <div class="cont_linea_separacion_sidebar_burguer">
+      <!-- linea -->
+      <div class="linea_separacion_sidebar_burguer"></div>
+    </div>
+
+    <ul class="cont_menu_redes_sociales">
+      <li><i class="fa-brands fa-facebook"></i></li>
+      <li><i class="fa-brands fa-twitter"></i></li>
+      <li><i class="fa-brands fa-instagram"></i></li>
+    </ul>
+  </div>
+
+  <div class="sidebar_perfil">
+
+    <div class="btn_cerrar_perfil">
+      <i class="fa-regular fa-circle-xmark"></i>
+    </div>
+
+    <div class="cont_icon_perfil">
+      <div class="cont_icon_perfil_img"><img src="imagenes/icono_perfil.png" alt=""></div>
+    </div>
+
+    <h4 class="titulo_perfil">Marito 404</h4>
+
+    <ul class="cont_menu_perfil">
+      <li><i class="fa-regular fa-user"></i>Mi perfil</li>
+      <li><i class="fa-regular fa-star"></i>Juegos favoritos</li>
+      <li><i class="fa-solid fa-book"></i>Biblioteca</li>
+      <li><i class="fa-solid fa-gear"></i>Configuracion de la cuenta</li>
+    </ul>
+
+    <div class="cont_linea_separacion_sidebar_perfil">
+      <!-- linea -->
+      <div class="linea_separacion_sidebar_perfil"></div>
+    </div>
+
+    <div class="btn_logout">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <span>Cerrar sesión</span>
+    </div>
+
+  </div>
+
+
+  <div class="cont_burguer">
     <i class="fa-solid fa-bars"></i>
   </div>
-  <div class="logo">
-    <h1>Souls Games</h1>
+
+  <div class="nav_logo">
+    <h1><span>Souls</span>Games</h1>
     <img src="imagenes/logo.png" alt="">
   </div>
-  <div class="carrito">
 
+  <div class="cont_carrito_perfil">
+    <div>
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="cont_perfil_img">
+      <img src="imagenes/icono_perfil.png" alt="">
+    </div>
   </div>
-  <div class="perfil">
-    <i class="fa-solid fa-cart-shopping"></i>
-    <img src="imagenes/avatar.png" alt="">
-  </div>
+
 
 </nav>
 <header>
   <div class="head">
     <div class="header">
       <img src="imagenes/juegoprincipal.png" alt="">
-      <h4>NUEVO 4 EN LINEA</h4>
+      <div class="titulo_juego_nav">
+        <h4>NUEVO 4 EN LINEA DE DRAGON BALL</h4>
+        
+      </div>
       <h6>Personalizado con tus personajes favoritos!</h6>
-      <h4> DE DRAGON BALL</h4>
+      <div class="btn_jugar_principal">
+        <p> Jugar</p>
+      </div>
     </div>
 
 
@@ -43,7 +124,7 @@
 <body>
   <!--  Carrouseles Por categorias-->
   <div class="carrouselLi">
-    <h4 class="titulo_carrousel">Juegos De accion</h4>
+    <h4 class="titulo_carrousel">Juegos De Carreras</h4>
     <ul class="carrouselLi_container">
       <li class="li_carrousel"><a href="">
           <img class="img_card" src="imagenes/cards/hotweels.png" alt="">
@@ -59,13 +140,16 @@
       </li>
       <li class="li_carrousel"><a href="">
           <img class="img_card" src="imagenes/cards/nfs.png" alt="">
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
             <p>Need for speed payback</p>
           </div>
           <div class="precio_juego">
-            <p>AR$ 60</p>
+            <p>AR$ 0</p>
           </div>
         </div>
       </li>
@@ -95,18 +179,30 @@
       </li>
       <li class="li_carrousel"><a href="">
           <img class="img_card" src="imagenes/cards/gt.png" alt="">
+          <div class="icono_sobresaliente">
+            <i class="fa-solid fa-bookmark"> </i>
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
+
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
             <p>Gran turismo Sport</p>
           </div>
           <div class="precio_juego">
-            <p>AR$2000</p>
+            <p>AR$ 0</p>
           </div>
         </div>
       </li>
       <li class="li_carrousel"><a href="">
           <img class="img_card" src="imagenes/cards/cars.png" alt="">
+          <div class="icono_sobresaliente">
+            <i class="fa-solid fa-bookmark"> </i>
+            <i class="fa-solid fa-book"></i>
+          </div>
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
@@ -119,25 +215,31 @@
       </li>
       <li class="li_carrousel"><a href="">
           <img class="img_card" src="imagenes/cards/fox.png" alt="">
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
             <p>Crash nitro kart</p>
           </div>
           <div class="precio_juego">
-            <p>AR$ 1244</p>
+            <p>AR$ 0</p>
           </div>
         </div>
       </li>
       <li class="li_carrousel"><a href="">
           <img class="img_card" src="imagenes/cards/car2.png" alt="">
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
             <p>Race master 3D</p>
           </div>
           <div class="precio_juego">
-            <p>AR$ 12412</p>
+            <p>AR$ 0</p>
           </div>
         </div>
       <li class="li_carrousel"><a href="">
@@ -167,16 +269,31 @@
     </ul>
   </div>
 
-<!-- Segundo carrousel por categorias-->
+  <!-- Segundo carrousel por categorias-->
   <div class="carrouselLi">
-    <h4 class="titulo_carrousel">Juegos De arcade</h4>
+    <h4 class="titulo_carrousel">Juegos De Accion</h4>
     <ul class="carrouselLi_container">
       <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/hotweels.png" alt="">
+          <img class="img_card" src="imagenes/cards/wow.png" alt="">
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
             <p>Wod of War</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 0</p>
+          </div>
+        </div>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/re4.png" alt="">
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Resident evil 4</p>
           </div>
           <div class="precio_juego">
             <p>AR$2000</p>
@@ -184,11 +301,11 @@
         </div>
       </li>
       <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/hotweels.png" alt="">
+          <img class="img_card" src="imagenes/cards/cod.png" alt="">
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
-            <p>Wod of War</p>
+            <p>Call of duty</p>
           </div>
           <div class="precio_juego">
             <p>AR$2000</p>
@@ -196,11 +313,15 @@
         </div>
       </li>
       <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/hotweels.png" alt="">
+          <img class="img_card" src="imagenes/cards/gta.png" alt="">
+          <div class="icono_sobresaliente">
+            <i class="fa-solid fa-bookmark"> </i>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
-            <p>Wod of War</p>
+            <p>Grand theft auto SanAndreas</p>
           </div>
           <div class="precio_juego">
             <p>AR$2000</p>
@@ -208,11 +329,41 @@
         </div>
       </li>
       <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/hotweels.png" alt="">
+          <img class="img_card" src="imagenes/cards/overwatch.png" alt="">
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
-            <p>Wod of War</p>
+            <p>Overwatch</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 0</p>
+          </div>
+        </div>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/fortnite.png" alt="">
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Fornite</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 0</p>
+          </div>
+        </div>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/wog.png" alt="">
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Star wars battlefront</p>
           </div>
           <div class="precio_juego">
             <p>AR$2000</p>
@@ -220,11 +371,11 @@
         </div>
       </li>
       <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/hotweels.png" alt="">
+          <img class="img_card" src="imagenes/cards/freefire.png" alt="">
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
-            <p>Wod of War</p>
+            <p>Free fire</p>
           </div>
           <div class="precio_juego">
             <p>AR$2000</p>
@@ -232,17 +383,33 @@
         </div>
       </li>
       <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/hotweels.png" alt="">
+          <img class="img_card" src="imagenes/cards/sakiro.png" alt="">
         </a>
         <div class="info_juego">
           <div class="titulo_juego">
-            <p>Wod of War</p>
+            <p>Sekiro shadows die twice</p>
           </div>
           <div class="precio_juego">
             <p>AR$2000</p>
           </div>
         </div>
       </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/assasin.png" alt="">
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Assassins creed mirage</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 0</p>
+          </div>
+        </div>
+      </li>
+
     </ul>
   </div>
 
@@ -250,9 +417,9 @@
   <!------------------------------->
   <!-- Espacio Publicitario-->
   <div class="publicidad_home">
-    <span>Aqui Ira la Puublicidad</span>
+    <img src="imagenes/publi.png" alt="">
   </div>
-
+<!-- Carrousel Destacado-->
   <div class="carousel_destacado">
     <div class="card_destacado">
       <img src="imagenes/cards/hollow.png" alt="Juego 1">
@@ -272,10 +439,8 @@
       <img src="imagenes/cards/halo.png" alt="Juego 1">
       <div class="card_destacado_info_container">
         <div class="card_destacado_info">
-          <h4>Hollow Knight</h4>
-          <p>Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes
-            que se encuentra en ruinas. Explora cavernas tortuosas, combate contra criaturas corrompidas y entabla
-            amistad con extraños insectos, todo en un estilo clásico en 2D dibujado a</p>
+          <h4>Halo infinite</h4>
+          <p>videojuego de disparos en primera persona de la franquicia de videojuegos de ciencia ficc</p>
         </div>
         <div class="btn_jugar_destacado">
           <p> Jugar</p>
@@ -286,10 +451,8 @@
       <img src="imagenes/cards/horizon.png" alt="Juego 1">
       <div class="card_destacado_info_container">
         <div class="card_destacado_info">
-          <h4>Hollow Knight</h4>
-          <p>Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes
-            que se encuentra en ruinas. Explora cavernas tortuosas, combate contra criaturas corrompidas y entabla
-            amistad con extraños insectos, todo en un estilo clásico en 2D dibujado a</p>
+          <h4>Horizon zero dawn</h4>
+          <p>La historia de Horizon Zero Dawn se proyecta en el planeta Tierra aproximadamente<p>
         </div>
         <div class="btn_agregar_destacado">
           <p> Agregar al cariito</p>
@@ -300,10 +463,8 @@
       <img src="imagenes/cards/fallguys.png" alt="Juego 1">
       <div class="card_destacado_info_container">
         <div class="card_destacado_info">
-          <h4>Hollow Knight</h4>
-          <p>Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes
-            que se encuentra en ruinas. Explora cavernas tortuosas, combate contra criaturas corrompidas y entabla
-            amistad con extraños insectos, todo en un estilo clásico en 2D dibujado a</p>
+          <h4>Fall guys</h4>
+          <p>Fall Guys es un party royale gratuito, multiplataforma y multijugador masivo en</p>
         </div>
         <div class="btn_agregar_destacado">
           <p> Agregar al carrito</p>
@@ -311,22 +472,155 @@
         </div>
       </div>
     </div>
-    <div class="card_destacado">
-      <img src="imagenes/cards/hollow.png" alt="Juego 1">
-      <div class="card_destacado_info_container">
-        <div class="card_destacado_info">
-          <h4>Hollow Knight</h4>
-          <p>Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes
-            que se encuentra en ruinas. Explora cavernas tortuosas, combate contra criaturas corrompidas y entabla
-            amistad con extraños insectos, todo en un estilo clásico en 2D dibujado a</p>
+  </div>
+  <!--Tercer carrousel por categorias-->
+  <div class="carrouselLi">
+    <h4 class="titulo_carrousel">Juegos De Carreras</h4>
+    <ul class="carrouselLi_container">
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/hotweels.png" alt="">
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Hot Weels</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 2000</p>
+          </div>
         </div>
-        <div class="btn_jugar_destacado">
-          <p> Jugar</p>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/nfs.png" alt="">
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Need for speed payback</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 0</p>
+          </div>
         </div>
-      </div>
-    </div>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/forza.png" alt="">
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Forza Horizon 4</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 2000</p>
+          </div>
+        </div>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/tca2.png" alt="">
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Toca 2 Touring cars</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 2000</p>
+          </div>
+        </div>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/gt.png" alt="">
+          <div class="icono_sobresaliente">
+            <i class="fa-solid fa-bookmark"> </i>
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
+
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Gran turismo Sport</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 0</p>
+          </div>
+        </div>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/cars.png" alt="">
+          <div class="icono_sobresaliente">
+            <i class="fa-solid fa-bookmark"> </i>
+            <i class="fa-solid fa-book"></i>
+          </div>
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Trafic jam 3D</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 368</p>
+          </div>
+        </div>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/fox.png" alt="">
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Crash nitro kart</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 0</p>
+          </div>
+        </div>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/car2.png" alt="">
+          <div class="recuadro_gratis">
+            <span>GRATIS</span>
+          </div>
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Race master 3D</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 0</p>
+          </div>
+        </div>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/mario.png" alt="">
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Mario Kart</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 9000</p>
+          </div>
+        </div>
+      </li>
+      <li class="li_carrousel"><a href="">
+          <img class="img_card" src="imagenes/cards/faf.png" alt="">
+        </a>
+        <div class="info_juego">
+          <div class="titulo_juego">
+            <p>Fast and the furious</p>
+          </div>
+          <div class="precio_juego">
+            <p>AR$ 200</p>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
   <script src="https://kit.fontawesome.com/e997784c98.js" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

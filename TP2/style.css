@@ -64,6 +64,7 @@
 body {
     background-color: var(--color_secundario);
     font-family: var(--funte_primaria);
+    min-width: 390px;
 }
 
 h1 {
@@ -141,31 +142,41 @@ button {
     max-height: 100%;
 }
 
-.head h4 {
+.header h4{
+    font-size: var(--h5_size);
+}
+.titulo_juego_nav {
+    max-width: 55%;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 5%;
     color: var(--color_neutroBlanco);
+    font-size: var(--h5_size);
 }
 
-.head h4:first-child {
-    top: 50%;
-}
-
-.head h4:last-child {
-    top: 65%;
-}
 
 .head h6 {
     padding-top: 2%;
     max-width: 50%;
     max-height: 100%;
     position: absolute;
-    top: 75%;
+    top: 50%;
     left: 5%;
     color: var(--color_neutroBlanco);
 }
 
+.btn_jugar_principal{
+
+    position: absolute;
+    top: 75%;
+    left: 10%;
+    margin-right: 5%;
+    border-radius: 20px;
+    padding: 2%;
+    background-color: var(--color_acento);
+    width: 30%;
+    text-align: center;
+}
 
 
 
@@ -218,31 +229,39 @@ button {
 .img_card {
     max-height: 100%;
     max-width: 100%;
+    border-radius: 19px;
 }
 
 .icono_sobresaliente {
     position: absolute;
-    width: 34px;
-    height: 46px;
     top: 10px;
     right: 10px;
     color: var(--color_acento);
-    background-color: var(--color_primario);
     border-radius: 10%;
     padding: 5px;
 }
 
-.icono_sobresaliente i {
-    height: 27px;
-    width: 27px;
-    position: relative;
+.icono_sobresaliente i{
+    display: inline-block;
+    position: absolute;
     top: 20%;
     right: -20%;
+    color: var(--color_primario);
+}
+.icono_sobresaliente i:first-child{
+    font-size: 200%;
+}
+
+.icono_sobresaliente i:last-child {
+    right: 26%;
+    color: var(--color_acento);
+    top: 60%;
+    font-size: 100%;
 }
 
 .recuadro_gratis {
     position: absolute;
-    bottom: 0;
+    bottom: 24%;
     left: 0;
     width: 89%;
     background-color: var(--color_acento);
@@ -259,15 +278,19 @@ button {
     color: var(--color_neutroNegro);
 
 }
-
-.info_juego {
-
+.info_juego{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: wrap;
     width: 100%;
     height: 50px;
-
+   
 }
-
-.info_juego {
+.info_juego{
     color: var(--color_neutroBlanco);
     font-size: var(--p_regular);
 }
@@ -278,13 +301,14 @@ button {
 
 /* publicidad*/
 .publicidad_home {
-    width: 100%;
-    height: 60px;
-    max-height: 10%;
-    background-color: var(--color_acento_sombra2);
-    border: solid 5px var(--color_primario_sombra1);
+    padding: 15px;
+    max-width: 100%;
 }
 
+.publicidad_home img{
+    width: 100%;
+  
+}
 
 /*Carrousel destacado*/
 
@@ -292,16 +316,18 @@ button {
     font-family: var(--funte_primaria);
     overflow-x: scroll;
     white-space: nowrap;
-    background-color: var(--color_secundario_luz1);
+    background-color: var(--color_secundario);
 
 }
 
 .card_destacado {
     display: inline-block;
     width: 90%;
-    background-color: var(--color_secundario);
+    background-color: var(--color_secundario_luz1);
+   
     margin: 4%;
     border-radius: 19px;
+    max-width: 500px;
 
 
 
@@ -370,6 +396,8 @@ button {
     width: 500%;
     text-align: center;
 }
+
+
 
 
 
