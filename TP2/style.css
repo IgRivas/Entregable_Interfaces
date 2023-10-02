@@ -937,12 +937,12 @@ button {
     z-index: 999;
 }
 
-/* Breadcumbs */
+/* 4 en linea Breadcumbs */
 
 .cont_breadcrumbs {
     display: flex;
     margin-top: 10px;
-    margin-left: 130px;
+    padding-left: 125px;
 }
 
 .cont_breadcrumbs i {
@@ -982,6 +982,92 @@ button {
 .cont_breadcrumbs_medio,
 .cont_breadcrumbs_fin {
     margin-left: -10px;
-    /* Puedes ajustar el valor según tus necesidades */
+}
 
+/* 4EnLinea Recuadro del juego */
+.cont_recuadro_juego {
+    position: relative;
+}
+
+.cont_recuadro_juego_img {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+
+.cont_recuadro_juego_img img {
+    filter: brightness(20%);
+    border-radius: 20px;
+}
+
+.cont_recuadro_juego_contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cont_recuadro_juego h1 {
+    color: var(--color_neutroBlanco);
+}
+
+.btn_4EnLinea {
+    background: var(--color_acento);
+    border-radius: 20px;
+    width: 120px;
+    height: 40px;
+    border: none;
+    font-size: var(--texto_botones);
+}
+
+.cont_recuadro_juego_contenido_alineacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+.cont_instrucciones {
+    width: 1100px;
+    height: 282px;
+    border-radius: 20px;
+    border: 1px solid var(--color_primario_sombra1);
+    background: var(--color_secundario_sombra1);
+
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.cont_instrucciones h2 {
+    color: var(--color_primario);
+    font-weight: normal;
+    text-align: center;
+}
+
+.cont_instrucciones p {
+    color: var(--color_neutroBlanco);
+    font-size: var(--h4_size);
+}
+
+.cont_instrucciones_contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-top: -20px;
+}
+
+.cont_instrucciones_contenido_alineacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont_instrucciones_texto {
+    width: 542px;
 }
