@@ -1236,7 +1236,18 @@ button {
     left: 83.5%;
 }
 
+.boton_carrousel .cont_btn_carrousel_right  {
+    top: 40%;
+    right: 3%;
+}
 
+.boton_carrousel .cont_btn_carrousel_left  {
+    top: 40%;
+    left: 2%;
+}
+.boton_carrousel{
+    display: none;
+}
 /* Media query para tamaños medianos (de 481px a 769px) */
 @media only screen and (min-width: 481px) and (max-width: 769px) {
 
@@ -1252,6 +1263,9 @@ button {
     .recuadro_gratis{
         bottom: 22%;
         width: 91%;
+    }
+    .boton_carrousel{
+        display: block;
     }
 
 
@@ -1284,5 +1298,8 @@ button {
     .info_juego {
         font-size: var(--h6_size);
   
+    }
+    .boton_carrousel{
+        display: block;
     }
 }
