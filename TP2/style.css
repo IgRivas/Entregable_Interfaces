@@ -147,12 +147,14 @@ button {
 }
 
 .titulo_juego_nav {
-    max-width: 55%;
+
+    max-width: 50%;
     position: absolute;
     top: 30%;
     left: 5%;
     color: var(--color_neutroBlanco);
-    font-size: var(--h5_size);
+
+ 
 }
 
 
@@ -169,13 +171,12 @@ button {
 .btn_jugar_principal {
 
     position: absolute;
-    top: 75%;
-    left: 10%;
+    
     margin-right: 5%;
     border-radius: 20px;
     padding: 2%;
     background-color: var(--color_acento);
-    width: 30%;
+    width: 50%;
     text-align: center;
 }
 
@@ -235,7 +236,7 @@ button {
 
 .icono_sobresaliente {
     position: absolute;
-    top: 10px;
+    top: 0%;
     right: 10px;
     color: var(--color_acento);
     border-radius: 10%;
@@ -321,6 +322,8 @@ button {
     overflow-x: scroll;
     white-space: nowrap;
     background-color: var(--color_secundario);
+    padding-left: 3%;
+    padding-right: 3%;
 
 }
 
@@ -328,14 +331,14 @@ button {
     display: inline-block;
     width: 90%;
     background-color: var(--color_secundario_luz1);
-
-    margin: 4%;
+    margin: 1%;
     border-radius: 19px;
-    max-width: 500px;
+    max-width: 560px;
 
 
 
 }
+
 
 .card_destacado img {
 
@@ -400,11 +403,6 @@ button {
     width: 500%;
     text-align: center;
 }
-
-
-
-
-
 
 
 /* Formulario de registro */
@@ -1236,4 +1234,55 @@ button {
     top: 50%;
     transform: translatey(-50%);
     left: 83.5%;
+}
+
+
+/* Media query para tamaños medianos (de 481px a 769px) */
+@media only screen and (min-width: 481px) and (max-width: 769px) {
+
+    .titulo_juego_nav h4{
+        font-size: var(--h4_size);
+    }
+    .header h6{
+        font-size: var(--h5_size);
+    }
+    .li_carrousel{
+        width: 160px;
+    }
+    .recuadro_gratis{
+        bottom: 22%;
+        width: 91%;
+    }
+
+
+}
+/* Media query para tamaños grandes (de 770px a 1440px) */
+@media only screen and (min-width: 770px) and (max-width: 1440px) {
+ 
+    .titulo_juego_nav h4{
+        font-size: var(--h2_size);
+      
+}
+    .header h6{
+        font-size: var(--h4_size);
+    }
+    .li_carrousel{
+        width: 230px;
+    }
+    .recuadro_gratis{
+        bottom: 17%;
+        width: 87%;
+    }
+    .icono_sobresaliente{
+        right: 50px;
+        top: 0px;
+    }
+    .btn_jugar_principal{
+        width: 50%;
+        font-size: var(--h4_size);
+    }
+    .info_juego {
+        font-size: var(--h6_size);
+  
+    }
 }
