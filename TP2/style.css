@@ -1110,7 +1110,7 @@ button {
 
 .cont_descripcion_recuadro {
     width: 1103px;
-    height: 1349px;
+    height: 1150px;
     border-radius: 20px;
     border: 1px solid var(--color_primario_sombra2, #1E608E);
     background: var(--colsecsom1, #0F1316);
@@ -1159,32 +1159,38 @@ button {
 }
 
 .contenedor_img_principal {
-    max-width: 800px;
-    max-height: 400px;
     display: flex;
     justify-content: center;
     margin: auto;
     margin-top: 10px;
+
 }
 
 .contenedor_img_principal img {
-    width: 100%;
-    height: 100%;
+    max-width: 750px;
+    border-radius: 20px;
+    border: 1px solid var(--color_primario);
+
+}
+
+#imagenSeleccionada {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .contenedor_imagenes_carrousel {
-    margin-top: 60px;
-    margin-left: 90px;
+    margin-top: 10px;
+    margin-left: 110px;
     position: relative;
     z-index: 1;
 }
 
 .cont_img_car {
     display: flex;
-    max-width: 790px;
+    max-width: 750px;
     gap: 20px;
-    overflow: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 .cont_img_car img {
@@ -1192,6 +1198,7 @@ button {
     max-height: 170px;
     border-radius: 20px;
     border: 1px solid var(--color_acento);
+    cursor: pointer;
 }
 
 .cont_btn_carrousel_left i,
@@ -1211,6 +1218,7 @@ button {
     background-color: var(--color_primario);
     border-radius: 100%;
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .cont_btn_carrousel_left,
@@ -1227,5 +1235,5 @@ button {
 .nav_galeria .cont_btn_carrousel_right {
     top: 50%;
     transform: translatey(-50%);
-    left: 86.5%;
+    left: 83.5%;
 }
