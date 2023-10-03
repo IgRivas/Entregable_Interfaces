@@ -142,9 +142,10 @@ button {
     max-height: 100%;
 }
 
-.header h4{
+.header h4 {
     font-size: var(--h5_size);
 }
+
 .titulo_juego_nav {
     max-width: 55%;
     position: absolute;
@@ -165,7 +166,7 @@ button {
     color: var(--color_neutroBlanco);
 }
 
-.btn_jugar_principal{
+.btn_jugar_principal {
 
     position: absolute;
     top: 75%;
@@ -241,14 +242,15 @@ button {
     padding: 5px;
 }
 
-.icono_sobresaliente i{
+.icono_sobresaliente i {
     display: inline-block;
     position: absolute;
     top: 20%;
     right: -20%;
     color: var(--color_primario);
 }
-.icono_sobresaliente i:first-child{
+
+.icono_sobresaliente i:first-child {
     font-size: 200%;
 }
 
@@ -278,7 +280,8 @@ button {
     color: var(--color_neutroNegro);
 
 }
-.info_juego{
+
+.info_juego {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -288,9 +291,10 @@ button {
     white-space: wrap;
     width: 100%;
     height: 50px;
-   
+
 }
-.info_juego{
+
+.info_juego {
     color: var(--color_neutroBlanco);
     font-size: var(--p_regular);
 }
@@ -305,9 +309,9 @@ button {
     max-width: 100%;
 }
 
-.publicidad_home img{
+.publicidad_home img {
     width: 100%;
-  
+
 }
 
 /*Carrousel destacado*/
@@ -324,7 +328,7 @@ button {
     display: inline-block;
     width: 90%;
     background-color: var(--color_secundario_luz1);
-   
+
     margin: 4%;
     border-radius: 19px;
     max-width: 500px;
@@ -1058,6 +1062,8 @@ button {
     gap: 10px;
 }
 
+/* 4 en linea instrucciones */
+
 .cont_instrucciones {
     width: 1100px;
     height: 282px;
@@ -1098,4 +1104,128 @@ button {
 
 .cont_instrucciones_texto {
     width: 542px;
+}
+
+/* 4 en linea descripcion */
+
+.cont_descripcion_recuadro {
+    width: 1103px;
+    height: 1349px;
+    border-radius: 20px;
+    border: 1px solid var(--color_primario_sombra2, #1E608E);
+    background: var(--colsecsom1, #0F1316);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.cont_titulo_descripcion h2,
+.cont_titulo_galeria h2 {
+    color: var(--color_primario);
+    text-align: center;
+    font-weight: normal;
+    margin-top: 40px;
+}
+
+.cont_descripcion {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.cont_descripcion_img_vegeta {
+    padding-bottom: 15px;
+}
+
+.cont_descripcion_texto p {
+    color: var(--color_neutroBlanco);
+    font-size: var(--h4_size);
+}
+
+.cont_descripcion_texto {
+    width: 542px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 4 en linea galeria */
+.cont_galeria {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor_img_principal {
+    max-width: 800px;
+    max-height: 400px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.contenedor_img_principal img {
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor_imagenes_carrousel {
+    margin-top: 60px;
+    margin-left: 90px;
+    position: relative;
+    z-index: 1;
+}
+
+.cont_img_car {
+    display: flex;
+    max-width: 790px;
+    gap: 20px;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.cont_img_car img {
+    width: 60%;
+    max-height: 170px;
+    border-radius: 20px;
+    border: 1px solid var(--color_acento);
+}
+
+.cont_btn_carrousel_left i,
+.cont_btn_carrousel_right i {
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 20%;
+}
+
+
+.cont_btn_carrousel_left,
+.cont_btn_carrousel_right {
+    width: 55px;
+    height: 55px;
+    background-color: var(--color_primario);
+    border-radius: 100%;
+    opacity: 0.8;
+}
+
+.cont_btn_carrousel_left,
+.cont_btn_carrousel_right {
+    position: absolute;
+}
+
+.nav_galeria .cont_btn_carrousel_left {
+    top: 50%;
+    transform: translatey(-50%);
+    right: 96.5%;
+}
+
+.nav_galeria .cont_btn_carrousel_right {
+    top: 50%;
+    transform: translatey(-50%);
+    left: 86.5%;
 }
