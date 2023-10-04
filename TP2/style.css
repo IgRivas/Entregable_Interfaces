@@ -154,7 +154,7 @@ button {
     left: 5%;
     color: var(--color_neutroBlanco);
 
- 
+
 }
 
 
@@ -171,7 +171,7 @@ button {
 .btn_jugar_principal {
 
     position: absolute;
-    
+
     margin-right: 5%;
     border-radius: 20px;
     padding: 2%;
@@ -1163,16 +1163,11 @@ button {
     margin-top: 10px;
 }
 
-@keyframes mostrarImagen {
-    0%{
-        transform:scale(2) ;
-    }
-}
-
 .contenedor_img_principal img {
     max-width: 750px;
     border-radius: 20px;
     border: 1px solid var(--color_primario);
+
 }
 
 .contenedor_imagenes_carrousel {
@@ -1196,17 +1191,9 @@ button {
     border-radius: 20px;
     border: 1px solid var(--color_acento);
     cursor: pointer;
+
 }
 
-.cont_img_car img:hover{
-    animation: focusImg 3s infinite;
-}
-
-/* @keyframes focusImg {
-    0%{
-        transform: rotate(360deg) ;
-    }
-} */
 
 .cont_btn_carrousel_left i,
 .cont_btn_carrousel_right i {
@@ -1243,4 +1230,14 @@ button {
     top: 50%;
     transform: translateY(-50%);
     left: 83.5%;
+}
+
+@keyframes animacionGaleria {
+    0% {
+        transform: translateY(100%) scale(0);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
 }
