@@ -49,3 +49,28 @@ document.querySelector(".btn_cerrar_perfil").addEventListener("click", () => {
 // btn_left.addEventListener("click", () => {
 //     carrouselLi_container.scrollLeft -= scrollAmount;
 // });
+
+
+// Footer
+
+let btn_categorias_footer = document.getElementById("btn_categorias_footer");
+let cont_categorias = document.querySelector(".cont_categorias_ocultar");
+
+let btn_contacto_footer = document.getElementById("btn_contacto_footer");
+let cont_contacto_footer = document.querySelector(".cont_contacto_footer");
+
+let btn_legal_footer = document.getElementById("btn_legal_footer");
+let cont_legar_footer = document.querySelector(".cont_legal_footer");
+
+btn_categorias_footer.addEventListener("click", () => {
+    cont_categorias.classList.toggle("cont_categorias_ocultar");
+});
+
+
+btn_contacto_footer.addEventListener("click", () => {
+    cont_contacto_footer.classList.toggle("cont_contacto_footer");
+});
+
+btn_legal_footer.addEventListener("click", () => {
+    cont_legar_footer.classList.toggle("cont_legal_footer");
+});
