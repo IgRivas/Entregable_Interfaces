@@ -31,3 +31,21 @@ document.querySelector(".btn_cerrar_perfil").addEventListener("click", () => {
     overlay.style.display = 'none';
 
 });
+
+
+"use strict"
+
+// Scroll de la galera
+let btn_right = document.querySelector(".cont_btn_carrousel_right");
+let btn_left = document.querySelector(".cont_btn_carrousel_left");
+
+let carrouselLi_container = document.querySelector(".carrouselLi_container");
+const scrollAmount = 200;
+
+btn_right.addEventListener("click", () => {
+    carrouselLi_container.scrollLeft += scrollAmount;
+});
+
+btn_left.addEventListener("click", () => {
+    carrouselLi_container.scrollLeft -= scrollAmount;
+});
