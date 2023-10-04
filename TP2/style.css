@@ -1163,19 +1163,18 @@ button {
     justify-content: center;
     margin: auto;
     margin-top: 10px;
+}
 
+@keyframes mostrarImagen {
+    0%{
+        transform:scale(2) ;
+    }
 }
 
 .contenedor_img_principal img {
     max-width: 750px;
     border-radius: 20px;
     border: 1px solid var(--color_primario);
-
-}
-
-#imagenSeleccionada {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
 }
 
 .contenedor_imagenes_carrousel {
@@ -1189,7 +1188,7 @@ button {
     display: flex;
     max-width: 750px;
     gap: 20px;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -1200,6 +1199,16 @@ button {
     border: 1px solid var(--color_acento);
     cursor: pointer;
 }
+
+.cont_img_car img:hover{
+    animation: focusImg 3s infinite;
+}
+
+/* @keyframes focusImg {
+    0%{
+        transform: rotate(360deg) ;
+    }
+} */
 
 .cont_btn_carrousel_left i,
 .cont_btn_carrousel_right i {
@@ -1228,12 +1237,13 @@ button {
 
 .nav_galeria .cont_btn_carrousel_left {
     top: 50%;
-    transform: translatey(-50%);
+    transform: translateY(-50%);
     right: 96.5%;
 }
 
 .nav_galeria .cont_btn_carrousel_right {
     top: 50%;
-    transform: translatey(-50%);
+    transform: translateY(-50%);
     left: 83.5%;
 }
+

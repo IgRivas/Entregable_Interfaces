@@ -19,11 +19,24 @@ btn_left.addEventListener("click", () => {
 
 let imagenSeleccionada = document.getElementById("imagenSeleccionada");
 let imagenes = document.querySelectorAll(".cont_img_car img");
+let cont = document.querySelectorAll(".contenedor_img_principal");
 
 imagenes.forEach(function (imagen) {
 
 
     imagen.addEventListener("click", function () {
+
+
+        
+        // setTimeout(function () {
+        //     imagenSeleccionada.style.opacity = "0";
+        // }, 300);
+
+        //   setTimeout(function () {
+        //     imagenSeleccionada.style.opacity = "1";
+        //     imagenSeleccionada.style.animation = "mostrarImagen 2s linear 0 1 normal none";
+        //     imagenSeleccionada.src = imagen.src;
+        // }, 550);
 
         setTimeout(function () {
             imagenSeleccionada.style.transition = "opacity 0.3s ease-in-out";
