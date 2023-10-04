@@ -207,11 +207,11 @@ button {
 .carrouselLi_container {
     position: relative;
     display: inline-block;
-    overflow: hidden;
+    overflow-x: hidden;
     overflow-x: scroll;
     max-width: 100%;
     white-space: nowrap;
-    height: auto;
+ 
 
 
 }
@@ -264,7 +264,7 @@ button {
 
 .recuadro_gratis {
     position: absolute;
-    bottom: 24%;
+    bottom: 27%;
     left: 0;
     width: 89%;
     background-color: var(--color_acento);
@@ -283,22 +283,26 @@ button {
 }
 
 .info_juego {
+    color: var(--color_neutroGris);
+    font-size: var(--p_regular);
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+.titulo_juego{
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    line-height: 1em;
+    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: wrap;
-    width: 100%;
-    height: 50px;
-
+    margin-bottom: 5px;
+    line-height: 1em;
+    max-width: 70%;
 }
 
-.info_juego {
-    color: var(--color_neutroBlanco);
-    font-size: var(--p_regular);
-}
 
 .precio_juego p {
     color: var(--color_success);
@@ -1538,17 +1542,25 @@ button {
         width: 160px;
     }
     .recuadro_gratis{
-        bottom: 22%;
+        bottom: 25%;
         width: 91%;
     }
     .boton_carrousel{
         display: block;
     }
+    .carrouselLi_container{
+
+        overflow: hidden;
+     
+    }
+    .info_juego{
+        font-size: var(--h6_size);
+    }
 
 
 }
-/* Media query para tamaños grandes (de 770px a 1440px) */
-@media only screen and (min-width: 770px) and (max-width: 1440px) {
+/* Media query para tamaños grandes (de 770px a ...) */
+@media only screen and (min-width: 770px) {
  
     .titulo_juego_nav h4{
         font-size: var(--h2_size);
@@ -1561,7 +1573,7 @@ button {
         width: 230px;
     }
     .recuadro_gratis{
-        bottom: 17%;
+        bottom: 19.6%;
         width: 87%;
     }
     .icono_sobresaliente{
@@ -1573,12 +1585,22 @@ button {
         font-size: var(--h4_size);
     }
     .info_juego {
-        font-size: var(--h6_size);
+        font-size: var(--h5_size);
 
     }
     .boton_carrousel{
         display: block;
     }
+    .carrouselLi_container{
+
+        overflow: hidden;
+     
+    }
+    .carousel_destacado{
+        overflow: hidden;
+    }
+
+
 
     /* Footer desktop */
     .cont_footer{
