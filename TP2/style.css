@@ -1496,3 +1496,71 @@ button {
 .cont_titulo_legal i {
     font-size: 15px;
 }
+
+.boton_carrousel .cont_btn_carrousel_right  {
+    top: 40%;
+    right: 3%;
+}
+
+.boton_carrousel .cont_btn_carrousel_left  {
+    top: 40%;
+    left: 2%;
+}
+.boton_carrousel{
+    display: none;
+}
+/* Media query para tamaños medianos (de 481px a 769px) */
+@media only screen and (min-width: 481px) and (max-width: 769px) {
+
+    .titulo_juego_nav h4{
+        font-size: var(--h4_size);
+    }
+    .header h6{
+        font-size: var(--h5_size);
+    }
+    .li_carrousel{
+        width: 160px;
+    }
+    .recuadro_gratis{
+        bottom: 22%;
+        width: 91%;
+    }
+    .boton_carrousel{
+        display: block;
+    }
+
+
+}
+/* Media query para tamaños grandes (de 770px a 1440px) */
+@media only screen and (min-width: 770px) and (max-width: 1440px) {
+ 
+    .titulo_juego_nav h4{
+        font-size: var(--h2_size);
+      
+}
+    .header h6{
+        font-size: var(--h4_size);
+    }
+    .li_carrousel{
+        width: 230px;
+    }
+    .recuadro_gratis{
+        bottom: 17%;
+        width: 87%;
+    }
+    .icono_sobresaliente{
+        right: 50px;
+        top: 0px;
+    }
+    .btn_jugar_principal{
+        width: 50%;
+        font-size: var(--h4_size);
+    }
+    .info_juego {
+        font-size: var(--h6_size);
+
+    }
+    .boton_carrousel{
+        display: block;
+    }
+}
