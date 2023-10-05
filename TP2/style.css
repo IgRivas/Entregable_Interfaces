@@ -97,20 +97,6 @@ button {
 
 /* Barra de navegacion*/
 
-.nav_bar {
-    width: 100%;
-    min-width: 400px;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--color_secundario_sombra1);
-}
-
-.nav_bar i {
-    color: var(--color_neutroBlanco);
-    font-size: 32px;
-
-}
-
 .logo {
     display: flex;
     color: var(--color_neutroBlanco);
@@ -120,7 +106,6 @@ button {
 .logo h1 {
     font: var(--h1_size);
 }
-
 
 .perfil {
     display: flex;
@@ -180,10 +165,180 @@ button {
     text-align: center;
 }
 
+/* carrusel valentin */
+
+
+
+.carrusel {
+    display: flex;
+    gap: 7px;
+    overflow: hidden;
+    overflow-x: scroll;
+    margin-left: 5px;
+    scroll-behavior: smooth;
+
+}
+
+.carrusel li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cont_img {
+    cursor: pointer;
+    position: relative;
+    padding-top: 20px;
+}
+
+.cont_biblioteca {
+    position: absolute;
+    top: 3%;
+    left: 70%;
+}
+
+.cont_img img {
+    width: 160px;
+    height: auto;
+}
+
+.recuadro_gratis {
+    width: auto;
+    height: 30px;
+    border-radius: 0px 0px 9px 9px;
+    border-top: 1px solid #3FBFE9;
+    background: #FFB800;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_juego {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.titulo_juego p {
+    color: #CCC;
+    font-weight: bold;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.precio_juego p {
+    font-weight: bold;
+    color: #4BB543;
+}
+
+.cont_titulo_carrusel {
+    margin-left: 10px;
+    padding-bottom: 10px;
+}
+
+.cont_titulo_carrusel h4 {
+    color: var(--color_neutroBlanco);
+    font-weight: normal;
+
+}
+
+.cont_btn_carrousel_left,
+.cont_btn_carrousel_right {
+    display: none;
+}
+
+.section_carrousel {
+    margin-top: 20px;
+}
+
+/* Media querys carrousel desktop */
+
+@media only screen and (min-width: 770px) {
+
+    .section_carrousel {
+        margin-top: 90px;
+    }
+
+    .cont_biblioteca {
+        top: 2%;
+        left: 70%;
+    }
+
+    .cont_titulo_carrusel h4 {
+        font-size: var(--h2_size);
+    }
+
+    .cont_titulo_carrusel {
+        margin-left: 130px;
+    }
+
+
+    .cont_img img {
+        width: 201px;
+    }
+
+    .recuadro_gratis {
+        bottom: 3px;
+    }
+
+    .carrusel {
+        width: 100%;
+        overflow-x: hidden;
+        gap: 20px;
+    }
+
+    .cont_carrusel {
+        width: 82%;
+        margin-left: 0;
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        position: relative;
+    }
+
+    .cont_btn_carrousel_right,
+    .cont_btn_carrousel_left {
+        width: 55.142px;
+        height: 55px;
+        border-radius: 1000px;
+        background-color: #3FBFE9;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+    }
+
+    .cont_btn_carrousel_right {
+        bottom: 45%;
+        transform: translateY(-45%);
+        left: 96%;
+    }
+
+    .cont_btn_carrousel_left {
+        bottom: 45%;
+        transform: translateY(-45%);
+        right: 97%;
+    }
+
+    .cont_btn_carrousel_right i,
+    .cont_btn_carrousel_left i {
+        color: white;
+        font-size: 36px;
+    }
+}
 
 
 /* Carrousel Li*/
-.carrouselLi {
+/* .carrouselLi {
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 2%;
@@ -306,7 +461,9 @@ button {
 
 .precio_juego p {
     color: var(--color_success);
-}
+} */
+
+
 
 /* publicidad*/
 .publicidad_home {
@@ -1533,7 +1690,7 @@ button {
 /* Media query para tamaños medianos (de 481px a 769px) */
 @media only screen and (min-width: 481px) and (max-width: 769px) {
 
-    .titulo_juego_nav h4 {
+    /* .titulo_juego_nav h4 {
         font-size: var(--h4_size);
     }
 
@@ -1562,14 +1719,14 @@ button {
 
     .info_juego {
         font-size: var(--h6_size);
-    }
+    } */
 
 
 }
 
 /* Media query para tamaños grandes (de 770px a ...) */
 @media only screen and (min-width: 770px) {
-
+    /* 
     .titulo_juego_nav h4 {
         font-size: var(--h2_size);
 
@@ -1615,7 +1772,7 @@ button {
 
     .carousel_destacado {
         overflow: hidden;
-    }
+    } */
 
 
 
