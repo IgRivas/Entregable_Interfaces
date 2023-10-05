@@ -11,3 +11,32 @@ document.getElementById("btn_form").addEventListener("click", () => {
     }, 3000);
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    function updateCounter() {
+        const counterElement = document.getElementById("cont");
+        let count = 0;
+        const interval = 50;
+        const counterInterval = setInterval(function () {
+            if (count == 100) {
+                clearInterval(counterInterval);
+
+
+            } else {
+                count++;
+                counterElement.innerHTML = count + "%";
+            }
+        }, interval);
+    }
+
+    updateCounter();
+
+    let overlayAnimacionLoader = document.querySelector(".section_loader");
+
+    setTimeout(function () {
+        overlayAnimacionLoader.style.display = "none"
+    }, 5000)
+
+});
+
