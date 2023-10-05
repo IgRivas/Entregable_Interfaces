@@ -67,7 +67,8 @@
                                     </div>
 
                                     <div class="form_button">
-                                        <button class="btn_registrarse">Iniciar sesion</button>
+                                        <button type="button" id="btn_form" class="btn_registrarse">Iniciar
+                                            sesion</button>
                                     </div>
 
                                     <div class="cont_input_login cont_input_login_h5">
@@ -92,9 +93,23 @@
                     </div>
 
                 </div>
+                <div class="cont_animacion_registro quitar">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+                        viewBox="0 0 200 200">
+                        <g fill="none" fill-rule="evenodd">
+                            <circle className="checkmark--circle" cx="100" cy="100" r="84.615" fill="#4BB543" />
+                            <polyline class="checkmark--check" stroke="#FFF"
+                                points="76.923 130.769 123.077 130.769 123.077 38.462"
+                                transform="rotate(42 100 84.615)" />
+                        </g>
+                    </svg>
+                </div>
 
+                <div class="overlayFormulario"></div>
 
     </main>
+    <script src="js/animacionRegistroLogin.js"></script>
+
     <script src="https://kit.fontawesome.com/e997784c98.js" crossorigin="anonymous"></script>
 
 </body>

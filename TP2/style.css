@@ -1845,3 +1845,63 @@ button {
         top: 100%;
     }
 }
+
+/* Animacion registro y login */
+
+@keyframes scale {
+    0% {
+        transform: scale3d(0.5, 0.5, 1);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+        opactiy: 100;
+    }
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    transform: scale3d(0.5, 0.5, 1);
+    animation: opacity 0.5s, scale 1s ease-in-out 0s forwards;
+    z-index: 2;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.checkmark--check {
+    stroke: #FFF;
+    stroke-width: 25;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: stroke 1s cubic-bezier(0.650, 0.000, 0.450, 1.000) 1s forwards;
+}
+
+.overlayFormulario {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.865);
+    display: none;
+    z-index: 1;
+}
+
+.quitar {
+    display: none;
+}
