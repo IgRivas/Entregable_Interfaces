@@ -211,7 +211,7 @@ button {
     overflow-x: scroll;
     max-width: 100%;
     white-space: nowrap;
- 
+
 
 
 }
@@ -290,7 +290,7 @@ button {
 
 }
 
-.titulo_juego{
+.titulo_juego {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -934,7 +934,7 @@ button {
 .sidebar_burguer {
     visibility: hidden;
     opacity: 0;
-    
+
 }
 
 .visible_burguer {
@@ -1471,14 +1471,14 @@ button {
     margin: 3px 0;
 }
 
-.cont_categorias_ocultar {  
+.cont_categorias_ocultar {
     display: none;
     transition: width 0.3s ease-in-out;
 }
 
-.con_categorias_visible{
+.con_categorias_visible {
     display: inline-block;
-}   
+}
 
 .cont_contacto_footer {
     display: none;
@@ -1513,16 +1513,17 @@ button {
     }
 } */
 
-.boton_carrousel .cont_btn_carrousel_right  {
+.boton_carrousel .cont_btn_carrousel_right {
     top: 40%;
     right: 3%;
 }
 
-.boton_carrousel .cont_btn_carrousel_left  {
+.boton_carrousel .cont_btn_carrousel_left {
     top: 40%;
     left: 2%;
 }
-.boton_carrousel{
+
+.boton_carrousel {
     display: none;
 }
 
@@ -1532,87 +1533,111 @@ button {
 /* Media query para tamaños medianos (de 481px a 769px) */
 @media only screen and (min-width: 481px) and (max-width: 769px) {
 
-    .titulo_juego_nav h4{
+    .titulo_juego_nav h4 {
         font-size: var(--h4_size);
     }
-    .header h6{
+
+    .header h6 {
         font-size: var(--h5_size);
     }
-    .li_carrousel{
+
+    .li_carrousel {
         width: 160px;
     }
-    .recuadro_gratis{
+
+    .recuadro_gratis {
         bottom: 25%;
         width: 91%;
     }
-    .boton_carrousel{
+
+    .boton_carrousel {
         display: block;
     }
-    .carrouselLi_container{
+
+    .carrouselLi_container {
 
         overflow: hidden;
-     
+
     }
-    .info_juego{
+
+    .info_juego {
         font-size: var(--h6_size);
     }
 
 
 }
+
 /* Media query para tamaños grandes (de 770px a ...) */
 @media only screen and (min-width: 770px) {
- 
-    .titulo_juego_nav h4{
+
+    .titulo_juego_nav h4 {
         font-size: var(--h2_size);
-      
+
     }
-    .header h6{
+
+    .header h6 {
         font-size: var(--h4_size);
     }
-    .li_carrousel{
+
+    .li_carrousel {
         width: 230px;
     }
-    .recuadro_gratis{
+
+    .recuadro_gratis {
         bottom: 19.6%;
         width: 87%;
     }
-    .icono_sobresaliente{
+
+    .icono_sobresaliente {
         right: 50px;
         top: 0px;
     }
-    .btn_jugar_principal{
+
+    .btn_jugar_principal {
         width: 50%;
         font-size: var(--h4_size);
     }
+
     .info_juego {
         font-size: var(--h5_size);
 
     }
-    .boton_carrousel{
+
+    .boton_carrousel {
         display: block;
     }
-    .carrouselLi_container{
+
+    .carrouselLi_container {
 
         overflow: hidden;
-     
+
     }
-    .carousel_destacado{
+
+    .carousel_destacado {
         overflow: hidden;
     }
 
 
 
     /* Footer desktop */
-    .cont_footer{
+    .cont_footer {
         height: 300px;
+        padding-top: 0;
+        padding-left: 0;
     }
 
-    .cont_footer_contenido{
+    .cont_footer_contenido {
         flex-direction: row;
         position: relative;
+        gap: 100px;
+        margin-left: 130px;
     }
 
-    .cont_linea_footer{
+    .cont_footer_contenido .nav_logo {
+        margin-top: -100px;
+    }
+
+    .cont_linea_footer {
         display: none;
     }
 
@@ -1622,25 +1647,44 @@ button {
         display: none;
     }
 
-    .cont_categorias_ocultar,.cont_contacto_footer,.cont_legal_footer{
-        display: block;
+    .cont_categorias_ocultar,
+    .cont_contacto_footer,
+    .cont_legal_footer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding-bottom: 30px;
     }
 
-    .linea_blanca_footer{
+    .linea_blanca_footer {
         height: 1px;
         width: 1100px;
         background-color: var(--color_neutroGris);
     }
 
-    .cont_linea_blanca_footer{
+    .cont_linea_blanca_footer {
         display: flex;
         justify-content: center;
-        margin-top: 30px;
+        margin-top: 50px;
     }
 
-    .cont_categorias_redes{
+    .cont_categorias_redes {
         position: absolute;
-        left: 85%;
-        bottom: 102% ;
+        left: 83%;
+        bottom: 102%;
+    }
+
+    .cont_categorias_footer,
+    .cont_contacto,
+    .cont_legal {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .cont_derechos_footer {
+        position: absolute;
+        top: 100%;
     }
 }

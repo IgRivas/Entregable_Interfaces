@@ -63,13 +63,7 @@ let btn_legal_footer = document.getElementById("btn_legal_footer");
 let cont_legar_footer = document.querySelector(".cont_legal_footer");
 
 btn_categorias_footer.addEventListener("click", () => {
-    
-    cont_categorias.style.animation = "animacionFooter 0.3 ease-in infinite";
-    
-    setTimeout(()=>{
-        cont_categorias.classList.toggle("con_categorias_visible");
-        cont_categorias.style.animation ="";
-    },400)
+    cont_categorias.classList.toggle("con_categorias_visible");
 });
 
 
