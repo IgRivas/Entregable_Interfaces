@@ -105,6 +105,8 @@
 
   </nav>
 
+  <div class="overlay"></div>
+
   <header>
     <div class="header">
       <img src="imagenes/juegoprincipal.png" alt="">
@@ -112,7 +114,7 @@
         <h4>NUEVO 4 EN LINEA DE DRAGON BALL</h4>
         <h6>Personalizado con tus personajes favoritos!</h6>
         <div class="btn_jugar_principal">
-          <p> Jugar</p>
+          <a href="4EnLinea.html">Jugar</a>
         </div>
       </div>
     </div>
@@ -125,7 +127,7 @@
       <h4 class="">Juegos De Carreras</h4>
     </div>
     <div class="cont_carrusel">
-      <ul class="carrusel" id="carrousel_carreras">
+      <ul class="carrusel carrusel_generico" id="carrousel_carreras">
         <li>
           <div class="cont_img">
             <img src="imagenes/carrousel_carreras/hotWheels.png" alt="">
@@ -305,10 +307,10 @@
           </div>
         </li>
       </ul>
-      <div id="btn_left_carrusel_carreras" class="cont_btn_carrousel_left">
+      <div id="btn_left_carrusel_carreras" class="cont_btn_carrousel_left btn_carrusel_left">
         <i class="fa-solid fa-arrow-left"></i>
       </div>
-      <div id="btn_right_carrusel_carreras" class="cont_btn_carrousel_right">
+      <div id="btn_right_carrusel_carreras" class="cont_btn_carrousel_right btn_carrusel_right">
         <i class="fa-solid fa-arrow-right"></i>
       </div>
   </section>
@@ -321,7 +323,7 @@
       <h4 class="">Juegos De Acción</h4>
     </div>
     <div class="cont_carrusel">
-      <ul class="carrusel">
+      <ul class="carrusel carrusel_generico">
         <li>
           <div class="cont_img">
             <img src="imagenes/carrousel_accion/god.png" alt="">
@@ -477,10 +479,10 @@
           </div>
         </li>
       </ul>
-      <div class="cont_btn_carrousel_left">
+      <div class="cont_btn_carrousel_left btn_carrusel_left">
         <i class="fa-solid fa-arrow-left"></i>
       </div>
-      <div class="cont_btn_carrousel_right">
+      <div class="cont_btn_carrousel_right btn_carrusel_right">
         <i class="fa-solid fa-arrow-right"></i>
       </div>
   </section>
@@ -555,7 +557,7 @@
       <h4 class="">Juegos De Acción</h4>
     </div>
     <div class="cont_carrusel">
-      <ul class="carrusel">
+      <ul class="carrusel carrusel_generico">
         <li>
           <div class="cont_img">
             <img src="imagenes/carrousel_arcade/pacman.png" alt="">
@@ -711,229 +713,14 @@
           </div>
         </li>
       </ul>
-      <div class="cont_btn_carrousel_left">
+      <div class="cont_btn_carrousel_left  btn_carrusel_left">
         <i class="fa-solid fa-arrow-left"></i>
       </div>
-      <div class="cont_btn_carrousel_right">
+      <div class="cont_btn_carrousel_right  btn_carrusel_right">
         <i class="fa-solid fa-arrow-right"></i>
       </div>
   </section>
 
-  <!------------------------------->
-  <!-- Espacio Publicitario-->
-  <!-- <div class="publicidad_home">
-    <img src="imagenes/publi.png" alt="">
-  </div> -->
-  <!-- Carrousel Destacado-->
-  <!-- <div class="carousel_destacado">
-    <div class="card_destacado">
-      <img src="imagenes/cards/hollow.png" alt="Juego 1">
-      <div class="card_destacado_info_container">
-        <div class="card_destacado_info">
-          <h4>Hollow Knight</h4>
-          <p>Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes
-            que se encuentra en ruinas. Explora cavernas tortuosas, combate contra criaturas corrompidas y entabla
-            amistad con extraños insectos, todo en un estilo clásico en 2D dibujado a</p>
-        </div>
-        <div class="btn_jugar_destacado">
-          <p> Jugar</p>
-        </div>
-      </div>
-    </div>
-    <div class="card_destacado">
-      <img src="imagenes/cards/halo.png" alt="Juego 1">
-      <div class="card_destacado_info_container">
-        <div class="card_destacado_info">
-          <h4>Halo infinite</h4>
-          <p>videojuego de disparos en primera persona de la franquicia de videojuegos de ciencia ficc</p>
-        </div>
-        <div class="btn_jugar_destacado">
-          <p> Jugar</p>
-        </div>
-      </div>
-    </div>
-    <div class="card_destacado">
-      <img src="imagenes/cards/horizon.png" alt="Juego 1">
-      <div class="card_destacado_info_container">
-        <div class="card_destacado_info">
-          <h4>Horizon zero dawn</h4>
-          <p>La historia de Horizon Zero Dawn se proyecta en el planeta Tierra aproximadamente
-          <p>
-        </div>
-        <div class="btn_agregar_destacado">
-          <p> Agregar al cariito</p>
-        </div>
-      </div>
-    </div>
-    <div class="card_destacado">
-      <img src="imagenes/cards/fallguys.png" alt="Juego 1">
-      <div class="card_destacado_info_container">
-        <div class="card_destacado_info">
-          <h4>Fall guys</h4>
-          <p>Fall Guys es un party royale gratuito, multiplataforma y multijugador masivo en</p>
-        </div>
-        <div class="btn_agregar_destacado">
-          <p> Agregar al carrito</p>
-
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <!--Tercer carrousel por categorias-->
-  <!-- <div class="carrouselLi">
-    <h4 class="titulo_carrousel">Juegos De Carreras</h4>
-    <ul class="carrouselLi_container">
-      <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/hotweels.png" alt="">
-        </a>
-        <div class="info_juego">
-          <div class="titulo_juego">
-            <p>Hot Weels</p>
-          </div>
-          <div class="precio_juego">
-            <p>AR$ 2000</p>
-          </div>
-        </div>
-      </li>
-      <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/nfs.png" alt="">
-          <div class="recuadro_gratis">
-            <span>GRATIS</span>
-          </div>
-        </a>
-        <div class="info_juego">
-          <div class="titulo_juego">
-            <p>Need for speed payback</p>
-          </div>
-          <div class="precio_juego">
-            <p>AR$ 0</p>
-          </div>
-        </div>
-      </li>
-      <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/forza.png" alt="">
-        </a>
-        <div class="info_juego">
-          <div class="titulo_juego">
-            <p>Forza Horizon 4</p>
-          </div>
-          <div class="precio_juego">
-            <p>AR$ 2000</p>
-          </div>
-        </div>
-      </li>
-      <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/tca2.png" alt="">
-        </a>
-        <div class="info_juego">
-          <div class="titulo_juego">
-            <p>Toca 2 Touring cars</p>
-          </div>
-          <div class="precio_juego">
-            <p>AR$ 2000</p>
-          </div>
-        </div>
-      </li>
-      <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/gt.png" alt="">
-          <div class="icono_sobresaliente">
-            <i class="fa-solid fa-bookmark"> </i>
-            <i class="fa-solid fa-book"></i>
-          </div>
-          <div class="recuadro_gratis">
-            <span>GRATIS</span>
-          </div>
-
-        </a>
-        <div class="info_juego">
-          <div class="titulo_juego">
-            <p>Gran turismo Sport</p>
-          </div>
-          <div class="precio_juego">
-            <p>AR$ 0</p>
-          </div>
-        </div>
-      </li>
-      <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/cars.png" alt="">
-          <div class="icono_sobresaliente">
-            <i class="fa-solid fa-bookmark"> </i>
-            <i class="fa-solid fa-book"></i>
-          </div>
-        </a>
-        <div class="info_juego">
-          <div class="titulo_juego">
-            <p>Trafic jam 3D</p>
-          </div>
-          <div class="precio_juego">
-            <p>AR$ 368</p>
-          </div>
-        </div>
-      </li>
-      <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/fox.png" alt="">
-          <div class="recuadro_gratis">
-            <span>GRATIS</span>
-          </div>
-        </a>
-        <div class="info_juego">
-          <div class="titulo_juego">
-            <p>Crash nitro kart</p>
-          </div>
-          <div class="precio_juego">
-            <p>AR$ 0</p>
-          </div>
-        </div>
-      </li>
-      <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/car2.png" alt="">
-          <div class="recuadro_gratis">
-            <span>GRATIS</span>
-          </div>
-        </a>
-        <div class="info_juego">
-          <div class="titulo_juego">
-            <p>Race master 3D</p>
-          </div>
-          <div class="precio_juego">
-            <p>AR$ 0</p>
-          </div>
-        </div>
-      <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/mario.png" alt="">
-        </a>
-        <div class="info_juego">
-          <div class="titulo_juego">
-            <p>Mario Kart</p>
-          </div>
-          <div class="precio_juego">
-            <p>AR$ 9000</p>
-          </div>
-        </div>
-      </li>
-      <li class="li_carrousel"><a href="">
-          <img class="img_card" src="imagenes/cards/faf.png" alt="">
-        </a>
-        <div class="info_juego">
-          <div class="titulo_juego">
-            <p>Fast and the furious</p>
-          </div>
-          <div class="precio_juego">
-            <p>AR$ 200</p>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <div class="boton_carrousel">
-      <div class="cont_btn_carrousel_left">
-        <i class="fa-solid fa-arrow-left"></i>
-      </div>
-      <div class="cont_btn_carrousel_right">
-        <i class="fa-solid fa-arrow-right"></i>
-      </div>
-    </div>
-  </div>
- -->
   <footer class="cont_footer">
     <div class="cont_linea_blanca_footer">
       <div class="linea_blanca_footer">
@@ -1017,10 +804,37 @@
     </div>
 
   </footer>
-
+  <div id="overlayAnimacionLoader">
+    <section class="section_loader">
+        <div class="loader">
+            <span style="--i:1"></span>
+            <span style="--i:2"></span>
+            <span style="--i:3"></span>
+            <span style="--i:4"></span>
+            <span style="--i:5"></span>
+            <span style="--i:6"></span>
+            <span style="--i:7"></span>
+            <span style="--i:8"></span>
+            <span style="--i:9"></span>
+            <span style="--i:10"></span>
+            <span style="--i:11"></span>
+            <span style="--i:12"></span>
+            <span style="--i:13"></span>
+            <span style="--i:14"></span>
+            <span style="--i:15"></span>
+            <span style="--i:16"></span>
+            <span style="--i:17"></span>
+            <span style="--i:18"></span>
+            <span style="--i:19"></span>
+            <span style="--i:20"></span>
+        </div>
+        <h1>Cargando: <span id="cont"></span></h1>
+    </section>
+</div>
   <script src="https://kit.fontawesome.com/e997784c98.js" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
-
+  <script src="js/animacionRegistroLogin.js"></script>
+  <script src="js/galeria.js"></script>
 </body>
 
 </html>
