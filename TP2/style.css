@@ -337,134 +337,6 @@ button {
 }
 
 
-/* Carrousel Li*/
-/* .carrouselLi {
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 2%;
-    display: block;
-    position: relative;
-    overflow-y: hidden;
-
-
-
-
-}
-
-.titulo_carrousel {
-    color: var(--color_neutroBlanco);
-    position: relative;
-    padding-bottom: 5px;
-    padding-top: 15px;
-
-}
-
-.carrouselLi_container {
-    position: relative;
-    display: inline-block;
-    overflow-x: hidden;
-    overflow-x: scroll;
-    max-width: 100%;
-    white-space: nowrap;
-
-
-
-}
-
-
-.li_carrousel {
-    padding-right: 15px;
-    display: inline-block;
-    position: relative;
-    max-width: 100%;
-    max-height: 100%;
-    width: 145px;
-
-
-}
-
-.img_card {
-    max-height: 100%;
-    max-width: 100%;
-    border-radius: 19px;
-}
-
-.icono_sobresaliente {
-    position: absolute;
-    top: 0%;
-    right: 10px;
-    color: var(--color_acento);
-    border-radius: 10%;
-    padding: 5px;
-}
-
-.icono_sobresaliente i {
-    display: inline-block;
-    position: absolute;
-    top: 20%;
-    right: -20%;
-    color: var(--color_primario);
-}
-
-.icono_sobresaliente i:first-child {
-    font-size: 200%;
-}
-
-.icono_sobresaliente i:last-child {
-    right: 26%;
-    color: var(--color_acento);
-    top: 60%;
-    font-size: 100%;
-}
-
-.recuadro_gratis {
-    position: absolute;
-    bottom: 27%;
-    left: 0;
-    width: 89%;
-    background-color: var(--color_acento);
-    color: var(--color_neutroBlanco);
-    text-align: center;
-    padding: 2%;
-    border-top: solid 2px var(--color_primario);
-    border-bottom-left-radius: 9px;
-    border-bottom-right-radius: 9px;
-}
-
-.recuadro_gratis span {
-    font: var(--h6_size);
-    color: var(--color_neutroNegro);
-
-}
-
-.info_juego {
-    color: var(--color_neutroGris);
-    font-size: var(--p_regular);
-    font-weight: bold;
-    margin-top: 10px;
-
-}
-
-.titulo_juego {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: wrap;
-    margin-bottom: 5px;
-    line-height: 1em;
-    max-width: 70%;
-}
-
-
-.precio_juego p {
-    color: var(--color_success);
-} */
-
-
-
 /* publicidad*/
 .publicidad_home {
     padding: 15px;
@@ -495,28 +367,19 @@ button {
     margin: 1%;
     border-radius: 19px;
     max-width: 560px;
-
-
-
 }
 
-
 .card_destacado img {
-
     border-top-right-radius: 19px;
     border-top-left-radius: 19px;
     height: 100%;
     max-width: 100%;
     max-height: 100%;
-
-
 }
 
 .card_destacado_info_container {
     display: flex;
     align-items: center;
-
-
 }
 
 .card_destacado_info {
@@ -1089,21 +952,21 @@ button {
 }
 
 .sidebar_burguer {
-    visibility: hidden;
-    opacity: 0;
-
+    top: 0;
+    width: 0;
+    overflow-x: hidden;
+    transition: width 0.3s ease-in-out;
 }
 
-.visible_burguer {
+/* .visible_burguer {
     visibility: visible;
     opacity: 1;
     transform: translateX(0%);
-
 }
 
 .noVisible_burguer {
     transform: translateX(-100%);
-}
+} */
 
 .sidebar_perfil {
     margin-top: 71px;
@@ -1355,10 +1218,7 @@ button {
 .cont_btn_carrousel_left i,
 .cont_btn_carrousel_right i {
     font-size: 36px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding-top: 20%;
+    color: var(--color_neutroNegro);
 }
 
 .cont_btn_carrousel_left,
@@ -1367,9 +1227,23 @@ button {
     height: 55px;
     background-color: var(--color_primario);
     border-radius: 100%;
-    opacity: 0.8;
+    opacity: 1;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.cont_btn_carrousel_right:hover,
+.cont_btn_carrousel_left:hover {
+    background-color: var(--color_primario_luz1);
+    box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.46) inset;
+}
+
+.cont_btn_carrousel_left {
+    background-color: var(--color_primario_sombra2);
+}
+
 
 .cont_btn_carrousel_left,
 .cont_btn_carrousel_right {
@@ -1628,13 +1502,8 @@ button {
     margin: 3px 0;
 }
 
-.cont_categorias_ocultar {
+.con_categorias_footer {
     display: none;
-    transition: width 0.3s ease-in-out;
-}
-
-.con_categorias_visible {
-    display: inline-block;
 }
 
 .cont_contacto_footer {
@@ -1660,16 +1529,6 @@ button {
     font-size: 15px;
 }
 
-
-/* @keyframes animacionFooter {
-    0%{
-        transform: translateY(100%);
-    }
-    100%{
-        transform: translateY(0);
-    }
-} */
-
 .boton_carrousel .cont_btn_carrousel_right {
     top: 40%;
     right: 3%;
@@ -1687,94 +1546,7 @@ button {
 
 /* Medias Querys home */
 
-/* Media query para tamaños medianos (de 481px a 769px) */
-@media only screen and (min-width: 481px) and (max-width: 769px) {
-
-    /* .titulo_juego_nav h4 {
-        font-size: var(--h4_size);
-    }
-
-    .header h6 {
-        font-size: var(--h5_size);
-    }
-
-    .li_carrousel {
-        width: 160px;
-    }
-
-    .recuadro_gratis {
-        bottom: 25%;
-        width: 91%;
-    }
-
-    .boton_carrousel {
-        display: block;
-    }
-
-    .carrouselLi_container {
-
-        overflow: hidden;
-
-    }
-
-    .info_juego {
-        font-size: var(--h6_size);
-    } */
-
-
-}
-
-/* Media query para tamaños grandes (de 770px a ...) */
 @media only screen and (min-width: 770px) {
-    /* 
-    .titulo_juego_nav h4 {
-        font-size: var(--h2_size);
-
-    }
-
-    .header h6 {
-        font-size: var(--h4_size);
-    }
-
-    .li_carrousel {
-        width: 230px;
-    }
-
-    .recuadro_gratis {
-        bottom: 19.6%;
-        width: 87%;
-    }
-
-    .icono_sobresaliente {
-        right: 50px;
-        top: 0px;
-    }
-
-    .btn_jugar_principal {
-        width: 50%;
-        font-size: var(--h4_size);
-    }
-
-    .info_juego {
-        font-size: var(--h5_size);
-
-    }
-
-    .boton_carrousel {
-        display: block;
-    }
-
-    .carrouselLi_container {
-
-        overflow: hidden;
-
-    }
-
-    .carousel_destacado {
-        overflow: hidden;
-    } */
-
-
 
     /* Footer desktop */
     .cont_footer {
@@ -1905,7 +1677,6 @@ button {
 .quitar {
     display: none;
 }
-
 
 /* Animacion de carga */
 
