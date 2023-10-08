@@ -133,7 +133,7 @@ button {
 
 .titulo_juego_nav {
 
-    max-width: 50%;
+    max-width: 40%;
     position: absolute;
     top: 30%;
     left: 5%;
@@ -153,18 +153,25 @@ button {
     color: var(--color_neutroBlanco);
 }
 
-.btn_jugar_principal {
-
+.btn_jugar_principal a{
+    text-decoration: none;
+    color: var(--color_neutroNegro);
     position: absolute;
-
+    margin-top: 5%;
     margin-right: 5%;
     border-radius: 20px;
     padding: 2%;
     background-color: var(--color_acento);
     width: 50%;
     text-align: center;
+    box-shadow: inset 0 0 0 0 var(--color_primario_sombra1);
+    -webkit-transition: ease-out 0.9s;
+    -moz-transition: ease-out 0.9s;
+    transition: ease-out 0.9s;
 }
-
+.slide_down:hover {
+    box-shadow: inset 400px 50px 0 0 var(--color_primario_sombra1);
+  }
 /* carrusel valentin */
 
 
@@ -272,6 +279,11 @@ button {
     transform: translate(-50%, -50%);
     width: 120px ;
     height: 40px;
+    box-shadow: inset 0 0 0 0 var(--color_primario_sombra1);
+    -webkit-transition: ease-out 0.5s;
+    -moz-transition: ease-out 0.5s;
+    transition: ease-out 0.5s;
+    
     
 }
 
@@ -286,17 +298,41 @@ button {
     
 }
 .cont_btn:hover{
-    background-color:var(--color_primario_sombra1) ;
+    box-shadow: inset 0 0 0 50px var(--color_primario_sombra1) ;
+ 
 }
 
 .cont_img:hover .cont_btn{
     opacity: 1;
+    z-index: +1;
+    
 }
+.cont_img::after {
+    border-radius: 10px;
+    content: "";
+    position: absolute;
+    top: 7%;
+    left: 0;
+    width: 100%;
+    height: 92%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el valor de opacidad (0.5 en este ejemplo) según tus necesidades */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Ajusta la duración y la curva de animación según tus necesidades */
+  }
+  
+  .cont_img:hover::after {
+    opacity: 1;
+  }
+ 
 
 /* Media querys carrousel desktop */
 
 @media only screen and (min-width: 770px) {
-
+    .btn_jugar_principal a{
+        font-size: var(--h2_size);
+        text-decoration: none;
+        color: var(--color_neutroNegro);
+    }
     .section_carrousel {
         margin-top: 90px;
     }
@@ -1586,30 +1622,43 @@ button {
 }
 
 
-/* Medias Querys home */
 
+/* Medias Querys home */
+@media only screen and (min-width: 481px) and (max-width: 768px){
+
+    .btn_jugar_principal a{
+        font-size: var(--h2_size);
+     
+    }
+}
+    
 @media only screen and (min-width: 770px) {
 
         .titulo_juego_nav h4{
-            font-size: var(--h1_size);
-        }
-        .titulo_juego_nav h6{
-            font-size: var(--h3_size);
-        }
-        .btn_jugar_principal{
             font-size: var(--h2_size);
         }
+        .titulo_juego_nav h6{
+            font-size: var(--h4_size);
+        }
+
+        
+        
         /* Carousel destacado desktop*/
         .carousel_destacado{
-            margin-left: 14%;
+          
             position: relative;
             overflow-x:scroll;
             overflow: hidden;
-            width: 68%;      
+            width: 78%;      
+            margin-right: 5%;
         }
        
         .section_carrousel_destacado{
-            position: relative;
+            position: relative; 
+            padding-left: 9%;
+            width: 100%;
+            margin-right: 13%;
+         
         }
         .card_img_conteiner{
             width: 560px;
@@ -1658,10 +1707,10 @@ button {
     }
     .section_carrousel_destacado .cont_btn_carrousel_left{
         top: 55%;
-        left: 13%;
+        left: 7%;
     }
     .section_carrousel_destacado .cont_btn_carrousel_right{
-        left: 82%;
+        left: 84%;
         top: 55%;
     }
     .section_carrousel_destacado .cont_titulo_carrusel{
