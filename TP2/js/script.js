@@ -38,3 +38,24 @@ botonesFooter.forEach((boton, index) => {
         }
     })
 })
+
+
+// Intercambio de pantallas juego
+if (document.querySelector("._4_en_linea_juego") && document.querySelector(".cont_recuadro_juego") && document.getElementById("btn_jugar")) {
+    let juego = document.querySelector("._4_en_linea_juego");
+    let recuadro = document.querySelector(".cont_recuadro_juego");
+    let btn_jugar = document.getElementById("btn_jugar");
+
+    btn_jugar.addEventListener("click", () => {
+        recuadro.style.display = "none";
+        juego.style.display = "block";
+    });
+
+    document.querySelector(".share").addEventListener("click", () => {
+        document.querySelector(".cont_4_en_linea_barra_redes").classList.toggle("aparece_redes");
+    })
+}
+
+
+
+

@@ -95,6 +95,10 @@ button {
     cursor: pointer;
 }
 
+.home {
+    background-color: var(--color_secundario_luz1);
+}
+
 /* Barra de navegacion*/
 
 .logo {
@@ -153,7 +157,7 @@ button {
     color: var(--color_neutroBlanco);
 }
 
-.btn_jugar_principal a{
+.btn_jugar_principal a {
     text-decoration: none;
     color: var(--color_neutroNegro);
     position: absolute;
@@ -169,9 +173,11 @@ button {
     -moz-transition: ease-out 0.9s;
     transition: ease-out 0.9s;
 }
+
 .slide_down:hover {
     box-shadow: inset 400px 50px 0 0 var(--color_primario_sombra1);
-  }
+}
+
 /* carrusel valentin */
 
 
@@ -265,7 +271,8 @@ button {
 .section_carrousel {
     margin-top: 20px;
 }
-.cont_btn{
+
+.cont_btn {
     display: flex;
     opacity: 0;
     position: absolute;
@@ -277,36 +284,39 @@ button {
     align-items: center;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 120px ;
+    width: 120px;
     height: 40px;
     box-shadow: inset 0 0 0 0 var(--color_primario_sombra1);
     -webkit-transition: ease-out 0.5s;
     -moz-transition: ease-out 0.5s;
     transition: ease-out 0.5s;
-    
-    
+
+
 }
 
-.cont_btn i{
+.cont_btn i {
     font-size: 27px;
     color: var(--color_neutroBlanco);
-    padding-right:10px ;
-}
-.cont_btn span{
-    font-family: var(--texto_botones);
-  
-    
-}
-.cont_btn:hover{
-    box-shadow: inset 0 0 0 50px var(--color_primario_sombra1) ;
- 
+    padding-right: 10px;
 }
 
-.cont_img:hover .cont_btn{
+.cont_btn span {
+    font-family: var(--texto_botones);
+
+
+}
+
+.cont_btn:hover {
+    box-shadow: inset 0 0 0 50px var(--color_primario_sombra1);
+
+}
+
+.cont_img:hover .cont_btn {
     opacity: 1;
     z-index: +1;
-    
+
 }
+
 .cont_img::after {
     border-radius: 10px;
     content: "";
@@ -315,24 +325,27 @@ button {
     left: 0;
     width: 100%;
     height: 92%;
-    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el valor de opacidad (0.5 en este ejemplo) según tus necesidades */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Ajusta el valor de opacidad (0.5 en este ejemplo) según tus necesidades */
     opacity: 0;
-    transition: opacity 0.3s ease; /* Ajusta la duración y la curva de animación según tus necesidades */
-  }
-  
-  .cont_img:hover::after {
+    transition: opacity 0.3s ease;
+    /* Ajusta la duración y la curva de animación según tus necesidades */
+}
+
+.cont_img:hover::after {
     opacity: 1;
-  }
- 
+}
+
 
 /* Media querys carrousel desktop */
 
 @media only screen and (min-width: 770px) {
-    .btn_jugar_principal a{
+    .btn_jugar_principal a {
         font-size: var(--h2_size);
         text-decoration: none;
         color: var(--color_neutroNegro);
     }
+
     .section_carrousel {
         margin-top: 90px;
     }
@@ -421,35 +434,35 @@ button {
 }
 
 /*Carrousel destacado*/
-.carousel_destacado{
+.carousel_destacado {
     display: flex;
     width: 95%;
     height: 100%;
     overflow-x: hidden;
     overflow-x: scroll;
-   
- 
 }
-.card_destacado{ 
-    background-color: var(--color_secundario_sombra2);
+
+.card_destacado {
+    background-color: var(--color_secundario);
     margin: 1%;
     border-radius: 19px;
     margin-left: 5%;
-    
-     
+    border: 1px solid var(--color_primario);
 }
-.card_img_conteiner{
+
+.card_img_conteiner {
     position: relative;
 
 }
 
 
-.card_img_conteiner img{
+.card_img_conteiner img {
     width: 320px;
     border-top-right-radius: 19px;
     border-top-left-radius: 19px;
 }
-.card_img_conteiner .recuadro_gratis{
+
+.card_img_conteiner .recuadro_gratis {
     position: absolute;
     width: 100%;
     border-radius: 0;
@@ -458,9 +471,10 @@ button {
 }
 
 
-.cont_miniaturas{
+.cont_miniaturas {
     display: none;
 }
+
 .btn_jugar_destacado {
     position: relative;
     bottom: 0%;
@@ -470,25 +484,28 @@ button {
     background-color: var(--color_acento);
     width: 50%;
     text-align: center;
-    position:absolute;
+    position: absolute;
     left: 47%;
-    
+
 }
-.titulo_destacado{
-   
+
+.titulo_destacado {
+
     margin-top: 2%;
     font-size: var(--h4_size);
     color: var(--color_neutroGris);
 }
-.card_destacado_info_container{
+
+.card_destacado_info_container {
     padding: 3%;
     display: flex;
     position: relative;
     flex-direction: column;
     margin-bottom: 3%;
-   
+
 }
-.card_destacado_info_container p{
+
+.card_destacado_info_container p {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -501,8 +518,9 @@ button {
     margin-bottom: 0px;
     line-height: 1em;
 }
-.cont_titulo_carrusel{
-    margin-left: 4% ;
+
+.cont_titulo_carrusel {
+    margin-left: 9%;
 }
 
 /* Formulario de registro */
@@ -974,7 +992,12 @@ button {
 
 .nav_logo {
     display: flex;
+}
+
+.nav_logo a {
+    display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .nav_logo h1 {
@@ -1158,6 +1181,201 @@ button {
     align-content: center;
     gap: 10px;
 }
+
+/* 4 en linea jugando */
+._4_en_linea_juego {
+    display: none;
+}
+
+.kamehouse {
+    width: 1100px;
+    height: 627px;
+    border-radius: 20px;
+    filter: brightness(70%);
+}
+
+.cont_4_en_linea {
+    width: 1100px;
+    height: 627px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.cont_4_en_linea_juego {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    gap: 100px;
+    transform: translate(-50%, -50%);
+}
+
+.cont_4_en_linea_personaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.titulo_jugador {
+    margin-top: 5px;
+}
+
+.cont_4_en_linea_barra {
+    display: flex;
+    width: 1053px;
+    height: 50px;
+    background-color: var(--color_secundario_sombra1);
+    border-radius: 50px;
+    position: absolute;
+    bottom: 2%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cont_4_en_linea_barra i {
+    color: var(--color_neutroBlanco);
+    font-size: 30px;
+}
+
+.cont_4_en_linea_barra h5 {
+    color: var(--color_neutroBlanco);
+    color: var(--color_neutroBlanco);
+
+}
+
+.cont_4_en_linea_iconos_left {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.cont_4_en_linea_right {
+    display: flex;
+    gap: 5px;
+    margin-right: 20px;
+}
+
+.vegeta,
+.goku {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 167px;
+    height: 283px;
+}
+
+.cont_4_en_linea_barra_redes {
+    width: 257px;
+    height: 49px;
+    border-radius: 20px;
+    border-bottom: 1px solid var(--color_primario);
+    background: var(--color_secundario_sombra1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    position: absolute;
+    right: 0;
+    bottom: 110%;
+    right: 3%;
+}
+
+.aparece_redes {
+    display: none;
+}
+
+.share {
+    cursor: pointer;
+}
+
+/* animacion btn_jugar */
+
+.btn_neon {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: var(--color_neutroNegro);
+    letter-spacing: 4px;
+    font-size: var(--texto_botones);
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.2s;
+    background-color: var(--color_primario);
+}
+
+.btn_neon:hover {
+    background-color: var(--color_acento);
+    box-shadow: 0 0 10px var(--color_acento), 0 0 40px var(--color_acento), 0 0 80px var(--color_acento);
+    transition-delay: 1s;
+    color: var(--color_neutroBlanco);
+
+}
+
+.btn_neon span {
+    position: absolute;
+    display: block;
+}
+
+#span1 {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFB800);
+}
+
+.btn_neon:hover #span1 {
+    left: 100%;
+    transition: 1s;
+}
+
+#span3 {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #FFB800);
+}
+
+.btn_neon:hover #span3 {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#span2 {
+    top: -100%;
+    right: 0%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #FFB800);
+}
+
+.btn_neon:hover #span2 {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#span4 {
+    bottom: -100%;
+    left: 0%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #FFB800);
+}
+
+.btn_neon:hover #span4 {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
 
 /* 4 en linea instrucciones */
 
@@ -1580,6 +1798,10 @@ button {
     margin: 3px 0;
 }
 
+.cont_categorias_ocultar {
+    display: none;
+}
+
 .con_categorias_footer {
     display: none;
 }
@@ -1617,110 +1839,180 @@ button {
     left: 2%;
 }
 
-.btn_carrusel_left,.btn_carrusel_right {
+.btn_carrusel_left,
+.btn_carrusel_right {
     display: none;
 }
 
 
 
 /* Medias Querys home */
-@media only screen and (min-width: 481px) and (max-width: 768px){
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 
-    .btn_jugar_principal a{
+    .btn_jugar_principal a {
         font-size: var(--h2_size);
-     
+
     }
 }
-    
+
 @media only screen and (min-width: 770px) {
 
-        .titulo_juego_nav h4{
-            font-size: var(--h2_size);
-        }
-        .titulo_juego_nav h6{
-            font-size: var(--h4_size);
-        }
+    .titulo_juego_nav h4 {
+        font-size: var(--h2_size);
+    }
 
-        
-        
-        /* Carousel destacado desktop*/
-        .carousel_destacado{
-          
-            position: relative;
-            overflow-x:scroll;
-            overflow: hidden;
-            width: 78%;      
-            margin-right: 5%;
-        }
-       
-        .section_carrousel_destacado{
-            position: relative; 
-            padding-left: 9%;
-            width: 100%;
-            margin-right: 13%;
-         
-        }
-        .card_img_conteiner{
-            width: 560px;
-        }
-        .card_img_conteiner img {
-            width: 100%;
-            height: 100%;
-        }
-        .card_destacado{
-        
-            display: flex;
-            width: 100%;
-            height: 398px;
-            
-     
-        }
-        .cont_miniaturas{
-            height: 160px;
-            display: flex;
-          
-        }
-        .cont_miniaturas img{
-            padding:  2%;
-            width: 50%;
-            margin-top: 3%;
-        }
-        .titulo_destacado{
-            width: 100%;
-            font-size: var(--h2_size);
-            padding-left: 3%;
-           
-        }
-        .card_destacado_info_container{
-            flex-wrap: wrap;
-            display: flex;
-            width: 346px;
-            max-width: 100%;
-            padding: 0;
-            padding-top: 4%;
-       }
-       .card_destacado_info_container p{
+    .titulo_juego_nav h6 {
+        font-size: var(--h4_size);
+    }
+
+
+
+    /* Carousel destacado desktop*/
+
+
+    .carousel_destacado {
+        position: relative;
+        overflow-x: scroll;
+        overflow: hidden;
+        width: 78%;
+        scroll-behavior: smooth;
+        margin-left: 50px;
+    }
+
+    .section_carrousel_destacado {
+        position: relative;
+        padding-left: 9%;
         width: 100%;
-        margin-top: 5%  ;
+    }
+
+    .card_img_conteiner {
+        width: 560px;
+    }
+
+    .card_img_conteiner img {
+        width: 100%;
+        height: 100%;
+        border-radius: 18px 0 0 19px;
+    }
+
+    .card_destacado {
+        display: flex;
+        width: 100%;
+        height: 398px;
+    }
+
+    .cont_miniaturas {
+        height: 160px;
+        display: flex;
+
+    }
+
+    .cont_miniaturas img {
+        padding: 2%;
+        width: 50%;
+        margin-top: 3%;
+        border-radius: 10px;
+    }
+
+    .titulo_destacado {
+        width: 100%;
+        font-size: var(--h2_size);
+        padding-left: 3%;
+        font-weight: normal;
+        color: var(--color_neutroBlanco);
+    }
+
+    .card_destacado_info_container {
+        flex-wrap: wrap;
+        display: flex;
+        width: 346px;
+        max-width: 100%;
+        padding: 0;
+        padding-top: 4%;
+    }
+
+    .card_destacado_info_container p {
+        width: 296px;
+        line-height: var(--p_large_interlineado);
         padding-left: 3%;
         margin-bottom: 10%;
     }
-    .section_carrousel_destacado .cont_btn_carrousel_left{
-        top: 55%;
-        left: 7%;
-    }
-    .section_carrousel_destacado .cont_btn_carrousel_right{
-        left: 84%;
+
+    .section_carrousel_destacado .cont_btn_carrousel_left {
+        left: 10%;
         top: 55%;
     }
-    .section_carrousel_destacado .cont_titulo_carrusel{
-        margin-left: 18%;
+
+    .section_carrousel_destacado .cont_btn_carrousel_right {
+        left: 85.5%;
+        top: 55%;
     }
-    
-    
-    .btn_carrusel_left,.btn_carrusel_right {
+
+    .section_carrousel_destacado .cont_titulo_carrusel {
+        margin-top: 20px;
+        margin-left: 100px;
+    }
+
+
+    .btn_carrusel_left,
+    .btn_carrusel_right {
         display: flex;
     }
+
+    .section_carrousel_destacado .recuadro_gratis {
+        border-radius: 0 0 0 18px;
+    }
+
+    .btn_jugar_destacado {
+        cursor: pointer;
+        background-color: var(--color_primario);
+        width: 133px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--texto_botones);
+        position: absolute;
+        bottom: -5%;
+        left: 55%;
+    }
+
+    .btn_jugar_destacado_carrito {
+        cursor: pointer;
+        background-color: var(--color_acento);
+        border-radius: 1000px;
+        width: 203px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: var(--texto_botones);
+        position: absolute;
+        bottom: -5%;
+        left: 38%;
+    }
+
+    .btn_jugar_destacado_carrito i {
+        font-size: 27px;
+        color: var(--color_neutroBlanco);
+    }
+
+
+
+    .destacado_precio {
+        position: absolute;
+        bottom: -10%;
+        left: 2%;
+
+    }
+
+    .destacado_precio p {
+        color: var(--color_success);
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+
     /* Footer desktop */
     .cont_footer {
         height: 300px;
@@ -1789,7 +2081,7 @@ button {
         position: absolute;
         top: 100%;
     }
-    
+
 }
 
 /* Animacion registro y login */
