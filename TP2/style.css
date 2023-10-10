@@ -123,7 +123,6 @@ button {
 .header {
     position: relative;
     max-width: 100%;
-
 }
 
 .header img {
@@ -136,14 +135,11 @@ button {
 }
 
 .titulo_juego_nav {
-    
     max-width: 40%;
     position: absolute;
     top: 20%;
     left: 5%;
     color: var(--color_neutroBlanco);
-
-
 }
 
 
@@ -151,78 +147,68 @@ button {
     padding-top: 2%;
     max-width: 50%;
     max-height: 100%;
-
 }
 
-.btn_jugar_principal a{
+.btn_jugar_principal a {
+    font-size: var(--texto_botones);
     text-decoration: none;
-   z-index: 2;
-   padding: 3%;
-
-}
-
-.btn_jugar_principal{
-    margin-top: 5%;
+    color: var(--color_neutroNegro);
     display: flex;
-    height: 40px;
-    width: 133px;
-    
-    border-radius: 19px;
-
+    justify-content: center;
+    align-items: center;
 }
-.btn{
-    
+
+.btn_jugar_principal {
+    margin-top: 5%;
+    border-radius: 20px;
+}
+
+.btn {
     position: relative;
-    transition: all 0.6s ease;
-    align-self: center;
+    text-decoration: none;
     border-radius: 19px;
-    width: 100%;
-    height: 100%;
+    height: 40px;
+    width: 200px;
 }
- .btn-4::after{
-        content: "";
-         position: absolute;
-         width: 100%;
-         height: 100%;
-         left: 0;
-         top: 0;
-         background-image: linear-gradient(90deg, var(--color_acento), var(--color_error), var(--color_primario), var(--color_success));
-         background-size: 300%;
-         z-index: -1;
-         transition: all 1.9 ease;
-         border-radius: 19px;
-         
 
-         
-    }
-.btn-4:hover::after{
-    background-position: 100%;
-    filter: blur(15px);
-
-}
-.btn-4::before{
+.btn-4::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
-    background-image: linear-gradient(90deg, var(--color_acento), var(--color_error), var(--color_primario), var(--color_success));
+    background-image: linear-gradient(90deg, var(--color_acento), var(--color_acento_luz1), var(--color_primario), var(--color_primario_sombra2));
     background-size: 300%;
     z-index: -1;
-    transition: all 1.9 ease;
+    transition: all 1.3s ease;
     border-radius: 19px;
-
 }
-.btn-4:hover::before{
 
+.btn-4:hover::after {
     background-position: 100%;
-    filter: blur(15px);
-
 }
+
+
+.btn-4::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(90deg, var(--color_acento), var(--color_acento_luz1), var(--color_primario), var(--color_primario_sombra2));
+    background-size: 300%;
+    z-index: -1;
+    border-radius: 19px;
+}
+
+.btn-4:hover::before {
+    background-position: 100%;
+    filter: blur(5px);
+}
+
 /* carrusel valentin */
-
-
 
 .carrusel {
     display: flex;
@@ -250,7 +236,6 @@ button {
     position: absolute;
     top: 3%;
     left: 70%;
-    z-index: +1;
 }
 
 .cont_img img {
@@ -333,8 +318,6 @@ button {
     -webkit-transition: ease-out 0.5s;
     -moz-transition: ease-out 0.5s;
     transition: ease-out 0.5s;
-
-
 }
 
 .cont_btn i {
@@ -345,8 +328,6 @@ button {
 
 .cont_btn span {
     font-family: var(--texto_botones);
-
-
 }
 
 .cont_btn:hover {
@@ -358,7 +339,6 @@ button {
 .cont_img:hover .cont_btn {
     opacity: 1;
     z-index: +1;
-
 }
 
 .cont_img::after {
@@ -370,10 +350,8 @@ button {
     width: 100%;
     height: 92%;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Ajusta el valor de opacidad (0.5 en este ejemplo) según tus necesidades */
     opacity: 0;
     transition: opacity 0.3s ease;
-    /* Ajusta la duración y la curva de animación según tus necesidades */
 }
 
 .cont_img:hover::after {
@@ -384,12 +362,6 @@ button {
 /* Media querys carrousel desktop */
 
 @media only screen and (min-width: 770px) {
-    /* .btn_jugar_principal  a {
-        font-size: var(--texto_botones);
-        text-decoration: none;
-        color: var(--color_neutroNegro);
-    } */
-
     .section_carrousel {
         margin-top: 90px;
     }
@@ -498,7 +470,6 @@ button {
     position: relative;
 
 }
-
 
 .card_img_conteiner img {
     width: 320px;
@@ -696,6 +667,10 @@ button {
     font-weight: 600;
 }
 
+.contenedor_btn_redes_sociales a {
+    text-decoration: none;
+}
+
 .cont_o {
     display: flex;
     align-items: center;
@@ -826,6 +801,10 @@ button {
     width: 334px;
     height: 50px;
     font-size: var(--h4_size);
+}
+
+.form_button button:hover {
+    background-color: var(--color_primario_sombra1);
 }
 
 .captcha {
@@ -1141,16 +1120,6 @@ button {
     transition: width 0.3s ease-in-out;
 }
 
-/* .visible_burguer {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(0%);
-}
-
-.noVisible_burguer {
-    transform: translateX(-100%);
-} */
-
 .sidebar_perfil {
     margin-top: 71px;
     top: 0;
@@ -1380,14 +1349,19 @@ button {
 .btn_neon {
     position: relative;
     display: inline-block;
-    padding: 15px 30px;
     color: var(--color_neutroNegro);
+    width: 120px;
+    height: 40px;
     letter-spacing: 4px;
     font-size: var(--texto_botones);
     text-decoration: none;
     overflow: hidden;
     transition: 0.2s;
     background-color: var(--color_primario);
+    border-radius: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn_neon:hover {
@@ -1395,12 +1369,18 @@ button {
     box-shadow: 0 0 10px var(--color_acento), 0 0 40px var(--color_acento), 0 0 80px var(--color_acento);
     transition-delay: 1s;
     color: var(--color_neutroBlanco);
-
 }
 
 .btn_neon span {
     position: absolute;
     display: block;
+}
+
+#span1,
+#span2,
+#span3,
+#span4 {
+    border-radius: 19px;
 }
 
 #span1 {
@@ -1566,14 +1546,12 @@ button {
     max-width: 750px;
     border-radius: 20px;
     border: 1px solid var(--color_primario);
-
 }
 
 .contenedor_imagenes_carrousel {
     margin-top: 10px;
     margin-left: 110px;
     position: relative;
-
 }
 
 .cont_img_car {
@@ -1590,7 +1568,6 @@ button {
     border-radius: 20px;
     border: 1px solid var(--color_acento);
     cursor: pointer;
-
 }
 
 .cont_btn_carrousel_left i,
@@ -1811,6 +1788,11 @@ button {
     font-size: var(--texto_botones);
 }
 
+.form_comentarioPersonal button:hover,
+.btn_vermas button:hover {
+    background: var(--color_primario_sombra1);
+}
+
 .form_comentarioPersonal i {
     color: var(--color_neutroBlanco);
     font-size: 30px;
@@ -1926,16 +1908,6 @@ button {
     display: none;
 }
 
-
-
-/* Medias Querys home */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-
-    /* .btn_jugar_principal {
-        font-size: var(--texto_botones);
-
-    } */
-}
 
 @media only screen and (min-width: 770px) {
     .titulo_juego_nav {
