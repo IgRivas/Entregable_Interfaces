@@ -2263,3 +2263,18 @@ button {
         transform: scale(0);
     }
 }
+
+/* canvas */
+
+
+.canvas_visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.canvas_NoVisible {
+    display: none;
+}

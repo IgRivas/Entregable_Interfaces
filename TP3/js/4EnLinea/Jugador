@@ -1,0 +1,8 @@
+class Jugador {
+    ficha = [];
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+
+    
+}
