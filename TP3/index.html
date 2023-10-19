@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="">
+
+        <div class="contenedor_registro">
+
+            <div class="content_imgForm ">
+
+                <img id="imagenForm" src="imagenes/fondoFormulario.png" alt="">
+
+                <div class="contenedor_formulario fondo_form">
+                    <div class="logo">
+                        <h4><span>Souls</span>Games</h4>
+                        <img src="imagenes/logo.png" alt="">
+                    </div>
+
+                    <h3 class="titulo_registro">Regístrarte gratis para jugar</h3>
+
+                    <div class="contenedor_btn_redes_sociales">
+                        <a href="home.html"> <button class="btn-facebook"><i
+                                    class="fa-brands fa-facebook"></i>Registrate
+                                con
+                                Facebook
+                            </button></a>
+                        <a href="home.html"> <button class="btn-google"><img width="28" height="28"
+                                    src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />Registrate
+                                con
+                                Google
+                            </button></a>
+
+                    </div>
+
+                    <div class="cont_o">
+                        <div class="linea_o"></div>
+                        <span>O</span>
+                        <div class="linea_o"></div>
+                    </div>
+
+
+                    <div class="contenedor_formulario_registro">
+                        <div class="wrapper">
+                            <div class="form">
+                                <form action="" class="formulario">
+
+                                    <div class="form_name">
+                                        <label for="">Nombre <span>*</span></label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form_apellido">
+                                        <label for="">Apellido <span>*</span></label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form_username">
+                                        <label for="">Nombre de usuario</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form_edad">
+                                        <label for="">Edad <span>*</span></label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form_mail">
+                                        <label for="">Mail <span>*</span></label>
+                                        <input type="email">
+                                    </div>
+                                    <div class="form_password">
+                                        <label for="">Contraseña <span>*</span></label>
+                                        <input type="password" placeholder="Debe tener al menos 6 caracteres">
+                                        <div class="icon_password"><i class=" fa-regular fa-eye-slash"></i></div>
+                                    </div>
+                                    <div class="form_passwordRep">
+                                        <label for="">Repetir contraseña <span>*</span></label>
+                                        <input type="password" placeholder="Debe tener al menos 6 caracteres">
+                                        <div class="icon_passwordRep"><i class="fa-regular fa-eye-slash"></i></div>
+                                    </div>
+
+                                    <div class="captcha">
+                                        <img src="imagenes/reCaptcha.png" alt="">
+                                    </div>
+
+                                    <div class="form_button">
+                                        <button type="button" id="btn_form" class="btn_registrarse">Registrarse</button>
+                                    </div>
+
+                                </form>
+
+                                <div class="form_iniciaSesion">
+                                    <p>¿Ya tienes una cuenta?
+                                        <a href="login.html" class="btn_inicia_sesion">Inicia sesion<a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="cont_animacion_registro quitar">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+                        viewBox="0 0 200 200">
+                        <g fill="none" fill-rule="evenodd">
+                            <circle className="checkmark--circle" cx="100" cy="100" r="84.615" fill="#4BB543" />
+                            <polyline class="checkmark--check" stroke="#FFF"
+                                points="76.923 130.769 123.077 130.769 123.077 38.462"
+                                transform="rotate(42 100 84.615)" />
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="overlayFormulario"></div>
+
+
+    </main>
+    <div id="overlayAnimacionLoader">
+        <section class="section_loader">
+            <div class="loader">
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+                <span style="--i:4"></span>
+                <span style="--i:5"></span>
+                <span style="--i:6"></span>
+                <span style="--i:7"></span>
+                <span style="--i:8"></span>
+                <span style="--i:9"></span>
+                <span style="--i:10"></span>
+                <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                <span style="--i:13"></span>
+                <span style="--i:14"></span>
+                <span style="--i:15"></span>
+                <span style="--i:16"></span>
+                <span style="--i:17"></span>
+                <span style="--i:18"></span>
+                <span style="--i:19"></span>
+                <span style="--i:20"></span>
+            </div>
+            <h1>Cargando: <span id="cont"></span></h1>
+        </section>
+    </div>
+
+    <script src="js/animacionRegistroLogin.js"></script>
+    <script src="https://kit.fontawesome.com/e997784c98.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

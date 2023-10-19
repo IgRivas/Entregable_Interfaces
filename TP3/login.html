@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="">
+
+        <div class="contenedor_registro">
+
+            <div class="content_imgForm content_imgForm_login">
+
+                <img id="imagenForm" src="imagenes/fondoFormularioLogin.png" alt="">
+
+                <div class="contenedor_formulario fondo_form">
+                    <div class="logo">
+                        <h4><span>Souls</span>Games</h4>
+                        <img src="imagenes/logo.png" alt="">
+                    </div>
+
+                    <h3 class="titulo_registro">Inicia sesion en SoulsGames</h3>
+
+                    <div class="contenedor_btn_redes_sociales">
+                        <a href="home.html"><button class="btn-facebook"><i class="fa-brands fa-facebook"></i>Iniciar
+                                con
+                                Facebook
+                            </button></a>
+                        <a href="home.html"> <button class="btn-google"><img width="28" height="28"
+                                    src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo" />Iniciar
+                                con
+                                Google
+                            </button></a>
+
+                    </div>
+
+                    <div class="cont_o">
+                        <div class="linea_o"></div>
+                        <span>O</span>
+                        <div class="linea_o"></div>
+                    </div>
+
+
+                    <div class="contenedor_formulario_registro">
+                        <div class="wrapper">
+                            <div class="form">
+                                <form action="" class="formulario">
+
+                                    <div class="cont_input_login cont_input_login_nombre">
+                                        <label for="">Email o nombre de usuario</label>
+                                        <input type="text">
+                                    </div>
+
+                                    <div class="cont_input_login cont_input_login_password">
+                                        <label for="">Contraseña</label>
+                                        <input type="password">
+                                    </div>
+
+                                    <div class="cont_input_login cont_icon_toggle ">
+                                        <i class="fa-solid fa-toggle-on"></i>
+                                        <p>Recordarme</p>
+                                    </div>
+
+                                    <div class="form_button">
+                                        <button type="button" id="btn_form" class="btn_registrarse">Iniciar
+                                            sesion</button>
+                                    </div>
+
+                                    <div class="cont_input_login cont_input_login_h5">
+                                        <h5>¿Has olvidado tu contraseña?</h5>
+                                    </div>
+
+                                </form>
+
+                                <div class="cont_linea showLinea">
+                                    <div class="linea_separacion_login"></div>
+                                </div>
+
+                                <div class="form_iniciaSesion form_Registro">
+                                    <p>¿No tienes cuenta?
+                                        <a href="index.html" class="btn_inicia_sesion">Registrate en SoulsGames</a>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="cont_animacion_registro quitar">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" width="200" height="200"
+                        viewBox="0 0 200 200">
+                        <g fill="none" fill-rule="evenodd">
+                            <circle className="checkmark--circle" cx="100" cy="100" r="84.615" fill="#4BB543" />
+                            <polyline class="checkmark--check" stroke="#FFF"
+                                points="76.923 130.769 123.077 130.769 123.077 38.462"
+                                transform="rotate(42 100 84.615)" />
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="overlayFormulario"></div>
+                <div id="overlayAnimacionLoader">
+                    <section class="section_loader">
+                        <div class="loader">
+                            <span style="--i:1"></span>
+                            <span style="--i:2"></span>
+                            <span style="--i:3"></span>
+                            <span style="--i:4"></span>
+                            <span style="--i:5"></span>
+                            <span style="--i:6"></span>
+                            <span style="--i:7"></span>
+                            <span style="--i:8"></span>
+                            <span style="--i:9"></span>
+                            <span style="--i:10"></span>
+                            <span style="--i:11"></span>
+                            <span style="--i:12"></span>
+                            <span style="--i:13"></span>
+                            <span style="--i:14"></span>
+                            <span style="--i:15"></span>
+                            <span style="--i:16"></span>
+                            <span style="--i:17"></span>
+                            <span style="--i:18"></span>
+                            <span style="--i:19"></span>
+                            <span style="--i:20"></span>
+                        </div>
+                        <h1>Cargando: <span id="cont"></span></h1>
+                    </section>
+                </div>
+    </main>
+    <script src="js/animacionRegistroLogin.js"></script>
+
+    <script src="https://kit.fontawesome.com/e997784c98.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
