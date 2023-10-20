@@ -148,7 +148,45 @@
                 <div class="cont_recuadro_juego_contenido_alineacion">
                     <h1>Dragon Ball 4 en Linea</h1>
                     <div>
-                        <img src="imagenes/4EnLinea/goku_veggeta_gohan.png" alt="">
+                        <form action="">
+                            <div>
+                                <h1>Fichas jugador 1</h2>
+                                    <label for="gokuFicha">
+                                        <input type="radio" name="jugador1Ficha" id="gokuFicha"
+                                            data-modelo="./imagenes/gokuFicha.png" checked>
+                                        <img src="imagenes/gokuFicha.png" alt="">
+                                    </label>
+                                    <label for="panFicha">
+                                        <input type="radio" name="jugador1Ficha" id="panFicha"
+                                            data-modelo="./imagenes/panFicha.png" checked>
+                                        <img src="imagenes/panFicha.png" alt="">
+                                    </label>
+                                    <label for="gohanFicha">
+                                        <input type="radio" name="jugador1Ficha" id="gohanFicha"
+                                            data-modelo="./imagenes/gohanFicha.png" checked>
+                                        <img src="imagenes/gohanFicha.png" alt="">
+                                    </label>
+                            </div>
+                            <div>
+                                <h1>Fichas jugador 2</h2>
+                                    <label for="vegetaFicha">
+                                        <input type="radio" name="jugador2Ficha" id="vegetaFicha"
+                                            data-modelo="./imagenes/vegetaFicha.png" checked>
+                                        <img src="imagenes/vegetaFicha.png" alt="">
+                                    </label>
+                                    <label for="gotenksFicha">
+                                        <input type="radio" name="jugador2Ficha" id="gotenksFicha"
+                                            data-modelo="./imagenes/gotenksFicha.png" checked>
+                                        <img src="imagenes/gotenksFicha.png" alt="">
+                                    </label>
+                                    <label for="krilinFicha">
+                                        <input type="radio" name="jugador2Ficha" id="krilinFicha"
+                                            data-modelo="./imagenes/krillinFicha.png" checked>
+                                        <img src="imagenes/krillinFicha.png" alt="">
+                                    </label>
+                            </div>
+                        </form>
+                        <!-- <img src="imagenes/4EnLinea/goku_veggeta_gohan.png" alt=""> -->
                     </div>
                     <a id="btn_jugar" href="#" class="btn_neon">
                         <span id="span1"></span>
@@ -533,7 +571,8 @@
             <h1>Cargando: <span id="cont"></span></h1>
         </section>
     </div> -->
-
+    <script src="js/4EnLinea/Jugador.js"></script>
+    <script src="js/4EnLinea/Fichero.js"></script>
     <script src="js/4EnLinea/Ficha.js"></script>
     <script src="js/4EnLinea/Juego.js"></script>
     <script src="js/script.js"></script>
