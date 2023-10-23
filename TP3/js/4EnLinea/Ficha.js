@@ -1,19 +1,19 @@
 class Ficha {
 
-    constructor(posX, posY, imgSrc, context) {
+    constructor(posX, posY, imgSrc, radius, context) {
         this.posX = posX;
         this.posY = posY;
         this.img = new Image();
         this.img.src = imgSrc;
         this.ctx = context;
-
+        this.radius = radius;
     }
 
     draw() {
         this.img.onload = () => {
 
             this.ctx.beginPath();
-            this.ctx.arc(this.posX, this.posY, 20, 0, 2 * Math.PI);
+            this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
             this.ctx.strokeStyle = 'green';
             this.ctx.lineWidth = 2;
             this.ctx.stroke();
@@ -28,5 +28,22 @@ class Ficha {
 
     }
 
+    isPointInside(x, y) {
+        let _x = this.posX - x;
+        let _y = this.posY - y;
+        return Math.sqrt(_x * _x + _y * _y) < this.radius;
+    }
 
+
+    getPosX() {
+        return this.posX;
+    }
+    getPosY() {
+        return this.posY;
+    }
+
+    setPosition(x, y) {
+        this.posX = x;
+        this.posY = y;
+    }
 }

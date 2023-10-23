@@ -1,53 +1,109 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext('2d');
-
+let lastClickedFigure = null;
+let isMouseDown = false;
 
 class Juego {
-
-    constructor() {
+    constructor(rellenoFichaJugador1, rellenoFichaJugador2) {
         this.fichas = new Array();
         this.ficheroJugador1 = new Fichero(50, 50, 200, 500, ctx);
         this.ficheroJugador2 = new Fichero(850, 50, 200, 500, ctx);
+        this.imgFondo = new Image();
+        this.imgFondo.src = './imagenes/4EnLinea/seccionJuego/kamehouse.jpg';
+        this.jugador1 = new Jugador("Jugador1");
+        this.jugador1.setModeloFicha(rellenoFichaJugador1);
+        this.jugador2 = new Jugador("Jugador2");
+        this.jugador2.setModeloFicha(rellenoFichaJugador2);
     }
 
     crearEscenario() {
-        let img = new Image();
-        img.src = './imagenes/4EnLinea/seccionJuego/kamehouse.jpg';
-        img.onload = () => {
-            ctx.drawImage(img, (canvas.width - img.width) / 2.5, (canvas.height - img.height) / 1.5);
+        console.log("hola");
+        this.imgFondo.onload = () => {
+            ctx.drawImage(this.imgFondo, (canvas.width - this.imgFondo.width) / 2.5, (canvas.height - this.imgFondo.height) / 1.5);
             ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             this.ficheroJugador1.draw();
             this.ficheroJugador2.draw();
+            this.crearFichas();
+
         };
     }
 
-    crearFichas(rellenoFichaJugador1, rellenoFichaJugador2) {
-        let jugador1 = new Jugador("Jugador1");
-        jugador1.setModeloFicha(rellenoFichaJugador1);
-        this.generarFicha(jugador1);
-        if (this.fichas.length < 20) {
-            this.crearFichas(rellenoFichaJugador1, rellenoFichaJugador2);
-        }
+    crearFichas() {
+        // LOGICA PARA ACOMODAR LA FICHAS DENTRO DEL FICHERO
+        const numFilas = 7;
+        const numColumnas = 3;
+        const espacioX = this.ficheroJugador1.getWidth() / numColumnas;
+        const espacioY = this.ficheroJugador1.getHeight() / numFilas;
 
-        let jugador2 = new Jugador("Jugador2");
-        jugador2.setModeloFicha(rellenoFichaJugador2);
-        this.generarFicha(jugador2);
-        if (this.fichas.length < 20) {
-            this.crearFichas(rellenoFichaJugador1, rellenoFichaJugador2);
-        }
-    }
+        for (let fila = 0; fila < numFilas; fila++) {
+            for (let columna = 0; columna < numColumnas; columna++) {
+                let posXJugador1 = this.ficheroJugador1.getPosX() + espacioX * columna + 37;
+                let posYJugador1 = this.ficheroJugador1.getPosY() + espacioY * fila + 40;
 
-    generarFicha(jugador) {
-        let ficha = new Ficha(Math.round(Math.random() * this.ficheroJugador1.getPosX() + 100), Math.round(Math.random() * this.ficheroJugador1.getPosY() + 200), jugador.getModeloFicha(), ctx);
-        this.fichas.push(ficha);
+                let posXJugador2 = this.ficheroJugador2.getPosX() + espacioX * columna + 37;
+                let posYJugador2 = this.ficheroJugador2.getPosY() + espacioY * fila + 40;
+
+                let fichaJugador1 = new Ficha(posXJugador1, posYJugador1, this.jugador1.getModeloFicha(), 20, ctx);
+                let fichaJugador2 = new Ficha(posXJugador2, posYJugador2, this.jugador2.getModeloFicha(), 20, ctx);
+
+                this.fichas.push(fichaJugador1, fichaJugador2);
+            }
+        }
         this.drawFigure();
     }
 
     drawFigure() {
-        this.crearEscenario();
+        this.clearCanvas();
         for (let i = 0; i < this.fichas.length; i++) {
             this.fichas[i].draw();
+        }
+    }
+
+    clearCanvas() {
+        this.imgFondo.onload = () => {
+            ctx.drawImage(this.imgFondo, (canvas.width - this.imgFondo.width) / 2.5, (canvas.height - this.imgFondo.height) / 1.5);
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+
+
+    findClickedFigure(x, y) {
+        for (let i = 0; i < this.fichas.length; i++) {
+            const element = this.fichas[i];
+            console.log("Ficha", i, "X:", element.getPosX(), "Y:", element.getPosY());
+
+            if (element.isPointInside(x, y)) {
+                return element;
+            }
+        }
+    }
+
+    onMouseDown(e) {
+        console.log("Mouse Down - X:", e.layerX, "Y:", e.layerY);
+
+        isMouseDown = true;
+        // Si dejo la ficha en un lugar
+        if (lastClickedFigure != null) {
+            lastClickedFigure = null;
+        }
+        //layerX y layerY son posiciones del evento del mouse
+        let clickFig = this.findClickedFigure(e.layerX, e.layerY);
+        if (clickFig != null) {
+            lastClickedFigure = clickFig;
+        }
+        this.drawFigure();
+    }
+
+    onMouseUp(e) {
+        isMouseDown = false;
+    }
+
+    onMouseMove(e) {
+        if (isMouseDown && lastClickedFigure != null) {
+            lastClickedFigure.setPosition(e.layerX, e.layerY);
+            this.drawFigure();
         }
     }
 }
@@ -64,7 +120,6 @@ btn_jugar.addEventListener("click", () => {
         let modeloFichaJugador1 = fichaJugador1.getAttribute("data-modelo");
         let modeloFichaJugador2 = fichaJugador2.getAttribute("data-modelo");
         crearJuego(modeloFichaJugador1, modeloFichaJugador2);
-
     }
 
     recuadro.style.display = "none";
@@ -75,8 +130,16 @@ btn_jugar.addEventListener("click", () => {
 });
 
 function crearJuego(modeloFichaJugador1, modeloFichaJugador2) {
-    let juego = new Juego();
-
+    let juego = new Juego(modeloFichaJugador1, modeloFichaJugador2);
     juego.crearEscenario();
-    juego.crearFichas(modeloFichaJugador1, modeloFichaJugador2);
+    canvas.addEventListener("mousedown", juego.onMouseDown.bind(juego), false);
+    canvas.addEventListener("mouseup", juego.onMouseUp.bind(juego), false);
+    canvas.addEventListener("mousemove", juego.onMouseMove.bind(juego), false);
 }
+
+
+
+
+
+
+
