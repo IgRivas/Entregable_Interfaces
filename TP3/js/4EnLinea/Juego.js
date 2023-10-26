@@ -64,13 +64,13 @@ class Juego {
     }
 
     clearCanvas() {
-       
             ctx.drawImage(this.imgFondo, (canvas.width - this.imgFondo.width) / 2.5, (canvas.height - this.imgFondo.height) / 1.5);
             ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             this.ficheroJugador1.draw();
-            this.ficheroJugador2.draw();
-        
+            this.ficheroJugador2.draw();     
+            this.tablero.draw();
+   
     }
 
 
@@ -78,7 +78,6 @@ class Juego {
         for (let i = 0; i < this.fichas.length; i++) {
             const element = this.fichas[i];
             console.log(element.isPointInside(x,y));
-
             if (element.isPointInside(x, y)) {
                 return element;
             }
@@ -86,8 +85,6 @@ class Juego {
     }
 
     onMouseDown(e) {
-        console.log("Mouse Down - X:", e.layerX, "Y:", e.layerY);
-
         isMouseDown = true;
         // Si dejo la ficha en un lugar
         if (lastClickedFigure != null) {
@@ -120,11 +117,11 @@ let recuadro = document.querySelector(".cont_recuadro_juego");
 btn_jugar.addEventListener("click", () => {
     const fichaJugador1 = document.querySelector('input[name="jugador1Ficha"]:checked')
     const fichaJugador2 = document.querySelector('input[name="jugador2Ficha"]:checked')
-
-    if (fichaJugador1 && fichaJugador2) {
+    const tamanioTablero = document.getElementById("tamanioTablero").value;
+    if (fichaJugador1 && fichaJugador2 && tamanioTablero) {
         let modeloFichaJugador1 = fichaJugador1.getAttribute("data-modelo");
         let modeloFichaJugador2 = fichaJugador2.getAttribute("data-modelo");
-        crearJuego(modeloFichaJugador1, modeloFichaJugador2);
+        crearJuego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero);
     }
 
     recuadro.style.display = "none";
@@ -134,8 +131,8 @@ btn_jugar.addEventListener("click", () => {
 
 });
 
-function crearJuego(modeloFichaJugador1, modeloFichaJugador2) {
-    let juego = new Juego(modeloFichaJugador1, modeloFichaJugador2,6);
+function crearJuego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero) {
+    let juego = new Juego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero);
     juego.crearEscenario();
     canvas.addEventListener("mousedown", juego.onMouseDown.bind(juego), false);
     canvas.addEventListener("mouseup", juego.onMouseUp.bind(juego), false);
