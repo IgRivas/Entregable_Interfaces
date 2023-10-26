@@ -10,7 +10,7 @@ class Ficha {
     }
 
     draw() {
-        this.img.onload = () => {
+
 
             this.ctx.beginPath();
             this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
@@ -24,7 +24,7 @@ class Ficha {
 
             this.ctx.drawImage(this.img, this.posX - 20, this.posY - 20, 20 * 2, 20 * 2);
             this.ctx.restore();
-        }
+    
 
     }
 
