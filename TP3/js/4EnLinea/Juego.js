@@ -4,18 +4,21 @@ let lastClickedFigure = null;
 let isMouseDown = false;
 
 class Juego {
-    constructor(rellenoFichaJugador1, rellenoFichaJugador2,tamaniooTablero) {
+    constructor(rellenoFichaJugador1, rellenoFichaJugador2, tamanioTablero) {
         this.fichas = new Array();
         this.ficheroJugador1 = new Fichero(50, 50, 200, 500, ctx);
         this.ficheroJugador2 = new Fichero(850, 50, 200, 500, ctx);
-        this.tablero = new Tablero(tamaniooTablero,ctx);
+        this.imgCasillero = new Image();
+        this.imgCasillero.src = './imagenes/casillero.png';
+        this.imagenCasilleroValido = new Image();
+        this.imagenCasilleroValido.src = "./imagenes/casilleroValido.png";
+        this.tablero = new Tablero(tamanioTablero, ctx, this.imgCasillero, this.imagenCasilleroValido);
         this.imgFondo = new Image();
         this.imgFondo.src = './imagenes/4EnLinea/seccionJuego/kamehouse.jpg';
         this.jugador1 = new Jugador("Jugador1");
         this.jugador1.setModeloFicha(rellenoFichaJugador1);
         this.jugador2 = new Jugador("Jugador2");
         this.jugador2.setModeloFicha(rellenoFichaJugador2);
-
     }
 
     crearEscenario() {
@@ -27,8 +30,6 @@ class Juego {
             this.ficheroJugador1.draw();
             this.ficheroJugador2.draw();
             this.crearFichas();
-            this.tablero.draw();
-
         };
     }
 
@@ -64,20 +65,20 @@ class Juego {
     }
 
     clearCanvas() {
-            ctx.drawImage(this.imgFondo, (canvas.width - this.imgFondo.width) / 2.5, (canvas.height - this.imgFondo.height) / 1.5);
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            this.ficheroJugador1.draw();
-            this.ficheroJugador2.draw();     
-            this.tablero.draw();
-   
+        ctx.drawImage(this.imgFondo, (canvas.width - this.imgFondo.width) / 2.5, (canvas.height - this.imgFondo.height) / 1.5);
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        this.ficheroJugador1.draw();
+        this.ficheroJugador2.draw();
+        this.tablero.draw();
+
     }
 
 
     findClickedFigure(x, y) {
         for (let i = 0; i < this.fichas.length; i++) {
             const element = this.fichas[i];
-            console.log(element.isPointInside(x,y));
+            console.log(element.isPointInside(x, y));
             if (element.isPointInside(x, y)) {
                 return element;
             }
