@@ -22,7 +22,6 @@ class Juego {
     }
 
     crearEscenario() {
-        console.log("hola");
         this.imgFondo.onload = () => {
             ctx.drawImage(this.imgFondo, (canvas.width - this.imgFondo.width) / 2.5, (canvas.height - this.imgFondo.height) / 1.5);
             ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
@@ -71,14 +70,11 @@ class Juego {
         this.ficheroJugador1.draw();
         this.ficheroJugador2.draw();
         this.tablero.draw();
-
     }
-
 
     findClickedFigure(x, y) {
         for (let i = 0; i < this.fichas.length; i++) {
             const element = this.fichas[i];
-            console.log(element.isPointInside(x, y));
             if (element.isPointInside(x, y)) {
                 return element;
             }
@@ -95,20 +91,50 @@ class Juego {
         let clickFig = this.findClickedFigure(e.offsetX, e.offsetY);
         if (clickFig != null) {
             lastClickedFigure = clickFig;
+            lastClickedFigure.setClicked(true);
         }
         this.drawFigure();
     }
 
     onMouseUp(e) {
         isMouseDown = false;
+        let x = e.offsetX;
+        let y = e.offsetY;
+        this.colocarFicha(x, y);
     }
 
     onMouseMove(e) {
-        if (isMouseDown && lastClickedFigure != null) {
+        if (isMouseDown && lastClickedFigure != null && !lastClickedFigure.isColocado()) {
             lastClickedFigure.setPosition(e.offsetX, e.offsetY);
             this.drawFigure();
         }
     }
+
+    colocarFicha(x, y) {
+        for (let i = 0; i < this.fichas.length; i++) {
+            let ficha = this.fichas[i];
+            //si la ficha esta siendo clickeada 
+            if (ficha.estaClickeada()) {
+                //es valido colocar la ficha en ese lugar
+                if (this.tablero.esValidoColocarFicha(x, y)) {
+                    let columna = this.tablero.obtenerColumnaPorPosicion(x);
+                    //Se coloco la ficha correctamente
+                    if (this.tablero.colocarFicha(columna, ficha)) {
+                        ficha.setColocado(true);
+                        this.drawFigure();
+                    }
+                }
+                else if (!ficha.isColocado()) {//La devuelve a su lugar de origen si no se pudo colocar la ficha
+                    ficha.volverAOrigen();
+                    this.drawFigure();
+                }
+                ficha.setClicked(false);
+            }
+
+        }
+    }
+
+
 }
 
 

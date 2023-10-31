@@ -6,9 +6,48 @@ class Casillero {
         this.imgCasillero = imgCasillero;
         this.width = width;
         this.height = height;
+        this.ficha = null;
+        this.tipoDrop = null;
     }
 
     draw() {
         this.ctx.drawImage(this.imgCasillero, this.x, this.y, this.width, this.height);
+    }
+
+    isPointInside(x, y) {
+        return x >= this.x && x <= this.x + this.width && y >= this.y && y <= this.y + this.height;
+    }
+
+    setFicha(ficha) {
+        this.ficha = ficha;
+        this.ficha.setPosition(this.x + 25, this.y + 25);
+    }
+
+    getFicha() {
+        return this.ficha;
+    }
+
+    contieneFicha() {
+        if (this.ficha == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    setTipoDrop(boolean) {
+        this.tipoDrop = boolean;
+    }
+
+    getTipoDrop() {
+        return this.tipoDrop;
+    }
+
+    getPosX() {
+        return this.x;
+    }
+
+    getPosY() {
+        return this.y;
     }
 }

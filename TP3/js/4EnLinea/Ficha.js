@@ -3,28 +3,32 @@ class Ficha {
     constructor(posX, posY, imgSrc, radius, context) {
         this.posX = posX;
         this.posY = posY;
+        this.origenX = this.posX;
+        this.origenY = this.posY;
         this.img = new Image();
         this.img.src = imgSrc;
         this.ctx = context;
         this.radius = radius;
+        this.clicked = false;
+        this.colocado = false;
     }
 
     draw() {
 
 
-            this.ctx.beginPath();
-            this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
-            this.ctx.strokeStyle = 'green';
-            this.ctx.lineWidth = 2;
-            this.ctx.stroke();
-            this.ctx.closePath();
+        this.ctx.beginPath();
+        this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
+        this.ctx.strokeStyle = 'green';
+        this.ctx.lineWidth = 2;
+        this.ctx.stroke();
+        this.ctx.closePath();
 
-            this.ctx.save();
-            this.ctx.clip();
+        this.ctx.save();
+        this.ctx.clip();
 
-            this.ctx.drawImage(this.img, this.posX - 20, this.posY - 20, 20 * 2, 20 * 2);
-            this.ctx.restore();
-    
+        this.ctx.drawImage(this.img, this.posX - 20, this.posY - 20, 20 * 2, 20 * 2);
+        this.ctx.restore();
+
 
     }
 
@@ -43,7 +47,33 @@ class Ficha {
     }
 
     setPosition(x, y) {
-        this.posX = x;
-        this.posY = y;
+        if (!this.colocado) {
+            this.posX = x;
+            this.posY = y;
+        }
+
     }
+
+    setClicked(click) {
+        this.clicked = click;
+    }
+
+    estaClickeada() {
+        return this.clicked;
+    }
+
+    setColocado(boolean) {
+        this.colocado = boolean;
+    }
+
+    isColocado() {
+        return this.colocado;
+    }
+
+    volverAOrigen() {
+        this.posX = this.origenX;
+        this.posY = this.origenY;
+    }
+
+
 }

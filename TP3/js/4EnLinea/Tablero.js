@@ -46,11 +46,11 @@ class Tablero {
                 const x = this.posXCasillero + columna * this.casillaWidth;
                 const y = this.posYCasillero + fila * this.casillaHeight;
                 let casillero = new Casillero(x, y, this.ctx, this.imagenCasillero, 50, 50);
+                casillero.setTipoDrop(false);
                 casillero.draw()
                 matriz[fila][columna] = casillero;
             }
         }
-        console.log(matriz);
         this.drawCasillerosValidos();
     }
 
@@ -59,13 +59,52 @@ class Tablero {
             const x = this.posXCasillero + columna * this.casillaWidth;
             const y = this.posYCasillero - this.casillaHeight;
             let casilleroValido = new Casillero(x, y, this.ctx, this.imagenCasilleroValido, 50, 50);
+            casilleroValido.setTipoDrop(true);
             casillerosValidos.push(casilleroValido);
             casilleroValido.draw();
         }
-        console.log(casillerosValidos);
+    }
+
+    esValidoColocarFicha(x, y) {
+        for (let col = 0; col < this.columnas; col++) {
+            let casillero = casillerosValidos[col];
+            if (casillero.getTipoDrop() && casillero.isPointInside(x, y)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    obtenerColumnaPorPosicion(x) {
+        const columnaCasillero = Math.floor((x - this.posXCasillero) / this.casillaWidth);
+
+        // Verifica si la columna está dentro del rango válido antes de retornarla.
+        if (columnaCasillero >= 0 && columnaCasillero < this.columnas) {
+            return columnaCasillero;
+        } else {
+            // Devuelve un valor especial o lanza una excepción en caso de estar fuera de rango.
+            // Por ejemplo, podrías lanzar una excepción o devolver -1 para indicar que no se encontró una columna válida.
+            return -1;
+        }
     }
 
 
+    colocarFicha(columna, ficha) {
+        if (columna >= 0 && columna < this.columnas) {
+            //recorro desde abajo para arriba
+            for (let fila = this.filas - 1; fila >= 0; fila--) {
+                let casillero = matriz[fila][columna];
+                console.log(fila + " " + casillero.contieneFicha())
+                if (casillero.contieneFicha() === false) {
+                    casillero.setFicha(ficha);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
 }
+
+
 
