@@ -15,9 +15,9 @@ class Juego {
         this.tablero = new Tablero(tamanioTablero, ctx, this.imgCasillero, this.imagenCasilleroValido);
         this.imgFondo = new Image();
         this.imgFondo.src = './imagenes/4EnLinea/seccionJuego/kamehouse.jpg';
-        this.jugador1 = new Jugador("Jugador1");
+        this.jugador1 = new Jugador("Jugador1", true);//Seteamos turno
         this.jugador1.setModeloFicha(rellenoFichaJugador1);
-        this.jugador2 = new Jugador("Jugador2");
+        this.jugador2 = new Jugador("Jugador2", false);//Seteamos turno
         this.jugador2.setModeloFicha(rellenoFichaJugador2);
     }
 
@@ -47,8 +47,8 @@ class Juego {
                 let posXJugador2 = this.ficheroJugador2.getPosX() + espacioX * columna + 37;
                 let posYJugador2 = this.ficheroJugador2.getPosY() + espacioY * fila + 40;
 
-                let fichaJugador1 = new Ficha(posXJugador1, posYJugador1, this.jugador1.getModeloFicha(), 20, ctx);
-                let fichaJugador2 = new Ficha(posXJugador2, posYJugador2, this.jugador2.getModeloFicha(), 20, ctx);
+                let fichaJugador1 = new Ficha(posXJugador1, posYJugador1, this.jugador1.getModeloFicha(), 20, ctx, "green", this.jugador1);
+                let fichaJugador2 = new Ficha(posXJugador2, posYJugador2, this.jugador2.getModeloFicha(), 20, ctx, "red", this.jugador2);
 
                 this.fichas.push(fichaJugador1, fichaJugador2);
             }
@@ -69,7 +69,7 @@ class Juego {
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         this.ficheroJugador1.draw();
         this.ficheroJugador2.draw();
-        this.tablero.draw();
+        this.tablero.dibujarCasilleros();
     }
 
     findClickedFigure(x, y) {
@@ -89,7 +89,7 @@ class Juego {
         }
         //layerX y layerY son posiciones del evento del mouse
         let clickFig = this.findClickedFigure(e.offsetX, e.offsetY);
-        if (clickFig != null) {
+        if (clickFig != null && !clickFig.isColocado() && clickFig.getJugador().getTurno()) {
             lastClickedFigure = clickFig;
             lastClickedFigure.setClicked(true);
         }
@@ -104,6 +104,7 @@ class Juego {
     }
 
     onMouseMove(e) {
+        //Debo chequear a demas que el jugador le corresponde el turno
         if (isMouseDown && lastClickedFigure != null && !lastClickedFigure.isColocado()) {
             lastClickedFigure.setPosition(e.offsetX, e.offsetY);
             this.drawFigure();
@@ -117,10 +118,29 @@ class Juego {
             if (ficha.estaClickeada()) {
                 //es valido colocar la ficha en ese lugar
                 if (this.tablero.esValidoColocarFicha(x, y)) {
+                    //traigo la columna correspondiente al casilleroValido
                     let columna = this.tablero.obtenerColumnaPorPosicion(x);
                     //Se coloco la ficha correctamente
                     if (this.tablero.colocarFicha(columna, ficha)) {
                         ficha.setColocado(true);
+
+                        if (this.tablero.chequearGanador(ficha, columna)) {
+                            // this.mostrarGanador();
+                            console.log("Gano alguien");
+                        } else {
+                            //si el turno es del jugador 1 y la ficha es del jugador 1
+                            if (ficha.getJugador() == this.jugador1 && this.jugador1.getTurno() == true) {
+                                //cambio el turno al jugador 2
+                                this.jugador1.setTurno(false);
+                                this.jugador2.setTurno(true);
+                                //si el turno es del jugador 2 y la ficha es del jugador 2
+                            } else {
+                                //cambio el turno al jugador 1
+                                this.jugador1.setTurno(true);
+                                this.jugador2.setTurno(false);
+                            }
+                        }
+
                         this.drawFigure();
                     }
                 }
@@ -130,7 +150,14 @@ class Juego {
                 }
                 ficha.setClicked(false);
             }
+        }
+    }
 
+    getTurno() {
+        if (this.jugador1.getTurno()) {
+            return this.jugador1;
+        } else {
+            return this.jugador2;
         }
     }
 
@@ -138,33 +165,9 @@ class Juego {
 }
 
 
-let btn_jugar = document.getElementById("btn_jugar");
-let recuadro = document.querySelector(".cont_recuadro_juego");
-
-btn_jugar.addEventListener("click", () => {
-    const fichaJugador1 = document.querySelector('input[name="jugador1Ficha"]:checked')
-    const fichaJugador2 = document.querySelector('input[name="jugador2Ficha"]:checked')
-    const tamanioTablero = document.getElementById("tamanioTablero").value;
-    if (fichaJugador1 && fichaJugador2 && tamanioTablero) {
-        let modeloFichaJugador1 = fichaJugador1.getAttribute("data-modelo");
-        let modeloFichaJugador2 = fichaJugador2.getAttribute("data-modelo");
-        crearJuego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero);
-    }
-
-    recuadro.style.display = "none";
-    canvas.classList.remove("canvas_NoVisible");
-    canvas.classList.add("canvas_visible");
 
 
-});
 
-function crearJuego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero) {
-    let juego = new Juego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero);
-    juego.crearEscenario();
-    canvas.addEventListener("mousedown", juego.onMouseDown.bind(juego), false);
-    canvas.addEventListener("mouseup", juego.onMouseUp.bind(juego), false);
-    canvas.addEventListener("mousemove", juego.onMouseMove.bind(juego), false);
-}
 
 
 

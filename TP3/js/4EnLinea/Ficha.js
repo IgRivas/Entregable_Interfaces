@@ -1,6 +1,6 @@
 class Ficha {
 
-    constructor(posX, posY, imgSrc, radius, context) {
+    constructor(posX, posY, imgSrc, radius, context, color, jugador) {
         this.posX = posX;
         this.posY = posY;
         this.origenX = this.posX;
@@ -11,6 +11,8 @@ class Ficha {
         this.radius = radius;
         this.clicked = false;
         this.colocado = false;
+        this.color = color;
+        this.jugador = jugador;
     }
 
     draw() {
@@ -18,7 +20,7 @@ class Ficha {
 
         this.ctx.beginPath();
         this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
-        this.ctx.strokeStyle = 'green';
+        this.ctx.strokeStyle = this.color;
         this.ctx.lineWidth = 2;
         this.ctx.stroke();
         this.ctx.closePath();
@@ -75,5 +77,14 @@ class Ficha {
         this.posY = this.origenY;
     }
 
+    getJugador() {
+        return this.jugador;
+    }
+
+    getColor() {
+        return this.color;
+    }
+
+    
 
 }
