@@ -84,7 +84,10 @@ class Ficha {
     getColor() {
         return this.color;
     }
+}
 
-    
 
+Ficha.prototype.toString = function fichaToString() {
+    var toReturn = `Jugador:${this.jugador} posX:${this.posX} posY:${this.posY}  `;
+    return toReturn;
 }

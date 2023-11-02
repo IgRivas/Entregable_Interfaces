@@ -111,10 +111,9 @@ class Tablero {
     }
 
     obtenerCasilleroPorFicha(ficha) {
-        for (let fila = 0; this.filas; fila++) {
-            for (let col = 0; this.columnas; col++) {
+        for (let fila = 0; fila < this.filas; fila++) {
+            for (let col = 0; col < this.columnas; col++) {
                 let casillero = matriz[fila][col];
-                console.log(casillero);
                 //encontramos el casillero donde esta la ficha  
                 let fichaNueva = casillero.getFicha();
                 if (fichaNueva != null) {
@@ -134,27 +133,34 @@ class Tablero {
     chequearGanador(ficha, columna) {
         //ficha del jugador, columna 3
         //obtenemos el casillero donde esta la ficha que se coloco
-        let casillero = this.obtenerCasilleroPorFicha(ficha);
+        let jsonCasillero = this.obtenerCasilleroPorFicha(ficha);
 
-        if (this.chequearHorizontal(casillero, columna)) {
+        if (this.chequearHorizontal(jsonCasillero, columna)) {
             return true;
         }
         return false;
     }
 
-    chequearHorizontal(casillero, columna) {
-        let fila = casillero.fila;
+    chequearHorizontal(jsonCasillero, columna) {
+        let fila = jsonCasillero.fila;
+        let fichaCasillero = jsonCasillero.casillero.getFicha();
         let cont = 0;
-        while (fila < this.filas) {
+        let columnaInicial = columna;
+        //recorrer columnas
+        while (columna < this.columnas) {
             let casilleroNuevo = matriz[fila][columna];
             if (cont == this.tamanio) {
                 return true;
             }
-            if (casilleroNuevo.getFicha() == casillero.getFicha()) {
-                cont++;
-                fila++;
-            } else {
-                fila--;
+            console.log(casilleroNuevo.getFicha());
+            if(casilleroNuevo.getFicha()!=null){
+                if (casilleroNuevo.getFicha().getJugador() == fichaCasillero.getJugador()) {
+                    cont++;
+                    columna++;
+                }
+            }else{
+                columna = columnaInicial;
+                break;
             }
         }
         return false;

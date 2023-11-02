@@ -51,3 +51,8 @@ class Casillero {
         return this.y;
     }
 }
+
+Casillero.prototype.toString = function fichaToString() {
+    var toReturn = `Ficha:${this.ficha} posX:${this.x} posY:${this.y}  `;
+    return toReturn;
+}

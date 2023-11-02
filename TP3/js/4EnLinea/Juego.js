@@ -22,14 +22,14 @@ class Juego {
     }
 
     crearEscenario() {
-        this.imgFondo.onload = () => {
+        this.imgFondo.addEventListener('load', () => {
             ctx.drawImage(this.imgFondo, (canvas.width - this.imgFondo.width) / 2.5, (canvas.height - this.imgFondo.height) / 1.5);
             ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             this.ficheroJugador1.draw();
             this.ficheroJugador2.draw();
             this.crearFichas();
-        };
+        });
     }
 
     crearFichas() {
