@@ -88,7 +88,14 @@ class Tablero {
     }
 
     obtenerColumnaPorPosicion(x) {
+        //recorro las columnas para ver en cual esta el mouse y devuelvo la columna
+        //El calculo hace: (posicion del mouse - posicion del casillero) / ancho de la casilla
+        //Esto me da la columna donde esta el mouse
         const columnaCasillero = Math.floor((x - this.posXCasillero) / this.casillaWidth);
+        console.log("x: " + x);
+        console.log("posXCasillero: " + this.posXCasillero);
+        console.log("casillaWidth: " + this.casillaWidth);
+        console.log("columnaCasillero: " + columnaCasillero);
         if (columnaCasillero >= 0 && columnaCasillero < this.columnas) {
             return columnaCasillero;
         } else {
@@ -127,16 +134,15 @@ class Tablero {
             }
         }
     }
-
     chequearGanador(ficha, columna) {
-        //ficha del jugador, columna 3
-        //obtenemos el casillero donde esta la ficha que se coloco
         let jsonCasillero = this.obtenerCasilleroPorFicha(ficha);
-
         if (this.chequearHorizontal(jsonCasillero, columna)) {
             return true;
         }
         if (this.chequearVertical(jsonCasillero, columna)) {
+            return true;
+        }
+        if (this.chequearDiagonal(jsonCasillero, columna)) {
             return true;
         }
         return false;
@@ -233,6 +239,131 @@ class Tablero {
         return false;
     }
 
+    chequearDiagonal(jsonCasillero, columna) {
+        let fila = jsonCasillero.fila;
+        let fichaCasillero = jsonCasillero.casillero.getFicha();
+        let cont = 0;
+        let columnaInicial = columna;
+        let filaInicial = fila;
+        if (this.chequearDiagonalIzquierdaArriba(cont, fichaCasillero, columnaInicial, columna, filaInicial, fila)) {
+            return true;
+        }
+        if (this.chequearDiagonalIzquierdaAbajo(cont, fichaCasillero, columnaInicial, columna, filaInicial, fila)) {
+            return true;
+        }
+    }
+
+    chequearDiagonalIzquierdaArriba(cont, fichaCasillero, columnaInicial, columna, filaInicial, fila) {
+        while (columna < this.columnas && fila < this.filas && columna >= 0 && fila >= 0) {
+            if (cont == this.tamanio) {
+                return true;
+            }
+            let casilleroNuevo = matriz[fila][columna];
+            let ficha = casilleroNuevo.getFicha();
+            if (ficha != null) {
+                if (ficha.getJugador() == fichaCasillero.getJugador()) {
+                    cont++;
+                    columna--;
+                    fila--;
+                } else {
+                    columna = columnaInicial;
+                    fila = filaInicial;
+                    return this.chequearDiagonalDerechaAbajo(cont - 1, fichaCasillero, columnaInicial, columna, filaInicial, fila);
+                }
+            } else {
+                columna = columnaInicial;
+                fila = filaInicial;
+                return this.chequearDiagonalDerechaAbajo(cont - 1, fichaCasillero, columnaInicial, columna, filaInicial, fila);
+            }
+        }
+        columna = columnaInicial;
+        fila = filaInicial;
+        return this.chequearDiagonalDerechaAbajo(cont - 1, fichaCasillero, columnaInicial, columna, filaInicial, fila);
+    }
+
+    chequearDiagonalDerechaAbajo(cont, fichaCasillero, columnaInicial, columna, filaInicial, fila) {
+
+        while (columna < this.columnas && fila < this.filas) {
+            let casilleroNuevo = matriz[fila][columna];
+            let ficha = casilleroNuevo.getFicha();
+            if (ficha != null) {
+                if (ficha.getJugador() == fichaCasillero.getJugador()) {
+                    cont++;
+                    columna++;
+                    fila++;
+                } else {
+                    columna = columnaInicial;
+                    fila = filaInicial;
+                    return false;
+                }
+            } else {
+                columna = columnaInicial;
+                fila = filaInicial;
+                return false;
+            }
+        }
+        if (cont == this.tamanio) {
+            return true;
+        }
+        return false;
+    }
+
+    chequearDiagonalIzquierdaAbajo(cont, fichaCasillero, columnaInicial, columna, filaInicial, fila) {
+        while (columna < this.columnas && fila < this.filas && columna >= 0 && fila >= 0) {
+            let casilleroNuevo = matriz[fila][columna];
+            let ficha = casilleroNuevo.getFicha();
+            if (ficha != null) {
+                if (ficha.getJugador() == fichaCasillero.getJugador()) {
+                    cont++;
+                    columna--;
+                    fila++;
+                } else {
+                    columna = columnaInicial;
+                    fila = filaInicial;
+                    return this.chequearDiagonalDerechaArriba(cont - 1, fichaCasillero, columnaInicial, columna, filaInicial, fila);
+                }
+            } else {
+                columna = columnaInicial;
+                fila = filaInicial;
+                return this.chequearDiagonalDerechaArriba(cont - 1, fichaCasillero, columnaInicial, columna, filaInicial, fila);
+            }
+        }
+        //Lo hacemos aca, se pasa del rango y no se comprueba
+        if (cont == this.tamanio) {
+            return true;
+        }
+        columna = columnaInicial;
+        fila = filaInicial;
+        return this.chequearDiagonalDerechaArriba(cont - 1, fichaCasillero, columnaInicial, columna, filaInicial, fila);
+    }
+
+    chequearDiagonalDerechaArriba(cont, fichaCasillero, columnaInicial, columna, filaInicial, fila) {
+        while (columna < this.columnas && fila < this.filas) {
+            //Lo hacemos aca, si no se pasa de casillero y como no tiene ficha o no es del mismo jugador retorna false
+            if (cont == this.tamanio) {
+                return true;
+            }
+            let casilleroNuevo = matriz[fila][columna];
+            let ficha = casilleroNuevo.getFicha();
+            if (ficha != null) {
+                if (ficha.getJugador() == fichaCasillero.getJugador()) {
+                    cont++;
+                    columna++;
+                    fila--;
+                } else {
+                    columna = columnaInicial;
+                    fila = filaInicial;
+                    return false;
+                }
+            } else {
+                columna = columnaInicial;
+                fila = filaInicial;
+                return false;
+            }
+        }
+
+        return false;
+    }
 
 
 }
