@@ -120,12 +120,10 @@ class Tablero {
                     if (fichaNueva == ficha) {
                         return {
                             casillero: casillero,
-                            fila: fila,
-                            col: col
+                            fila: fila
                         };
                     }
                 }
-
             }
         }
     }
@@ -138,6 +136,9 @@ class Tablero {
         if (this.chequearHorizontal(jsonCasillero, columna)) {
             return true;
         }
+        if (this.chequearVertical(jsonCasillero, columna)) {
+            return true;
+        }
         return false;
     }
 
@@ -146,25 +147,93 @@ class Tablero {
         let fichaCasillero = jsonCasillero.casillero.getFicha();
         let cont = 0;
         let columnaInicial = columna;
-        //recorrer columnas
+        if (this.chequearHorizontalDerecha(cont, fila, fichaCasillero, columnaInicial, columna)) {
+            return true;
+        }
+    }
+
+    chequearHorizontalDerecha(cont, fila, fichaCasillero, columnaInicial, columna) {
         while (columna < this.columnas) {
             let casilleroNuevo = matriz[fila][columna];
             if (cont == this.tamanio) {
                 return true;
             }
-            console.log(casilleroNuevo.getFicha());
-            if(casilleroNuevo.getFicha()!=null){
+            if (casilleroNuevo.getFicha() != null) {
                 if (casilleroNuevo.getFicha().getJugador() == fichaCasillero.getJugador()) {
                     cont++;
                     columna++;
                 }
-            }else{
+                else {
+                    columna = columnaInicial;
+                    return this.chequearHorizontalIzquierda(cont - 1, fila, fichaCasillero, columnaInicial, columna);
+                }
+            } else {
                 columna = columnaInicial;
-                break;
+                return this.chequearHorizontalIzquierda(cont - 1, fila, fichaCasillero, columnaInicial, columna);
             }
+        }
+        columna = columnaInicial;
+        return this.chequearHorizontalIzquierda(cont - 1, fila, fichaCasillero, columnaInicial, columna);
+    }
+
+    chequearHorizontalIzquierda(cont, fila, fichaCasillero, columnaInicial, columna) {
+        while (columna < this.columnas && columna >= 0) {
+            let casilleroNuevo = matriz[fila][columna];
+            if (cont == this.tamanio) {
+                return true;
+            }
+            if (casilleroNuevo.getFicha() != null) {
+                if (casilleroNuevo.getFicha().getJugador() == fichaCasillero.getJugador()) {
+                    cont++;
+                    columna--;
+                }
+                else {
+                    columna = columnaInicial;
+                    return false;
+                }
+            } else {
+                columna = columnaInicial;
+                return false;
+            }
+        }
+
+        return false;
+    }
+
+    chequearVertical(jsonCasillero, columna) {
+        let fila = jsonCasillero.fila;
+        let fichaCasillero = jsonCasillero.casillero.getFicha();
+        let cont = 0;
+        let filaInicial = fila;
+        if (this.chequearVerticalAbajo(cont, fila, fichaCasillero, filaInicial, columna)) {
+            return true;
+        }
+    }
+
+    chequearVerticalAbajo(cont, fila, fichaCasillero, filaInicial, columna) {
+        while (fila < this.filas) {
+            let casilleroNuevo = matriz[fila][columna];
+            if (casilleroNuevo.getFicha() != null) {
+                if (casilleroNuevo.getFicha().getJugador() == fichaCasillero.getJugador()) {
+                    cont++;
+                    fila++;
+                } else {
+                    fila = filaInicial;
+                    return false
+                }
+            } else {
+                fila = filaInicial;
+                return false
+            }
+        }
+        //Lo hacemos aca, si no se pasa de la fila q itera y nunca se comprueba
+        if (cont == this.tamanio) {
+            return true;
         }
         return false;
     }
+
+
 
 }
 

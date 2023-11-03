@@ -6,8 +6,8 @@ let isMouseDown = false;
 class Juego {
     constructor(rellenoFichaJugador1, rellenoFichaJugador2, tamanioTablero) {
         this.fichas = new Array();
-        this.ficheroJugador1 = new Fichero(50, 50, 200, 500, ctx);
-        this.ficheroJugador2 = new Fichero(850, 50, 200, 500, ctx);
+        this.ficheroJugador1 = new Fichero(50, 50, 250, 500, ctx);
+        this.ficheroJugador2 = new Fichero(800, 50, 250, 500, ctx);
         this.imgCasillero = new Image();
         this.imgCasillero.src = './imagenes/casillero.png';
         this.imagenCasilleroValido = new Image();
@@ -19,6 +19,18 @@ class Juego {
         this.jugador1.setModeloFicha(rellenoFichaJugador1);
         this.jugador2 = new Jugador("Jugador2", false);//Seteamos turno
         this.jugador2.setModeloFicha(rellenoFichaJugador2);
+        if (tamanioTablero == 4) {
+            this.cantFichasFilas = 7;
+            this.cantFichasColumnas = 3;
+        }
+        if (tamanioTablero == 5) {
+            this.cantFichasFilas = 7;
+            this.cantFichasColumnas = 4;
+        }
+        if (tamanioTablero == 6) {
+            this.cantFichasFilas = 7;
+            this.cantFichasColumnas = 5;
+        }
     }
 
     crearEscenario() {
@@ -33,18 +45,18 @@ class Juego {
     }
 
     crearFichas() {
-        // LOGICA PARA ACOMODAR LA FICHAS DENTRO DEL FICHERO
-        const numFilas = 7;
-        const numColumnas = 3;
-        const espacioX = this.ficheroJugador1.getWidth() / numColumnas;
+
+        const numFilas = this.cantFichasFilas;
+        const numColumnas = this.cantFichasColumnas;
+        const espacioX = this.ficheroJugador1.getWidth() / numColumnas - 40;
         const espacioY = this.ficheroJugador1.getHeight() / numFilas;
 
         for (let fila = 0; fila < numFilas; fila++) {
             for (let columna = 0; columna < numColumnas; columna++) {
-                let posXJugador1 = this.ficheroJugador1.getPosX() + espacioX * columna + 37;
+                let posXJugador1 = this.ficheroJugador1.getPosX() + espacioX * columna + 50;
                 let posYJugador1 = this.ficheroJugador1.getPosY() + espacioY * fila + 40;
 
-                let posXJugador2 = this.ficheroJugador2.getPosX() + espacioX * columna + 37;
+                let posXJugador2 = this.ficheroJugador2.getPosX() + espacioX * columna + 50;
                 let posYJugador2 = this.ficheroJugador2.getPosY() + espacioY * fila + 40;
 
                 let fichaJugador1 = new Ficha(posXJugador1, posYJugador1, this.jugador1.getModeloFicha(), 20, ctx, "green", this.jugador1);
