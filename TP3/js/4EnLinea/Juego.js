@@ -4,20 +4,18 @@ let lastClickedFigure = null;
 let isMouseDown = false;
 
 class Juego {
-    constructor(rellenoFichaJugador1, rellenoFichaJugador2, tamanioTablero) {
+    constructor(rellenoFichaJugador1, rellenoFichaJugador2, tamanioTablero, nombreJugador1, nombreJugador2) {
         this.fichas = new Array();
-        this.ficheroJugador1 = new Fichero(50, 50, 250, 500, ctx);
-        this.ficheroJugador2 = new Fichero(800, 50, 250, 500, ctx);
-        this.imgCasillero = new Image();
-        this.imgCasillero.src = './imagenes/casillero.png';
-        this.imagenCasilleroValido = new Image();
-        this.imagenCasilleroValido.src = "./imagenes/casilleroValido.png";
-        this.tablero = new Tablero(tamanioTablero, ctx, this.imgCasillero, this.imagenCasilleroValido);
+        this.nombreJugador1 = nombreJugador1;
+        this.nombreJugador2 = nombreJugador2;
+        this.ficheroJugador1 = new Fichero(50, 60, 220, 500, ctx, './imagenes/fichero.png');
+        this.ficheroJugador2 = new Fichero(860, 60, 220, 500, ctx, './imagenes/fichero.png');
+        this.tablero = new Tablero(tamanioTablero, ctx, './imagenes/casillero.png', "./imagenes/casilleroValido.png");
         this.imgFondo = new Image();
         this.imgFondo.src = './imagenes/4EnLinea/seccionJuego/kamehouse.jpg';
-        this.jugador1 = new Jugador("Jugador1", true);//Seteamos turno
+        this.jugador1 = new Jugador(this.nombreJugador1, true);//Seteamos turno
         this.jugador1.setModeloFicha(rellenoFichaJugador1);
-        this.jugador2 = new Jugador("Jugador2", false);//Seteamos turno
+        this.jugador2 = new Jugador(this.nombreJugador2, false);//Seteamos turno
         this.jugador2.setModeloFicha(rellenoFichaJugador2);
         if (tamanioTablero == 4) {
             this.cantFichasFilas = 7;
@@ -46,10 +44,10 @@ class Juego {
 
     crearFichas() {
 
-        const numFilas = this.cantFichasFilas;
-        const numColumnas = this.cantFichasColumnas;
+        const numFilas = 20;
+        const numColumnas = 2;
         const espacioX = this.ficheroJugador1.getWidth() / numColumnas - 40;
-        const espacioY = this.ficheroJugador1.getHeight() / numFilas;
+        const espacioY = this.ficheroJugador1.getHeight() / numFilas - 5;
 
         for (let fila = 0; fila < numFilas; fila++) {
             for (let columna = 0; columna < numColumnas; columna++) {

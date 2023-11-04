@@ -1,5 +1,6 @@
 class Jugador {
     constructor(nombre, turno) {
+        console.log(nombre);
         this.nombre = nombre;
         this.modeloFicha = null;
         this.turno = turno;

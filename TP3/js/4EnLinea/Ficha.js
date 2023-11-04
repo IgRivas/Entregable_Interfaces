@@ -1,59 +1,43 @@
-class Ficha {
-
-    constructor(posX, posY, imgSrc, radius, context, color, jugador) {
-        this.posX = posX;
-        this.posY = posY;
-        this.origenX = this.posX;
-        this.origenY = this.posY;
-        this.img = new Image();
-        this.img.src = imgSrc;
-        this.ctx = context;
+class Ficha extends Figura {
+    constructor(x, y, imgSrc, radius, ctx, color, jugador) {
+        super(x, y, imgSrc, ctx, 40, 40);
+        this.origenX = this.x;
+        this.origenY = this.y;
         this.radius = radius;
         this.clicked = false;
         this.colocado = false;
         this.color = color;
+        //La ficha pertenece a un jugador
         this.jugador = jugador;
     }
 
     draw() {
-
-
         this.ctx.beginPath();
-        this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
+        this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
         this.ctx.strokeStyle = this.color;
         this.ctx.lineWidth = 2;
         this.ctx.stroke();
         this.ctx.closePath();
-
         this.ctx.save();
         this.ctx.clip();
-
-        this.ctx.drawImage(this.img, this.posX - 20, this.posY - 20, 20 * 2, 20 * 2);
+        //Llamo al draw de la clase padre (figura)
+        super.draw();
         this.ctx.restore();
-
-
     }
 
+    //sobre escribo el metodo isPointInside de la clase padre (figura)
     isPointInside(x, y) {
-        let _x = this.posX - x;
-        let _y = this.posY - y;
+        let _x = this.x - x;
+        let _y = this.y - y;
         return Math.sqrt(_x * _x + _y * _y) < this.radius;
     }
 
-
-    getPosX() {
-        return this.posX;
-    }
-    getPosY() {
-        return this.posY;
-    }
-
+    //setea la posicion de la ficha
     setPosition(x, y) {
         if (!this.colocado) {
-            this.posX = x;
-            this.posY = y;
+            this.x = x;
+            this.y = y;
         }
-
     }
 
     setClicked(click) {
@@ -72,9 +56,10 @@ class Ficha {
         return this.colocado;
     }
 
+    //setea la posicion de la ficha a la posicion de origen
     volverAOrigen() {
-        this.posX = this.origenX;
-        this.posY = this.origenY;
+        this.x = this.origenX;
+        this.y = this.origenY;
     }
 
     getJugador() {

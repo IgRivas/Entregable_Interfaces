@@ -1,30 +1,17 @@
-class Fichero {
-    constructor(posX, posY, width, height, ctx) {
-        this.posX = posX;
-        this.posY = posY;
+class Fichero extends Figura {
+    constructor(x, y, width, height, ctx, img) {
+        super(x, y, img, ctx, width, height);
         this.width = width;
         this.height = height;
-        this.ctx = ctx;     
-    }
+        this.ctx = ctx;
 
-    getPosY() {
-        return this.posY;
-    }
-
-    getPosX() {
-        return this.posX;
-    }
-
-    getWidth() {
-        return this.width;
-    }
-
-    getHeight() {
-        return this.height;
     }
 
     draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-        ctx.fillRect(this.posX, this.posY, this.width, this.height);
+        this.ctx.globalAlpha = 0.75;
+
+
+        super.draw();
+        this.ctx.globalAlpha = 1;
     }
 }

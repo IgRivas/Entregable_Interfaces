@@ -1,17 +1,12 @@
-class Casillero {
+class Casillero extends Figura {
     constructor(x, y, ctx, imgCasillero, width, height) {
-        this.x = x;
-        this.y = y;
-        this.ctx = ctx;
-        this.imgCasillero = imgCasillero;
-        this.width = width;
-        this.height = height;
+        super(x, y, imgCasillero, ctx, width, height);
         this.ficha = null;
         this.tipoDrop = null;
     }
 
     draw() {
-        this.ctx.drawImage(this.imgCasillero, this.x, this.y, this.width, this.height);
+        super.draw();
     }
 
     isPointInside(x, y) {
@@ -20,7 +15,7 @@ class Casillero {
 
     setFicha(ficha) {
         this.ficha = ficha;
-        this.ficha.setPosition(this.x + 25, this.y + 25);
+        this.ficha.setPosition(this.x + 5, this.y + 5);
     }
 
     getFicha() {
@@ -43,13 +38,6 @@ class Casillero {
         return this.tipoDrop;
     }
 
-    getPosX() {
-        return this.x;
-    }
-
-    getPosY() {
-        return this.y;
-    }
 }
 
 Casillero.prototype.toString = function fichaToString() {

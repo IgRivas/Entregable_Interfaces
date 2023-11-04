@@ -1,8 +1,9 @@
 
 let casillerosValidos = [];
 let matriz = [];
-class Tablero {
+class Tablero extends Figura {
     constructor(tamanio, ctx, imagenCasillero, imagenCasilleroValido) {
+        super(0, 0, null, ctx, 0, 0);
         this.tamanio = tamanio;
         this.ctx = ctx;
         this.imagenCasillero = imagenCasillero;
@@ -92,10 +93,6 @@ class Tablero {
         //El calculo hace: (posicion del mouse - posicion del casillero) / ancho de la casilla
         //Esto me da la columna donde esta el mouse
         const columnaCasillero = Math.floor((x - this.posXCasillero) / this.casillaWidth);
-        console.log("x: " + x);
-        console.log("posXCasillero: " + this.posXCasillero);
-        console.log("casillaWidth: " + this.casillaWidth);
-        console.log("columnaCasillero: " + columnaCasillero);
         if (columnaCasillero >= 0 && columnaCasillero < this.columnas) {
             return columnaCasillero;
         } else {
@@ -134,6 +131,7 @@ class Tablero {
             }
         }
     }
+
     chequearGanador(ficha, columna) {
         let jsonCasillero = this.obtenerCasilleroPorFicha(ficha);
         if (this.chequearHorizontal(jsonCasillero, columna)) {
