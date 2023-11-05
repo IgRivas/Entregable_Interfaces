@@ -33,6 +33,14 @@ class Tablero extends Figura {
             this.posXCasillero = 350;
             this.posYCasillero = 120;
         }
+        if (this.tamanio == 7) {
+            this.columnas = 10;
+            this.filas = 9;
+            this.casillaWidth = 440 / this.columnas;
+            this.casillaHeight = 410 / this.filas;
+            this.posXCasillero = 340;
+            this.posYCasillero = 120;
+        }
         this.draw();
 
     }
@@ -40,8 +48,8 @@ class Tablero extends Figura {
     //Esto inicializa los arreglos y matrices del tablero
     draw() {
         //recuadro de fondo
-        this.ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-        this.ctx.fillRect(280, 50, 550, 500);
+        // this.ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+        // this.ctx.fillRect(280, 50, 550, 500);
         for (let fila = 0; fila < this.filas; fila++) {//recorro filas
             matriz[fila] = [];//iniciamos la fila
             for (let columna = 0; columna < this.columnas; columna++) {//recorro columnas
@@ -101,14 +109,12 @@ class Tablero extends Figura {
     }
 
     colocarFicha(columna, ficha) {
-        if (columna >= 0 && columna < this.columnas) {
-            //recorro desde abajo para arriba
-            for (let fila = this.filas - 1; fila >= 0; fila--) {
-                let casillero = matriz[fila][columna];
-                if (casillero.contieneFicha() === false) {
-                    casillero.setFicha(ficha);
-                    return true;
-                }
+        //recorro desde abajo para arriba
+        for (let fila = this.filas - 1; fila >= 0; fila--) {
+            let casillero = matriz[fila][columna];
+            if (casillero.contieneFicha() === false) {
+                casillero.setFicha(ficha);
+                return true;
             }
         }
         return false;
@@ -130,6 +136,21 @@ class Tablero extends Figura {
                 }
             }
         }
+    }
+
+    empate() {
+        //Recorro toda la matriz
+        for (let fila = 0; fila < this.filas; fila++) {
+            for (let col = 0; col < this.columnas; col++) {
+                let casillero = matriz[fila][col];
+                //Si el casillero no contiene una ficha, significa que todavia no se lleno el tablero
+                if (casillero.contieneFicha() === false) {
+                    return false;
+                }
+            }
+        }
+        //recorri todo y esta todo lleno, entonces es empate
+        return true;
     }
 
     chequearGanador(ficha, columna) {
@@ -336,7 +357,7 @@ class Tablero extends Figura {
     }
 
     chequearDiagonalDerechaArriba(cont, fichaCasillero, columnaInicial, columna, filaInicial, fila) {
-        while (columna < this.columnas && fila < this.filas) {
+        while (columna < this.columnas && fila < this.filas && columna >= 0 && fila >= 0) {
             //Lo hacemos aca, si no se pasa de casillero y como no tiene ficha o no es del mismo jugador retorna false
             if (cont == this.tamanio) {
                 return true;
@@ -363,7 +384,18 @@ class Tablero extends Figura {
         return false;
     }
 
+    reiniciarTablero() {
+        for (let fila = 0; fila < this.filas; fila++) {
+            for (let col = 0; col < this.columnas; col++) {
+                let casillero = matriz[fila][col];
+                casillero.eliminarFicha();
+            }
+        }
 
+        // Vuelve a crear los casilleros válidos
+        casillerosValidos = [];
+
+    }
 }
 
 

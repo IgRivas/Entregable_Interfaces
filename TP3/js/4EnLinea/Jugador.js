@@ -1,8 +1,8 @@
 class Jugador {
-    constructor(nombre, turno) {
+    constructor(nombre, turno, modeloFicha) {
         console.log(nombre);
         this.nombre = nombre;
-        this.modeloFicha = null;
+        this.modeloFicha = modeloFicha;
         this.turno = turno;
     }
 
@@ -12,10 +12,6 @@ class Jugador {
 
     getNombre() {
         return this.nombre;
-    }
-
-    setModeloFicha(modelo) {
-        this.modeloFicha = modelo;
     }
 
     getModeloFicha() {
@@ -29,15 +25,6 @@ class Jugador {
     setTurno(turno) {
         this.turno = turno;
     }
-
-    // toString() {
-    //     return {
-    //         nombre: this.nombre,
-    //         turno: this.turno,
-    //         modeloFicha: this.modeloFicha
-    //     };
-    // }
-
 
 }
 Jugador.prototype.toString = function jugadorToString() {

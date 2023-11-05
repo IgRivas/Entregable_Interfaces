@@ -16,6 +16,11 @@ class Casillero extends Figura {
     setFicha(ficha) {
         this.ficha = ficha;
         this.ficha.setPosition(this.x + 5, this.y + 5);
+
+    }
+
+    eliminarFicha() {
+        this.ficha = null;
     }
 
     getFicha() {

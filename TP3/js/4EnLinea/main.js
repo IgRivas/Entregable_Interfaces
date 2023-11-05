@@ -1,4 +1,4 @@
-
+let juego;
 let btn_jugar = document.getElementById("btn_jugar");
 let recuadro = document.querySelector(".cont_recuadro_juego");
 
@@ -22,9 +22,19 @@ btn_jugar.addEventListener("click", () => {
 });
 
 function crearJuego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero, nombreJugador1, nombreJugador2) {
-    let juego = new Juego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero, nombreJugador1, nombreJugador2);
+    juego = new Juego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero, nombreJugador1, nombreJugador2);
     juego.crearEscenario();
     canvas.addEventListener("mousedown", juego.onMouseDown.bind(juego), false);
     canvas.addEventListener("mouseup", juego.onMouseUp.bind(juego), false);
     canvas.addEventListener("mousemove", juego.onMouseMove.bind(juego), false);
 }
+
+document.querySelector(".btn_volverAJugar").addEventListener("click", () => {
+    recuadro.style.display = "block";
+    canvas.classList.remove("canvas_visible");
+    canvas.classList.add("canvas_NoVisible");
+    let contGanador = document.getElementById("contGanador");
+    contGanador.style.display = "none";
+    juego.tablero.reiniciarTablero();
+
+});

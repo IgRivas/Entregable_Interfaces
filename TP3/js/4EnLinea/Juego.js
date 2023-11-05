@@ -13,22 +13,8 @@ class Juego {
         this.tablero = new Tablero(tamanioTablero, ctx, './imagenes/casillero.png', "./imagenes/casilleroValido.png");
         this.imgFondo = new Image();
         this.imgFondo.src = './imagenes/4EnLinea/seccionJuego/kamehouse.jpg';
-        this.jugador1 = new Jugador(this.nombreJugador1, true);//Seteamos turno
-        this.jugador1.setModeloFicha(rellenoFichaJugador1);
-        this.jugador2 = new Jugador(this.nombreJugador2, false);//Seteamos turno
-        this.jugador2.setModeloFicha(rellenoFichaJugador2);
-        if (tamanioTablero == 4) {
-            this.cantFichasFilas = 7;
-            this.cantFichasColumnas = 3;
-        }
-        if (tamanioTablero == 5) {
-            this.cantFichasFilas = 7;
-            this.cantFichasColumnas = 4;
-        }
-        if (tamanioTablero == 6) {
-            this.cantFichasFilas = 7;
-            this.cantFichasColumnas = 5;
-        }
+        this.jugador1 = new Jugador(this.nombreJugador1, true, rellenoFichaJugador1);//Seteamos turno
+        this.jugador2 = new Jugador(this.nombreJugador2, false, rellenoFichaJugador2);//Seteamos turno
     }
 
     crearEscenario() {
@@ -40,11 +26,12 @@ class Juego {
             this.ficheroJugador2.draw();
             this.crearFichas();
         });
+
     }
 
     crearFichas() {
-
-        const numFilas = 20;
+        //con 46 fichas por lado, alcanza para cualquier 4 en linea disponible en el momento
+        const numFilas = 23;
         const numColumnas = 2;
         const espacioX = this.ficheroJugador1.getWidth() / numColumnas - 40;
         const espacioY = this.ficheroJugador1.getHeight() / numFilas - 5;
@@ -114,7 +101,6 @@ class Juego {
     }
 
     onMouseMove(e) {
-        //Debo chequear a demas que el jugador le corresponde el turno
         if (isMouseDown && lastClickedFigure != null && !lastClickedFigure.isColocado()) {
             lastClickedFigure.setPosition(e.offsetX, e.offsetY);
             this.drawFigure();
@@ -132,35 +118,60 @@ class Juego {
                     let columna = this.tablero.obtenerColumnaPorPosicion(x);
                     //Se coloco la ficha correctamente
                     if (this.tablero.colocarFicha(columna, ficha)) {
+                        //la ficha se coloco se setea en true
                         ficha.setColocado(true);
-
+                        //Cada vez que se coloca una ficha se chequea si hay ganador
                         if (this.tablero.chequearGanador(ficha, columna)) {
-                            // this.mostrarGanador();
+                            //si gano alguien
+                            this.mostrarGanador(ficha.getJugador());
+
                             console.log("Gano alguien");
+                        } else if (this.tablero.empate()) {
+                            console.log("Empate");
                         } else {
                             //si el turno es del jugador 1 y la ficha es del jugador 1
                             if (ficha.getJugador() == this.jugador1 && this.jugador1.getTurno() == true) {
                                 //cambio el turno al jugador 2
                                 this.jugador1.setTurno(false);
                                 this.jugador2.setTurno(true);
-                                //si el turno es del jugador 2 y la ficha es del jugador 2
                             } else {
+                                //si el turno es del jugador 2 y la ficha es del jugador 2
                                 //cambio el turno al jugador 1
                                 this.jugador1.setTurno(true);
                                 this.jugador2.setTurno(false);
                             }
                         }
-
+                        //dibujo la ficha en el casillero correspondiente
                         this.drawFigure();
                     }
                 }
-                else if (!ficha.isColocado()) {//La devuelve a su lugar de origen si no se pudo colocar la ficha
+                //La devuelve a su lugar de origen si no se pudo colocar la ficha
+                else if (!ficha.isColocado()) {
                     ficha.volverAOrigen();
                     this.drawFigure();
                 }
                 ficha.setClicked(false);
             }
         }
+    }
+
+
+    mostrarGanador(jugador) {
+        //Reinicio el juego
+        this.fichas = new Array();
+        this.tablero.reiniciarTablero();
+
+        //Muestro el ganador
+        let contGanador = document.getElementById("contGanador");
+        contGanador.style.display = "block";
+        let ganador = document.querySelector(".ganador");
+        ganador.innerHTML = `Ganador: ${jugador.getNombre()}`;
+
+        // Desactiva los eventos de mouse para que no se puedan realizar más jugadas.
+        canvas.removeEventListener("mousedown", this.onMouseDown);
+        canvas.removeEventListener("mouseup", this.onMouseUp);
+        canvas.removeEventListener("mousemove", this.onMouseMove);
+
     }
 
     getTurno() {
