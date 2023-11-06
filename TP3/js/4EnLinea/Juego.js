@@ -15,9 +15,9 @@ class Juego {
         this.imgFondo.src = './imagenes/4EnLinea/seccionJuego/kamehouse.jpg';
         this.jugador1 = new Jugador(this.nombreJugador1, true, rellenoFichaJugador1);//Seteamos turno
         this.jugador2 = new Jugador(this.nombreJugador2, false, rellenoFichaJugador2);//Seteamos turno
-        
+
         //Cada vez que se crea un juego, reiniciamos el contador
-        this.minutos = 1;
+        this.minutos = 5;
         this.segundos = 0;
     }
 
@@ -128,10 +128,10 @@ class Juego {
                         //Cada vez que se coloca una ficha se chequea si hay ganador
                         if (this.tablero.chequearGanador(ficha, columna)) {
                             //si gano alguien
-                            this.finalizarJuego(ficha.getJugador(),"ganador");
+                            this.finalizarJuego(ficha.getJugador(), "ganador");
                             return;
                         } else if (this.tablero.empate()) {
-                            this.finalizarJuego(null,"empate");
+                            this.finalizarJuego(null, "empate");
                             return;
                         } else {
                             //si el turno es del jugador 1 y la ficha es del jugador 1
@@ -161,7 +161,7 @@ class Juego {
     }
 
 
-    finalizarJuego(jugador,condicion) {
+    finalizarJuego(jugador, condicion) {
         //Reinicio el juego
         this.fichas = new Array();
         this.tablero.reiniciarTablero();
@@ -171,11 +171,11 @@ class Juego {
         let ganador = document.querySelector(".ganador");
         switch (condicion) {
             case "ganador": ganador.innerHTML = `Ganador: ${jugador.getNombre()}`;
-            break;
+                break;
             case "empate": ganador.innerHTML = `Empate`;
-            break;
+                break;
             case "tiempo": ganador.innerHTML = `Se acabo el tiempo`;
-            break;
+                break;
         }
         // Desactiva los eventos de mouse para que no se puedan realizar más jugadas.
         canvas.removeEventListener("mousedown", this.onMouseDown);
@@ -192,7 +192,7 @@ class Juego {
         }
     }
 
-    crearIntervalo(){
+    crearIntervalo() {
         let minutosIntervalo = this.minutos;
         let segundosIntervalo = this.segundos;
         //Guardamos la referncia al juego, x q al querer utilizarlo dentro del intervalo no lo reconoce por el scope
@@ -208,13 +208,13 @@ class Juego {
             document.querySelector(".tiempo").innerHTML = `${minutosIntervalo}:${segundosIntervalo}`;
             if (minutosIntervalo == 0 && segundosIntervalo == 0) {
                 clearInterval(intervalo);
-                juego.finalizarJuego(null,"tiempo");
+                juego.finalizarJuego(null, "tiempo");
             }
 
         }, 1000);
     }
-    
-    
+
+
 
 
 }

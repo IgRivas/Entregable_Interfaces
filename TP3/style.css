@@ -149,11 +149,6 @@ button {
     max-height: 100%;
 }
 
-.cont_recuadro_juego_contenido button{
-    /* sacar estilos al boton */
-    background: none;
-    border: none;
-}
 
 .btn_jugar_principal a {
     font-size: var(--texto_botones);
@@ -1215,10 +1210,53 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: var(--color_secundario_sombra1);
+    border: 1px solid var(--color_primario_sombra1);
+    border-radius: 20px;
+    width: 700px;
+    height: 400px;
 }
 
-.cont_recuadro_juego h1 {
+.form_juego {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.cont_select_tamanio select {
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    background-color: var(--color_primario_sombra2);
     color: var(--color_neutroBlanco);
+    text-align: center;
+}
+
+
+.cont_select_tamanio select option {
+    background-color: var(--color_primario_sombra2);
+    color: var(--color_neutroBlanco);
+    text-align: center;
+}
+
+/* input de tipo texto */
+.cont_recuadro_juego_contenido input[type="text"] {
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    background-color: var(--color_primario_sombra2);
+    color: var(--color_neutroBlanco);
+    text-align: center;
+    font-size: var(--h5_size);
+    font-weight: bold;
+}
+
+
+.cont_recuadro_juego h1 {
+    color: var(--color_primario);
+    margin-top: 20px;
 }
 
 .btn_4EnLinea {
@@ -1237,6 +1275,18 @@ button {
     justify-content: center;
     align-content: center;
     gap: 10px;
+}
+
+.cont_form_juego {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.cont_recuadro_juego_contenido label {
+    font-size: var(--h4_size);
+    color: var(--color_neutroGris);
 }
 
 /* 4 en linea jugando */
@@ -1353,6 +1403,7 @@ button {
 /* animacion btn_jugar */
 
 .btn_neon {
+    margin-top: 20px;
     position: relative;
     display: inline-block;
     color: var(--color_neutroNegro);
@@ -1449,7 +1500,7 @@ button {
 
 .cont_instrucciones {
     width: 1100px;
-    height: 282px;
+    height: 400px;
     border-radius: 20px;
     border: 1px solid var(--color_primario_sombra1);
     background: var(--color_secundario_sombra1);
@@ -1464,6 +1515,12 @@ button {
     color: var(--color_primario);
     font-weight: normal;
     text-align: center;
+}
+
+.cont_descripcion_texto_parrafos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .cont_instrucciones p {
@@ -1517,6 +1574,7 @@ button {
     align-items: center;
     align-content: center;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .cont_descripcion_img_vegeta {
@@ -2301,15 +2359,13 @@ button {
     text-align: center;
 }
 
-.btn_volverAJugar{
-    
-}
+.btn_volverAJugar {}
 
-.intervalo_4_en_linea_noVisible{
+.intervalo_4_en_linea_noVisible {
     display: none;
 }
 
-.intervalo_4_en_linea_visible{
+.intervalo_4_en_linea_visible {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -2318,9 +2374,8 @@ button {
     height: 50px;
     border-radius: 20px;
     position: absolute;
-    top: 108%;
+    top: 105%;
     left: 41.5%;
     color: var(--color_neutroBlanco);
     background-color: var(--color_primario_sombra1);
 }
-

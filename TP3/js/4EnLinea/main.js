@@ -9,18 +9,23 @@ btn_jugar.addEventListener("click", () => {
     const nombreJugador1 = document.getElementById("nombreJugador1").value;
     const nombreJugador2 = document.getElementById("nombreJugador2").value;
     const tamanioTablero = document.getElementById("tamanioTablero").value;
-    if (fichaJugador1 && fichaJugador2 && tamanioTablero) {
-        let modeloFichaJugador1 = fichaJugador1.getAttribute("data-modelo");
-        let modeloFichaJugador2 = fichaJugador2.getAttribute("data-modelo");
-        crearJuego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero, nombreJugador1, nombreJugador2);
+    if (nombreJugador1 != "" && nombreJugador2 != "") {
+        if (fichaJugador1 && fichaJugador2 && tamanioTablero) {
+            let modeloFichaJugador1 = fichaJugador1.getAttribute("data-modelo");
+            let modeloFichaJugador2 = fichaJugador2.getAttribute("data-modelo");
+            crearJuego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero, nombreJugador1, nombreJugador2);
+        }
+        recuadro.style.display = "none";
+        canvas.classList.remove("canvas_NoVisible");
+        canvas.classList.add("canvas_visible");
+
+        contIntervalo.classList.remove("intervalo_4_en_linea_noVisible");
+        contIntervalo.classList.add("intervalo_4_en_linea_visible");
+    } else if (nombreJugador1 == "") {
+        document.getElementById("nombreJugador1").style.border = "1px solid #CC3300";
+    } if (nombreJugador2 == "") {
+        document.getElementById("nombreJugador2").style.border = "1px solid #CC3300";
     }
-
-    recuadro.style.display = "none";
-    canvas.classList.remove("canvas_NoVisible");
-    canvas.classList.add("canvas_visible");
-
-    contIntervalo.classList.remove("intervalo_4_en_linea_noVisible");
-    contIntervalo.classList.add("intervalo_4_en_linea_visible");
 
 
 });

@@ -146,45 +146,47 @@
 
             <div class="cont_recuadro_juego_contenido">
                 <div class="cont_recuadro_juego_contenido_alineacion">
-                    <h1>Dragon Ball 4 en Linea</h1>
+                    <h1 class="cont_recuadro_juego_contenido_titulo">Dragon Ball en Linea</h1>
                     <div>
-                        <form action="">
-                            <div>
-                                <h1>Tamanio del tablero</h1>
-                                <select name="" id="tamanioTablero">
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                </select>
+                        <form action="" class="form_juego">
+                            <div class="cont_select_tamanio">
+                                <label for="tamanioTablero">
+                                    Elegi el tamaño de tu tablero
+                                    <select name="" id="tamanioTablero">
+                                        <option value="4">4 en linea</option>
+                                        <option value="5">5 en linea</option>
+                                        <option value="6">6 en linea</option>
+                                        <option value="7">7 en linea</option>
+                                    </select>
                                 </label>
-                                <h1>Fichas jugador 1</h2>
-                                    <label for="nombreJugador1">
-                                        Ingresar nombre jugador 1
-                                        <input type="text" name="nombreJugador1" id="nombreJugador1" required>
-                                    </label>
-                                    <label for="gokuFicha">
-                                        <input type="radio" name="jugador1Ficha" id="gokuFicha"
-                                            data-modelo="./imagenes/gokuFicha.png" checked>
-                                        <img src="imagenes/gokuFicha.png" alt="">
-                                    </label>
-                                    <label for="panFicha">
-                                        <input type="radio" name="jugador1Ficha" id="panFicha"
-                                            data-modelo="./imagenes/panFicha.png" checked>
-                                        <img src="imagenes/panFicha.png" alt="">
-                                    </label>
-                                    <label for="gohanFicha">
-                                        <input type="radio" name="jugador1Ficha" id="gohanFicha"
-                                            data-modelo="./imagenes/gohanFicha.png" checked>
-                                        <img src="imagenes/gohanFicha.png" alt="">
-                                    </label>
+                            </div>
+                            <div class="fichas_jugador1">
+                                <label for="nombreJugador1">
+                                    Ingresar nombre jugador 1
+                                    <input type="text" name="nombreJugador1" id="nombreJugador1" required>
+                                </label>
+                                <label for="gokuFicha" class="ficha-label">
+                                    <input type="radio" name="jugador1Ficha" id="gokuFicha"
+                                        data-modelo="./imagenes/gokuFicha.png" checked>
+                                    <img src="imagenes/gokuFicha.png" alt="" class="ficha-image">
+                                </label>
+                                <label for="panFicha" class="ficha-label">
+                                    <input type="radio" name="jugador1Ficha" id="panFicha"
+                                        data-modelo="./imagenes/panFicha.png" checked>
+                                    <img src="imagenes/panFicha.png" alt="" class="ficha-image">
+                                </label>
+                                <label for="gohanFicha" class="ficha-label">
+                                    <input type="radio" name="jugador1Ficha" id="gohanFicha"
+                                        data-modelo="./imagenes/gohanFicha.png" checked>
+                                    <img src="imagenes/gohanFicha.png" alt="" class="ficha-image">
+                                </label>
+
                             </div>
                             <div>
-                                <h1>Fichas jugador 2</h2>
-                                    <label for="nombreJugador1">
-                                        Ingresar nombre jugador 2
-                                        <input type="text" name="nombreJugador2" id="nombreJugador2" required>
-                                    </label>
+                                <label for="nombreJugador1">
+                                    Ingresar nombre jugador 2
+                                    <input type="text" name="nombreJugador2" id="nombreJugador2" required>
+
                                     <label for="vegetaFicha">
                                         <input type="radio" name="jugador2Ficha" id="vegetaFicha"
                                             data-modelo="./imagenes/vegetaFicha.png" checked>
@@ -200,21 +202,20 @@
                                             data-modelo="./imagenes/krillinFicha.png" checked>
                                         <img src="imagenes/krillinFicha.png" alt="">
                                     </label>
+                                </label>
                             </div>
-                            <button type="submit">
-                                <a id="btn_jugar" href="#" class="btn_neon">
-                                    <span id="span1"></span>
-                                    <span id="span2"></span>
-                                    <span id="span3"></span>
-                                    <span id="span4"></span>
-                                    Jugar
-                                </a>
-                            </button>
+
                         </form>
-                        <!-- <img src="imagenes/4EnLinea/goku_veggeta_gohan.png" alt=""> -->
                     </div>
-                  
+                    <a id="btn_jugar" href="#" class="btn_neon">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                        Jugar
+                    </a>
                 </div>
+
             </div>
 
         </section>
@@ -303,9 +304,11 @@
             <div class="cont_instrucciones_contenido_alineacion">
                 <img src="imagenes/4EnLinea/click.png" alt="">
                 <div class="cont_instrucciones_texto">
-                    <p>Utiliza tu mouse para mover las fichas dentro del juego. Haciendo click izquierdo sobre la ficha
-                        que
-                        selecciones para colocarla sobre la celda correspondiente</p>
+                    <p>Para empezar a jugar, pon tu nombre y el de tu oponente.
+                        Sin ellos no podras iniciar la partida.
+                        Elije las fichas que utilizara cada uno y presiona el boton Jugar.
+                        Utiliza tu mouse para mover las fichas dentro del juego. Haciendo click izquierdo sobre la ficha
+                        que selecciones para colocarla sobre la celda correspondiente</p>
                 </div>
 
             </div>
@@ -323,21 +326,27 @@
                     <div class="cont_descripcion_img_vegeta">
                         <img src="imagenes/4EnLinea/vegeta.png" alt="">
                     </div>
-
                     <div class="cont_descripcion_texto">
                         <div>
                             <img src="imagenes/4EnLinea/bola del dragon.png" alt="">
                         </div>
-                        <p>En este increíble 4 en línea de Dragón Ball con tus personajes favoritos, podés elegir entre
-                            Gotenks,
-                            Goku, Pan y Vegeta, elegí el que más te guste para ir a la batalla!</p>
+                        <div class="cont_descripcion_texto_parrafos">
+                            <p>En este increíble 4 en línea de Dragón Ball con tus personajes favoritos, podés elegir
+                                entre
+                                4 tamanios de tablero diferentes!
+                            </p>
+                            <p> Además de poder elegir entre 6 personajes diferentes:
+                                Gotenks, Goku, Pan, Vegeta, Krillin, y Gohan, elegí el que más te guste para ir a la
+                                batalla!</p>
+                            <p> Pero no pierdas tiempo, ya que solo dispones de 5 minutos para concluir una partida
+                            </p>
+                        </div>
+
                     </div>
                     <div>
                         <img src="imagenes/4EnLinea/goku.png" alt="">
                     </div>
                 </div>
-
-
             </div>
 
             <section class="cont_galeria">
@@ -353,9 +362,9 @@
                 <div class="contenedor_imagenes_carrousel">
 
                     <div class="cont_img_car carrusel_generico">
-                        <img id="primerImagen" src="imagenes/4EnLinea/galeria/vegeta.webp" alt="">
-                        <img src="imagenes/4EnLinea/galeria/imagenCuaternaria.jpg" alt="">
-                        <img src="imagenes/4EnLinea/galeria/fighterz.jpg" alt="">
+                        <img id="primerImagen" src="imagenes/4EnLinea/galeria/juegoInicial.png" alt="">
+                        <img src="imagenes/4EnLinea/galeria/juangoGohanVsKrilin.png" alt="">
+                        <img src="imagenes/4EnLinea/galeria/jugandoPanVsVegeta.png" alt="">
                         <img src="imagenes/4EnLinea/galeria/gokuchico.webp" alt="">
                         <img src="imagenes/4EnLinea/galeria/gokuEsferas.jpg" alt="">
                         <img src="imagenes/4EnLinea/galeria/imagenPrincipal.png" alt="">
@@ -372,9 +381,6 @@
                     </div>
 
                 </div>
-
-
-
             </section>
 
         </section>
