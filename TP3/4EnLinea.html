@@ -161,7 +161,7 @@
                                 <h1>Fichas jugador 1</h2>
                                     <label for="nombreJugador1">
                                         Ingresar nombre jugador 1
-                                        <input type="text" name="nombreJugador1" id="nombreJugador1">
+                                        <input type="text" name="nombreJugador1" id="nombreJugador1" required>
                                     </label>
                                     <label for="gokuFicha">
                                         <input type="radio" name="jugador1Ficha" id="gokuFicha"
@@ -183,7 +183,7 @@
                                 <h1>Fichas jugador 2</h2>
                                     <label for="nombreJugador1">
                                         Ingresar nombre jugador 2
-                                        <input type="text" name="nombreJugador2" id="nombreJugador2">
+                                        <input type="text" name="nombreJugador2" id="nombreJugador2" required>
                                     </label>
                                     <label for="vegetaFicha">
                                         <input type="radio" name="jugador2Ficha" id="vegetaFicha"
@@ -201,16 +201,19 @@
                                         <img src="imagenes/krillinFicha.png" alt="">
                                     </label>
                             </div>
+                            <button type="submit">
+                                <a id="btn_jugar" href="#" class="btn_neon">
+                                    <span id="span1"></span>
+                                    <span id="span2"></span>
+                                    <span id="span3"></span>
+                                    <span id="span4"></span>
+                                    Jugar
+                                </a>
+                            </button>
                         </form>
                         <!-- <img src="imagenes/4EnLinea/goku_veggeta_gohan.png" alt=""> -->
                     </div>
-                    <a id="btn_jugar" href="#" class="btn_neon">
-                        <span id="span1"></span>
-                        <span id="span2"></span>
-                        <span id="span3"></span>
-                        <span id="span4"></span>
-                        Jugar
-                    </a>
+                  
                 </div>
             </div>
 
@@ -219,6 +222,11 @@
         <div id="contGanador">
             <h1 class="ganador"> </h1>
             <a href="#" class="btn_volverAJugar">Volver a jugar</a>
+        </div>
+
+        <div class="intervalo_4_en_linea_noVisible">
+            <div class="tiempo"></div>
+            <div><a class="btn_volverAJugar" href=""><i class="fa-solid fa-rotate-right"></i></a></div>
         </div>
 
         <canvas id="canvas" class="canvas_NoVisible" width="1100px" height="600px"></canvas>

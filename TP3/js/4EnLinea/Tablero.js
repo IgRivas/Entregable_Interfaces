@@ -237,6 +237,10 @@ class Tablero extends Figura {
 
     chequearVerticalAbajo(cont, fila, fichaCasillero, filaInicial, columna) {
         while (fila < this.filas) {
+            //Este chqueo cubre el caso donde la ficha se coloca en la fila 0
+            if (cont == this.tamanio) {
+                return true;
+            }
             let casilleroNuevo = matriz[fila][columna];
             if (casilleroNuevo.getFicha() != null) {
                 if (casilleroNuevo.getFicha().getJugador() == fichaCasillero.getJugador()) {

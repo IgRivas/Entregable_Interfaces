@@ -149,6 +149,12 @@ button {
     max-height: 100%;
 }
 
+.cont_recuadro_juego_contenido button{
+    /* sacar estilos al boton */
+    background: none;
+    border: none;
+}
+
 .btn_jugar_principal a {
     font-size: var(--texto_botones);
     text-decoration: none;
@@ -2298,3 +2304,23 @@ button {
 .btn_volverAJugar{
     
 }
+
+.intervalo_4_en_linea_noVisible{
+    display: none;
+}
+
+.intervalo_4_en_linea_visible{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    position: absolute;
+    top: 108%;
+    left: 41.5%;
+    color: var(--color_neutroBlanco);
+    background-color: var(--color_primario_sombra1);
+}
+

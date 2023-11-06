@@ -15,9 +15,14 @@ class Juego {
         this.imgFondo.src = './imagenes/4EnLinea/seccionJuego/kamehouse.jpg';
         this.jugador1 = new Jugador(this.nombreJugador1, true, rellenoFichaJugador1);//Seteamos turno
         this.jugador2 = new Jugador(this.nombreJugador2, false, rellenoFichaJugador2);//Seteamos turno
+        
+        //Cada vez que se crea un juego, reiniciamos el contador
+        this.minutos = 1;
+        this.segundos = 0;
     }
 
     crearEscenario() {
+        this.crearIntervalo();
         this.imgFondo.addEventListener('load', () => {
             ctx.drawImage(this.imgFondo, (canvas.width - this.imgFondo.width) / 2.5, (canvas.height - this.imgFondo.height) / 1.5);
             ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
@@ -123,11 +128,11 @@ class Juego {
                         //Cada vez que se coloca una ficha se chequea si hay ganador
                         if (this.tablero.chequearGanador(ficha, columna)) {
                             //si gano alguien
-                            this.mostrarGanador(ficha.getJugador());
-
-                            console.log("Gano alguien");
+                            this.finalizarJuego(ficha.getJugador(),"ganador");
+                            return;
                         } else if (this.tablero.empate()) {
-                            console.log("Empate");
+                            this.finalizarJuego(null,"empate");
+                            return;
                         } else {
                             //si el turno es del jugador 1 y la ficha es del jugador 1
                             if (ficha.getJugador() == this.jugador1 && this.jugador1.getTurno() == true) {
@@ -156,17 +161,22 @@ class Juego {
     }
 
 
-    mostrarGanador(jugador) {
+    finalizarJuego(jugador,condicion) {
         //Reinicio el juego
         this.fichas = new Array();
         this.tablero.reiniciarTablero();
-
         //Muestro el ganador
         let contGanador = document.getElementById("contGanador");
         contGanador.style.display = "block";
         let ganador = document.querySelector(".ganador");
-        ganador.innerHTML = `Ganador: ${jugador.getNombre()}`;
-
+        switch (condicion) {
+            case "ganador": ganador.innerHTML = `Ganador: ${jugador.getNombre()}`;
+            break;
+            case "empate": ganador.innerHTML = `Empate`;
+            break;
+            case "tiempo": ganador.innerHTML = `Se acabo el tiempo`;
+            break;
+        }
         // Desactiva los eventos de mouse para que no se puedan realizar más jugadas.
         canvas.removeEventListener("mousedown", this.onMouseDown);
         canvas.removeEventListener("mouseup", this.onMouseUp);
@@ -181,6 +191,30 @@ class Juego {
             return this.jugador2;
         }
     }
+
+    crearIntervalo(){
+        let minutosIntervalo = this.minutos;
+        let segundosIntervalo = this.segundos;
+        //Guardamos la referncia al juego, x q al querer utilizarlo dentro del intervalo no lo reconoce por el scope
+        let juego = this;
+        //Crear un intervalo de 5 minutos, donde muestre los segundos y minutos
+        let intervalo = setInterval(function () {
+            //simulo q paso un minuto
+            if (segundosIntervalo == 0) {
+                segundosIntervalo = 60;
+                minutosIntervalo--;
+            }
+            segundosIntervalo--;
+            document.querySelector(".tiempo").innerHTML = `${minutosIntervalo}:${segundosIntervalo}`;
+            if (minutosIntervalo == 0 && segundosIntervalo == 0) {
+                clearInterval(intervalo);
+                juego.finalizarJuego(null,"tiempo");
+            }
+
+        }, 1000);
+    }
+    
+    
 
 
 }

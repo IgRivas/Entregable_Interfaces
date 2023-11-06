@@ -1,6 +1,7 @@
 let juego;
 let btn_jugar = document.getElementById("btn_jugar");
 let recuadro = document.querySelector(".cont_recuadro_juego");
+let contIntervalo = document.querySelector(".intervalo_4_en_linea_noVisible");
 
 btn_jugar.addEventListener("click", () => {
     const fichaJugador1 = document.querySelector('input[name="jugador1Ficha"]:checked')
@@ -18,6 +19,9 @@ btn_jugar.addEventListener("click", () => {
     canvas.classList.remove("canvas_NoVisible");
     canvas.classList.add("canvas_visible");
 
+    contIntervalo.classList.remove("intervalo_4_en_linea_noVisible");
+    contIntervalo.classList.add("intervalo_4_en_linea_visible");
+
 
 });
 
@@ -29,12 +33,17 @@ function crearJuego(modeloFichaJugador1, modeloFichaJugador2, tamanioTablero, no
     canvas.addEventListener("mousemove", juego.onMouseMove.bind(juego), false);
 }
 
-document.querySelector(".btn_volverAJugar").addEventListener("click", () => {
-    recuadro.style.display = "block";
-    canvas.classList.remove("canvas_visible");
-    canvas.classList.add("canvas_NoVisible");
-    let contGanador = document.getElementById("contGanador");
-    contGanador.style.display = "none";
-    juego.tablero.reiniciarTablero();
+let botonesReiniciar = document.querySelectorAll(".btn_volverAJugar");
 
+botonesReiniciar.forEach(boton => {
+    boton.addEventListener("click", () => {
+        recuadro.style.display = "block";
+        canvas.classList.remove("canvas_visible");
+        canvas.classList.add("canvas_NoVisible");
+        let contGanador = document.getElementById("contGanador");
+        contGanador.style.display = "none";
+        contIntervalo.classList.add("intervalo_4_en_linea_noVisible");
+        contIntervalo.classList.remove("intervalo_4_en_linea_visible");
+        juego.tablero.reiniciarTablero();
+    });
 });
