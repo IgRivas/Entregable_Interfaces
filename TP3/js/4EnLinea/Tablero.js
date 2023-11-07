@@ -86,6 +86,7 @@ class Tablero extends Figura {
         }
     }
 
+    // Quiero refactorizar este metodo para q devuelva un json con el casillero y la fila
     esValidoColocarFicha(x, y) {
         for (let col = 0; col < this.columnas; col++) {
             let casillero = casillerosValidos[col];
@@ -120,6 +121,7 @@ class Tablero extends Figura {
         return false;
     }
 
+    //Obtenemos el casillero donde esta la ficha
     obtenerCasilleroPorFicha(ficha) {
         for (let fila = 0; fila < this.filas; fila++) {
             for (let col = 0; col < this.columnas; col++) {
@@ -128,6 +130,7 @@ class Tablero extends Figura {
                 let fichaNueva = casillero.getFicha();
                 if (fichaNueva != null) {
                     if (fichaNueva == ficha) {
+                        //retornamos un json con el casillero y la fila
                         return {
                             casillero: casillero,
                             fila: fila
@@ -168,46 +171,54 @@ class Tablero extends Figura {
     }
 
     chequearHorizontal(jsonCasillero, columna) {
-        let fila = jsonCasillero.fila;
-        let fichaCasillero = jsonCasillero.casillero.getFicha();
         let cont = 0;
-        let columnaInicial = columna;
-        if (this.chequearHorizontalDerecha(cont, fila, fichaCasillero, columnaInicial, columna)) {
+        if (this.chequearHorizontalDerecha(cont, jsonCasillero.fila, jsonCasillero.casillero.getFicha(), columna, columna)) {
             return true;
         }
     }
 
     chequearHorizontalDerecha(cont, fila, fichaCasillero, columnaInicial, columna) {
+        //Itero mientras sea una columna valida
         while (columna < this.columnas) {
             let casilleroNuevo = matriz[fila][columna];
+            //Si llego a la cantidad de fichas ganadoras, retorno true
             if (cont == this.tamanio) {
                 return true;
             }
+            //Si el casillero tiene una ficha
             if (casilleroNuevo.getFicha() != null) {
+                //Si la ficha es del mismo jugador, aumento el contador y avanzo a la siguiente columna
                 if (casilleroNuevo.getFicha().getJugador() == fichaCasillero.getJugador()) {
                     cont++;
                     columna++;
                 }
                 else {
+                    //Si no es del mismo jugador, reinicio el contador y la columna y voy a chequear a la izquierda
                     columna = columnaInicial;
                     return this.chequearHorizontalIzquierda(cont - 1, fila, fichaCasillero, columnaInicial, columna);
                 }
+                //Si el casillero no tiene una ficha, reinicio el contador y la columna y voy a chequear a la izquierda
             } else {
                 columna = columnaInicial;
                 return this.chequearHorizontalIzquierda(cont - 1, fila, fichaCasillero, columnaInicial, columna);
             }
         }
+        //Chequeo a la izquierda si se pasa de la columna
         columna = columnaInicial;
         return this.chequearHorizontalIzquierda(cont - 1, fila, fichaCasillero, columnaInicial, columna);
     }
 
     chequearHorizontalIzquierda(cont, fila, fichaCasillero, columnaInicial, columna) {
+        //Itero mientras sea una columna valida y la columaneste dentro del rango, osea no llege a -1
         while (columna < this.columnas && columna >= 0) {
             let casilleroNuevo = matriz[fila][columna];
+            //Si llego a la cantidad de fichas ganadoras, retorno true
             if (cont == this.tamanio) {
                 return true;
             }
+
             if (casilleroNuevo.getFicha() != null) {
+                //Si la ficha es del mismo jugador, aumento el contador y avanzo a la siguiente columna, osea a la izquierda
                 if (casilleroNuevo.getFicha().getJugador() == fichaCasillero.getJugador()) {
                     cont++;
                     columna--;
@@ -221,21 +232,21 @@ class Tablero extends Figura {
                 return false;
             }
         }
-
+        if (cont == this.tamanio) {
+            return true;
+        }
         return false;
     }
 
     chequearVertical(jsonCasillero, columna) {
-        let fila = jsonCasillero.fila;
-        let fichaCasillero = jsonCasillero.casillero.getFicha();
         let cont = 0;
-        let filaInicial = fila;
-        if (this.chequearVerticalAbajo(cont, fila, fichaCasillero, filaInicial, columna)) {
+        if (this.chequearVerticalAbajo(cont, jsonCasillero.fila, jsonCasillero.casillero.getFicha(), jsonCasillero.fila, columna)) {
             return true;
         }
     }
 
     chequearVerticalAbajo(cont, fila, fichaCasillero, filaInicial, columna) {
+        //Itero mientras sea una fila valida
         while (fila < this.filas) {
             //Este chqueo cubre el caso donde la ficha se coloca en la fila 0
             if (cont == this.tamanio) {
@@ -243,6 +254,7 @@ class Tablero extends Figura {
             }
             let casilleroNuevo = matriz[fila][columna];
             if (casilleroNuevo.getFicha() != null) {
+                //Si la ficha es del mismo jugador, aumento el contador y avanzo a la siguiente fila, osea para abajo
                 if (casilleroNuevo.getFicha().getJugador() == fichaCasillero.getJugador()) {
                     cont++;
                     fila++;
@@ -255,7 +267,7 @@ class Tablero extends Figura {
                 return false
             }
         }
-        //Lo hacemos aca, si no se pasa de la fila q itera y nunca se comprueba
+        //Lo hacemos aca tambien, si no se pasa de la fila q itera y nunca se comprueba
         if (cont == this.tamanio) {
             return true;
         }
@@ -263,20 +275,17 @@ class Tablero extends Figura {
     }
 
     chequearDiagonal(jsonCasillero, columna) {
-        let fila = jsonCasillero.fila;
-        let fichaCasillero = jsonCasillero.casillero.getFicha();
         let cont = 0;
-        let columnaInicial = columna;
-        let filaInicial = fila;
-        if (this.chequearDiagonalIzquierdaArriba(cont, fichaCasillero, columnaInicial, columna, filaInicial, fila)) {
+        if (this.chequearDiagonalIzquierdaArriba(cont, jsonCasillero.casillero.getFicha(), columna, columna, jsonCasillero.fila, jsonCasillero.fila)) {
             return true;
         }
-        if (this.chequearDiagonalIzquierdaAbajo(cont, fichaCasillero, columnaInicial, columna, filaInicial, fila)) {
+        if (this.chequearDiagonalIzquierdaAbajo(cont, jsonCasillero.casillero.getFicha(), columna, columna, jsonCasillero.fila, jsonCasillero.fila)) {
             return true;
         }
     }
 
     chequearDiagonalIzquierdaArriba(cont, fichaCasillero, columnaInicial, columna, filaInicial, fila) {
+        //Itero mientras sea una columna valida y la columna este dentro del rango, osea no llege a -1 y la fila lo mismo
         while (columna < this.columnas && fila < this.filas && columna >= 0 && fila >= 0) {
             if (cont == this.tamanio) {
                 return true;
@@ -284,16 +293,19 @@ class Tablero extends Figura {
             let casilleroNuevo = matriz[fila][columna];
             let ficha = casilleroNuevo.getFicha();
             if (ficha != null) {
+                //Si la ficha es del mismo jugador, aumento el contador y avanzo a la siguiente columna y fila, osea a la izquierda y arriba
                 if (ficha.getJugador() == fichaCasillero.getJugador()) {
                     cont++;
                     columna--;
                     fila--;
                 } else {
+                    //Si no es del mismo jugador, reinicio el contador y la columna y voy a chequear a la derecha y abajo
                     columna = columnaInicial;
                     fila = filaInicial;
                     return this.chequearDiagonalDerechaAbajo(cont - 1, fichaCasillero, columnaInicial, columna, filaInicial, fila);
                 }
             } else {
+                //Si no hay ficha, reinicio el contador y la columna y voy a chequear a la derecha y abajo
                 columna = columnaInicial;
                 fila = filaInicial;
                 return this.chequearDiagonalDerechaAbajo(cont - 1, fichaCasillero, columnaInicial, columna, filaInicial, fila);
@@ -389,16 +401,8 @@ class Tablero extends Figura {
     }
 
     reiniciarTablero() {
-        for (let fila = 0; fila < this.filas; fila++) {
-            for (let col = 0; col < this.columnas; col++) {
-                let casillero = matriz[fila][col];
-                casillero.eliminarFicha();
-            }
-        }
-
-        // Vuelve a crear los casilleros válidos
+        matriz = [];
         casillerosValidos = [];
-
     }
 }
 
