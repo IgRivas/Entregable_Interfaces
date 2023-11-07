@@ -17,12 +17,12 @@ class Juego {
         this.jugador2 = new Jugador(this.nombreJugador2, false, rellenoFichaJugador2);//Seteamos turno
 
         //Cada vez que se crea un juego, reiniciamos el contador
-        this.minutos = 5;
-        this.segundos = 0;
+        this.reiniciarIntervalo();
+
     }
 
     crearEscenario() {
-        this.crearIntervalo();
+
         this.imgFondo.addEventListener('load', () => {
             ctx.drawImage(this.imgFondo, (canvas.width - this.imgFondo.width) / 2.5, (canvas.height - this.imgFondo.height) / 1.5);
             ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
@@ -89,7 +89,7 @@ class Juego {
         if (lastClickedFigure != null) {
             lastClickedFigure = null;
         }
-        //layerX y layerY son posiciones del evento del mouse
+        //offsetX y offsetY son posiciones del evento del mouse
         let clickFig = this.findClickedFigure(e.offsetX, e.offsetY);
         if (clickFig != null && !clickFig.isColocado() && clickFig.getJugador().getTurno()) {
             lastClickedFigure = clickFig;
@@ -117,10 +117,10 @@ class Juego {
             let ficha = this.fichas[i];
             //si la ficha esta siendo clickeada 
             if (ficha.estaClickeada()) {
-                //es valido colocar la ficha en ese lugar
-                if (this.tablero.esValidoColocarFicha(x, y)) {
-                    //traigo la columna correspondiente al casilleroValido
-                    let columna = this.tablero.obtenerColumnaPorPosicion(x);
+                //traigo la columna correspondiente al casilleroValido
+                let columna = this.tablero.obtenerColumnaPorPosicion(x);
+                //es valido colocar la ficha en ese lugar y la columna no esta llena
+                if (this.tablero.esValidoColocarFicha(x, y) && !this.tablero.columnaLlena(columna)) {
                     //Se coloco la ficha correctamente
                     if (this.tablero.colocarFicha(columna, ficha)) {
                         //la ficha se coloco se setea en true
@@ -162,6 +162,8 @@ class Juego {
 
 
     finalizarJuego(jugador, condicion) {
+        clearInterval(this.intervaloTiempo);
+
         //Reinicio el juego
         this.fichas = new Array();
         this.tablero.reiniciarTablero();
@@ -192,14 +194,22 @@ class Juego {
         }
     }
 
-    crearIntervalo() {
+
+    reiniciarIntervalo() {
+        // Reiniciar el tiempo
+        this.minutos = 5;
+        this.segundos = 0;
+
+        // Detener el intervalo anterior si existe
+        if (this.intervaloTiempo) {
+            clearInterval(this.intervaloTiempo);
+        }
+
+        // Crear un nuevo intervalo
         let minutosIntervalo = this.minutos;
         let segundosIntervalo = this.segundos;
-        //Guardamos la referncia al juego, x q al querer utilizarlo dentro del intervalo no lo reconoce por el scope
         let juego = this;
-        //Crear un intervalo de 5 minutos, donde muestre los segundos y minutos
-        let intervalo = setInterval(function () {
-            //simulo q paso un minuto
+        this.intervaloTiempo = setInterval(function () {
             if (segundosIntervalo == 0) {
                 segundosIntervalo = 60;
                 minutosIntervalo--;
@@ -207,17 +217,18 @@ class Juego {
             segundosIntervalo--;
             document.querySelector(".tiempo").innerHTML = `${minutosIntervalo}:${segundosIntervalo}`;
             if (minutosIntervalo == 0 && segundosIntervalo == 0) {
-                clearInterval(intervalo);
+                clearInterval(juego.intervaloTiempo);
                 juego.finalizarJuego(null, "tiempo");
             }
-
         }, 1000);
     }
 
-
-
-
 }
+
+
+
+
+
 
 
 

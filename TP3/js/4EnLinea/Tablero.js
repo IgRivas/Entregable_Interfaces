@@ -86,7 +86,6 @@ class Tablero extends Figura {
         }
     }
 
-    // Quiero refactorizar este metodo para q devuelva un json con el casillero y la fila
     esValidoColocarFicha(x, y) {
         for (let col = 0; col < this.columnas; col++) {
             let casillero = casillerosValidos[col];
@@ -95,6 +94,25 @@ class Tablero extends Figura {
             }
         }
         return false;
+    }
+
+
+    /*Este metodo debe chequear si la columna esta llena, osea
+        [1][0][0][0][0][0][0]
+        [1][0][0][0][0][0][0]
+        [1][0][0][0][0][0][0]
+        [1][0][0][0][0][0][0]
+        [1][0][0][0][0][0][0]
+        [1][0][0][0][0][0][0]
+    */
+    columnaLlena(columna) {
+        for (let fila = 0; fila < this.filas; fila++) {
+            let casillero = matriz[fila][columna];
+            if (casillero.contieneFicha() === false) {
+                return false;
+            }
+        }
+        return true;
     }
 
     obtenerColumnaPorPosicion(x) {
