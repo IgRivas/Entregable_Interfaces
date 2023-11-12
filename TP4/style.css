@@ -6,6 +6,8 @@
     --color_negro: #000000;
     --color_gris_oscuro: #242424;
     --color_gris_claro: #5E5E5D;
+    --color_violeta: #8F6AA6;
+
 
     --h1: 60px;
     --p_regular: 20px;
@@ -14,28 +16,67 @@
 
 }
 
+
+
+
+body {
+    overflow-x: hidden;
+    background-color: var(--color_negro);
+}
+
+
 * {
     margin: 0;
     padding: 0;
 }
 
-.header {}
-
-
-
 
 .header__nav {
     width: 100%;
     height: 227px;
-    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0.00) 100%);
+    background: linear-gradient(180deg, #5499F8 0%, #5499F8 100%, rgba(84, 153, 248, 0.00) 100%);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    z-index: 5;
+    animation: agrandarImg 0.3s;
+}
+
+@keyframes agrandarImg {
+    from {
+        height: 103px;
+    }
+
+    to {
+        height: 227;
+    }
 }
 
 .sticky {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
+    left: 0;
+    width: 100%;
+    animation: achicarImg 0.3s;
+}
+
+
+@keyframes achicarImg {
+    from {
+        height: 227px;
+    }
+
+    to {
+        height: 103px;
+    }
+}
+
+.header__nav-item {
+    margin: 0 80px;
+
+}
+
+.header__nav-divLogo {
+    z-index: 2;
 }
 
 
@@ -57,8 +98,6 @@
     cursor: pointer;
 }
 
-/* el primer hijo y el tercero de header__nav */
-
 .header__nav :nth-child(1),
 .header__nav :nth-child(3) {
     margin-top: 5px;
@@ -71,4 +110,97 @@
 .btn_container {
     width: 200px;
     height: 50px;
+}
+
+/* Parallax header */
+.header {}
+
+
+.parallax {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.header-item {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.layer-9 img {
+    width: 100%;
+    z-index: 1;
+}
+
+.layer-8 {
+    left: -4.5%;
+    z-index: 2;
+}
+
+
+.layer-7 {
+    top: 390px;
+    left: 30%;
+    z-index: 2;
+}
+
+.layer-6 {
+    left: 72%;
+    z-index: 2;
+}
+
+.layer-5 {
+    top: 155px;
+    left: 90px;
+    z-index: 3;
+}
+
+.layer-4 {
+    left: 770px;
+    top: 110px;
+    z-index: 3;
+}
+
+
+.layer-3 {
+    left: 410px;
+    top: 190px;
+    z-index: 3;
+}
+
+.layer-2 {
+    top: 160px;
+    left: -180px;
+    z-index: 4;
+}
+
+.layer-1 {
+    top: 150px;
+    left: 1050px;
+    z-index: 4;
+}
+
+
+
+/* Duende verde */
+
+.section__duende {
+    position: relative;
+    z-index: 2;
+    top: -65px;
+}
+
+.fondo_duende {
+    width: 100%;
+    position: absolute;
+
+}
+
+.fondo_duende img {
+    width: 100%;
 }
