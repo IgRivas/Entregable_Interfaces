@@ -204,3 +204,98 @@ body {
 .fondo_duende img {
     width: 100%;
 }
+
+
+
+/* Cards Spidey*/
+
+.cont_cards{
+    display: flex;
+    position: relative;
+    z-index: 2;
+    gap: 40.56px;
+    padding-left: 100px;
+   
+}
+.cont_cards{
+    width: 332px;
+
+}
+.card p{
+    font-family: 'Lato';
+    font-size: 20px;
+    white-space: pre-line;
+}
+.card img{
+    margin-bottom: 23.31px;
+}
+
+
+/* Footer */
+
+.footer_tp4{
+    margin-top: 20%;
+    background-color:  rgb(101, 101, 101);
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+    z-index: 2;
+}
+.cont_footer_tp4{
+  
+    padding-top: 4%;
+    padding-right: 25%;
+    padding-left: 8%;
+
+  
+}
+.cont_footer_tp4 p, span{
+    font-size: 20px;
+    color: var(--color_blanco);
+    font-family: 'Lato';
+    letter-spacing: 2px; 
+    line-height: 18.9px;
+}
+.cont_iconos_footer{
+    background-color: rgb(37, 36, 36);
+    height: 90px;
+    width: 100%;
+    
+}
+.cont_iconos_footer img{
+    padding-left: 5%;
+    padding-top: 3px;
+    width: 90%;
+
+}
+.cont_footer_tp4 span{
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 2px;
+   
+    
+}
+.cont_footer_tp4 p{
+    margin-bottom: 4%;
+}
+.cont_categorias_redes {
+    display: flex;
+    gap: 2px;
+    background-color: black;
+    width: 208px;
+    margin-top: 4%;
+}
+
+.cont_categorias_redes i {
+    
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+}
+.cont_categorias_redes li{
+    list-style: none;
+}
+
+
+
