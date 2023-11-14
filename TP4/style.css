@@ -12,9 +12,10 @@
     --h1: 60px;
     --p_regular: 20px;
 
-    --font_family: font-family: 'Lato', sans-serif;
+    --font_family: 'Lato', sans-serif;
 
 }
+
 
 
 
@@ -28,10 +29,15 @@ body {
 * {
     margin: 0;
     padding: 0;
+    font-family: var(--font_family);
 }
 
 
-.header__nav {
+
+/* Nav */
+
+
+.nav {
     width: 100%;
     height: 227px;
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 100%, rgba(84, 153, 248, 0.00) 100%);
@@ -70,17 +76,17 @@ body {
     }
 }
 
-.header__nav-item {
+.nav-item {
     margin: 0 80px;
 
 }
 
-.header__nav-divLogo {
+.nav-divLogo {
     z-index: 2;
 }
 
 
-.header__nav-btn {
+.nav-btn {
     width: 200px;
     height: 50px;
     border-radius: 111px;
@@ -98,23 +104,21 @@ body {
     cursor: pointer;
 }
 
-.header__nav :nth-child(1),
-.header__nav :nth-child(3) {
+.nav :nth-child(1),
+.nav :nth-child(3) {
     margin-top: 5px;
 }
 
-.header__nav :nth-child(2) {
+.nav :nth-child(2) {
     margin-top: 50px;
 }
 
-.btn_container {
+.nav-btn_container {
     width: 200px;
     height: 50px;
 }
 
 /* Parallax header */
-.header {}
-
 
 .parallax {
     position: relative;
@@ -198,7 +202,6 @@ body {
 .fondo_duende {
     width: 100%;
     position: absolute;
-
 }
 
 .fondo_duende img {
@@ -206,78 +209,144 @@ body {
 }
 
 
+.section__duende-cont_izq {
+    position: absolute;
+    top: 210px;
+    width: 100%;
+    z-index: 2;
+}
+
+.section__duende-titulo {
+    color: var(--color_blanco);
+    font-size: 60px;
+    font-weight: 500;
+    width: 646px;
+    line-height: 94.5%;
+}
+
+.section__duende-parrafo {
+    color: var(--color_blanco);
+    font-size: 20px;
+    font-weight: normal;
+    width: 586px;
+    margin-top: 24px;
+}
+
+.section__duende-texto {
+    margin-left: 95px;
+}
+
+.section__duende-img {
+    margin-left: 90.28px;
+    margin-top: 11.59px;
+}
+
+.section__duende-pj {
+    position: absolute;
+    width: 100%;
+    top: -30%;
+    left: 53.5%;
+
+    transition: transform 0.5 ease;
+}
+
+.fondo_blancoChico {
+    position: absolute;
+    top: 685px;
+    z-index: -1;
+    width: 100%;
+}
+
+.fondo_blancoChico img {
+    width: 100%;
+    height: 100%;
+}
 
 /* Cards Spidey*/
 
-.cont_cards{
-    display: flex;
+.section__duende-blanco {
     position: relative;
-    z-index: 2;
+
+}
+
+.cards_spidey {
+    position: absolute;
+    top: 1070px;
+}
+
+.cont_cards {
+    display: flex;
     gap: 40.56px;
     padding-left: 100px;
-   
 }
-.cont_cards{
-    width: 332px;
 
-}
-.card p{
+.card p {
     font-family: 'Lato';
     font-size: 20px;
-    white-space: pre-line;
-}
-.card img{
-    margin-bottom: 23.31px;
+    font-weight: normal;
+    width: 333px;
+    height: 218px;
 }
 
+.textoImg {
+    margin-top: 23.31px;
+}
 
 /* Footer */
 
-.footer_tp4{
+.footer_tp4 {
     margin-top: 20%;
-    background-color:  rgb(101, 101, 101);
+    background-color: rgb(101, 101, 101);
     margin-left: 5%;
     margin-right: 5%;
     position: relative;
     z-index: 2;
 }
-.cont_footer_tp4{
-  
+
+.cont_footer_tp4 {
+
     padding-top: 4%;
     padding-right: 25%;
     padding-left: 8%;
 
-  
+
 }
-.cont_footer_tp4 p, span{
+
+.cont_footer_tp4 p,
+span {
     font-size: 20px;
     color: var(--color_blanco);
     font-family: 'Lato';
-    letter-spacing: 2px; 
+    letter-spacing: 2px;
     line-height: 18.9px;
 }
-.cont_iconos_footer{
+
+.cont_iconos_footer {
     background-color: rgb(37, 36, 36);
     height: 90px;
     width: 100%;
-    
+
 }
-.cont_iconos_footer img{
+
+.cont_iconos_footer img {
     padding-left: 5%;
     padding-top: 3px;
     width: 90%;
 
 }
-.cont_footer_tp4 span{
+
+.cont_footer_tp4 span {
     cursor: pointer;
     text-decoration: underline;
     margin-right: 2px;
-   
-    
+
+
 }
-.cont_footer_tp4 p{
+
+.cont_footer_tp4 p {
     margin-bottom: 4%;
 }
+
 .cont_categorias_redes {
     display: flex;
     gap: 2px;
@@ -287,15 +356,13 @@ body {
 }
 
 .cont_categorias_redes i {
-    
+
     font-size: 20px;
     color: black;
     background-color: white;
     padding: 10px;
 }
-.cont_categorias_redes li{
+
+.cont_categorias_redes li {
     list-style: none;
 }
-
-
-

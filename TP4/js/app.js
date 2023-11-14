@@ -1,9 +1,9 @@
 // "use strict"
 
 window.addEventListener("scroll", function () {
-    let nav = document.querySelector(".header__nav");
-    let logo = document.querySelector(".header__nav-logo");
-    let contLogo = document.querySelector(".header__nav-divLogo");
+    let nav = document.querySelector(".nav");
+    let logo = document.querySelector(".nav-logo");
+    let contLogo = document.querySelector(".nav-divLogo");
     if (this.window.scrollY > 0) {
         console.log("hola");
         nav.classList.add("sticky");
@@ -53,3 +53,12 @@ window.addEventListener("scroll", () => {
     layer_2.style.transform = `translateY(${value * -0.3}px)`;
 });
 
+
+// Seccion "Conoce a Spidey y sus sorprendentes amigos"
+
+let duende = document.querySelector(".section__duende-pj");
+
+window.addEventListener('scroll', () => {
+    let scrollY = window.scrollY;
+    duende.style.transform = `translateY(${scrollY * 0.10}px)`;
+});
