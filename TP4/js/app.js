@@ -90,5 +90,37 @@ ghost_spider_img.forEach(element => {
 
 
 
+window.addEventListener('scroll', () => {
+    let scrollY = window.scrollY;
+    duende.style.transform = `translateY(${scrollY * 0.10}px)`;
+});
 
+function checkScroll() {
+    const cards = document.querySelectorAll('.card');
 
+    cards.forEach(function (card) {
+        const rect = card.getBoundingClientRect();
+
+        // Verifica si la parte superior de la tarjeta está por debajo del límite inferior de la ventana
+        // y si la parte inferior de la tarjeta está por encima del límite superior de la ventana
+        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+        // Verifica si la tarjeta ya tiene la clase 'visible'
+        const hasVisibleClass = card.classList.contains('visible');
+
+        if (isVisible && !hasVisibleClass) {
+            // Si la tarjeta es visible y no tiene la clase 'visible', la agrega
+            card.classList.add('visible');
+        } else if (!isVisible && hasVisibleClass) {
+            // Si la tarjeta no es visible pero tiene la clase 'visible', la elimina
+            card.classList.remove('visible');
+            
+        }
+    });
+}
+
+// Agrega un evento de desplazamiento para llamar a la función cuando sea necesario
+window.addEventListener('scroll', checkScroll);
+
+// Llama a la función inicialmente para verificar las tarjetas que ya están visibles al cargar la página
+checkScroll();
