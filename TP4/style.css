@@ -125,7 +125,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .header-item {
@@ -154,39 +153,59 @@ body {
 }
 
 .layer-6 {
-    left: 72%;
+    left: 70.5%;
     z-index: 2;
 }
 
 .layer-5 {
-    top: 155px;
-    left: 90px;
+    top: 150px;
+    left: 85px;
     z-index: 3;
+    opacity: 0;
 }
 
 .layer-4 {
-    left: 770px;
-    top: 110px;
+    left: 690px;
+    top: 100px;
     z-index: 3;
+    opacity: 0;
 }
 
 
 .layer-3 {
-    left: 410px;
-    top: 190px;
+    left: 385px;
+    top: 184px;
     z-index: 3;
+    opacity: 0;
 }
 
+@keyframes opacidad {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
 .layer-2 {
-    top: 160px;
-    left: -180px;
+    top: 155px;
+    left: -200px;
     z-index: 4;
+    opacity: 0;
 }
 
 .layer-1 {
     top: 150px;
-    left: 1050px;
+    left: 975px;
     z-index: 4;
+    opacity: 0;
 }
 
 
@@ -196,22 +215,19 @@ body {
 .section__duende {
     position: relative;
     z-index: 2;
-    top: -65px;
+    top: 530px;
 }
 
 .fondo_duende {
     width: 100%;
+    height: 100%;
     position: absolute;
-}
 
-.fondo_duende img {
-    width: 100%;
 }
-
 
 .section__duende-cont_izq {
     position: absolute;
-    top: 210px;
+    top: 225px;
     width: 100%;
     z-index: 2;
 }
@@ -245,14 +261,13 @@ body {
     position: absolute;
     width: 100%;
     top: -30%;
-    left: 53.5%;
-
+    left: 57%;
     transition: transform 0.5 ease;
 }
 
 .fondo_blancoChico {
     position: absolute;
-    top: 685px;
+    top: 710px;
     z-index: -1;
     width: 100%;
 }
@@ -266,7 +281,6 @@ body {
 
 .section__duende-blanco {
     position: relative;
-
 }
 
 .cards_spidey {
@@ -291,6 +305,64 @@ body {
 .textoImg {
     margin-top: 23.31px;
 }
+
+
+/* Ghost spider */
+
+.section__ghostSpider {
+    position: relative;
+
+}
+
+.section__ghostSpider-fondo {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    top: 2259px;
+}
+
+.section__ghostSpider-item {
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+}
+
+.section__ghostSpider-img {
+    transition: transform 0.5s ease;
+}
+
+.section__ghostSpider-item_juego1 {
+    z-index: 3;
+    top: 2100px;
+    margin-left: 50.87px;
+    transform: translateX(-600px);
+    transition-delay: 0.3s;
+}
+
+
+.section__ghostSpider-item_juego2 {
+    z-index: 4;
+    top: 2240px;
+    margin-left: 35px;
+    transform: translateX(-600px);
+    transition-delay: 0.4s;
+}
+
+
+.section__ghostSpider-item_juego3 {
+    z-index: 4;
+    top: 2430px;
+    margin-left: 66.18px;
+    transform: translateX(-600px);
+    transition-delay: 0.5s;
+}
+
+
+
+
+
+
+
+
 
 /* Footer */
 
