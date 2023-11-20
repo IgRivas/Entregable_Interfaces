@@ -114,7 +114,7 @@ function checkScroll() {
         } else if (!isVisible && hasVisibleClass) {
             // Si la tarjeta no es visible pero tiene la clase 'visible', la elimina
             card.classList.remove('visible');
-            
+
         }
     });
 }
@@ -124,3 +124,15 @@ window.addEventListener('scroll', checkScroll);
 
 // Llama a la función inicialmente para verificar las tarjetas que ya están visibles al cargar la página
 checkScroll();
+
+// Los vengadores acompañando tu aventura 
+
+let parallax_vengadores = document.querySelector(".section__vengadores-parallax");
+parallax_vengadores.addEventListener("mousemove", (e) => {
+    document.querySelectorAll(".section__vengadores-parallax_move").forEach(element => {
+        let value = -4;
+        let x = (e.clientX * value) / 100;
+        let y = (e.clientY * value) / 100;
+        element.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+});

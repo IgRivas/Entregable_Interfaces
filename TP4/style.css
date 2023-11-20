@@ -120,11 +120,12 @@ body {
 
 /* Parallax header */
 
+.header {
+    height: 700px;
+}
+
 .parallax {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .header-item {
@@ -216,15 +217,10 @@ body {
 .section__duende {
     position: relative;
     z-index: 2;
-    top: 530px;
+    top: -169px;
+    height: 1780px;
 }
 
-.fondo_duende {
-    width: 100%;
-    height: 100%;
-
-    position: absolute;
-}
 
 .fondo_duende img {
     width: 100%;
@@ -288,7 +284,7 @@ body {
 
 .section__duende-blanco {
     position: relative;
-
+    top: -842px;
 }
 
 .cards_spidey {
@@ -315,12 +311,12 @@ body {
 }
 
 /*Animacion cards*/
-.card.visible{
+.card.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.card{
+.card {
     opacity: 0;
     transform: translateY(100px);
     transition: opacity 1s, transform 2s;
@@ -331,28 +327,27 @@ body {
 }
 
 .card:nth-child(2) {
-    transition-delay: 1s}
+    transition-delay: 1s
+}
 
 .card:nth-child(3) {
-    transition-delay: 1.5s}
+    transition-delay: 1.5s
+}
 
 /* Ghost spider */
 
 .section__ghostSpider {
     position: relative;
-
-}
-
-.section__ghostSpider-fondo {
-    position: absolute;
-    width: 100%;
+    top: -230px;
     z-index: 2;
-    top: 2259px;
+    height: 788px;
 }
+
 
 .section__ghostSpider-item {
-    position: absolute;
     transition: transform 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
 }
 
 .section__ghostSpider-img {
@@ -361,48 +356,112 @@ body {
 
 .section__ghostSpider-item_juego1 {
     z-index: 3;
-    top: 2100px;
-    margin-left: 50.87px;
+    margin-left: 85px;
     transform: translateX(-600px);
     transition-delay: 0.3s;
+    top: -16%;
 }
 
 
 .section__ghostSpider-item_juego2 {
     z-index: 4;
-    top: 2240px;
-    margin-left: 35px;
+    margin-left: 72px;
     transform: translateX(-600px);
     transition-delay: 0.4s;
+    top: 4%;
 }
-
 
 .section__ghostSpider-item_juego3 {
     z-index: 4;
-    top: 2430px;
-    margin-left: 66.18px;
+    margin-left: 104px;
     transform: translateX(-600px);
     transition-delay: 0.5s;
+    top: 29.5%;
 }
 
 
+/*Los vengadores acompañando tu aventura */
 
+.section__vengadores {
+    position: relative;
+    top: -290px;
+}
 
+.section__venadores-cont {
+    /* position: absolute;
+    z-index: 2;
+    top: 3000px; */
+}
 
+.section__vengadores-titulo {
+    width: 667px;
+    margin-left: 104px;
+}
 
+.section__vengadores-titulo h1 {
+    font-family: var(--font_family);
+    color: var(--color_blanco);
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 94.5%;
+}
 
+.section__vengadores-parallax {
+    margin-left: 104px;
+    margin-top: 55.11px;
+    position: relative;
+}
 
+.section__vengadores-parallax_item {
+    position: absolute;
+    top: 0;
+}
 
+.section__vengadores-parallax_arboles {
+    z-index: 1;
+}
 
+.section__vengadores-parallax_plantas {
+    z-index: 2;
+}
 
- /*Animacion menu hamburguesa*/  
- 
- .nav-item {
+.section__vengadores-parallax_elastico {
+    top: -18%;
+    left: 26.16px;
+    z-index: 3;
+}
+
+.section__vengadores-parallax_panteraNegra {
+    top: -49%;
+    left: 40%;
+    z-index: 3;
+}
+
+.section__vengadores-parallax_hulk {
+    top: 17.5%;
+    left: 57%;
+    z-index: 1;
+}
+
+/* Seccion Mas amigos, mas diversion */
+
+.section_masAmigos {
+    position: relative;
+    top: -450px;
+}
+
+/*Animacion menu hamburguesa*/
+
+.nav-item {
     cursor: pointer;
 }
 
-.line1, .line2, .line3 {
-    transition: transform 1.5s ease; /* Agregamos una transición suave */
+.line1,
+.line2,
+.line3 {
+    transition: transform 1.5s ease;
+    /* Agregamos una transición suave */
 }
 
 .open .line1 {
@@ -415,7 +474,7 @@ body {
 }
 
 .open .line3 {
-   
+
     transform: rotate(-405deg) translate(-20px, 2px);
 
 }
@@ -528,7 +587,7 @@ span {
 
 /*Mas amigos mas diversion*/
 
-.cont_CardAmigos{
+.cont_CardAmigos {
     display: flex;
     background-color: white;
     width: 1076px;
@@ -536,22 +595,26 @@ span {
     margin-left: 10%;
     height: 302px;
 }
-.cont_info h3{
+
+.cont_info h3 {
     font-size: 40px;
     margin-bottom: 25px;
 }
-.cont_info p{
-    font-size: 17px;  
-    margin-bottom: 45px; 
+
+.cont_info p {
+    font-size: 17px;
+    margin-bottom: 45px;
 }
-.img_cardAmigos{
+
+.img_cardAmigos {
     width: 552px;
-   
+
 }
-.cont_info{
+
+.cont_info {
     font-family: 'Lato';
     margin: 10px;
     margin-left: 57px;
-  
+
     width: 467px;
 }
