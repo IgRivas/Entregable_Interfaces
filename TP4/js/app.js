@@ -89,7 +89,7 @@ ghost_spider_img.forEach(element => {
 });
 
 
-
+// Spidey y sus amigos -Cards-
 window.addEventListener('scroll', () => {
     let scrollY = window.scrollY;
     duende.style.transform = `translateY(${scrollY * 0.10}px)`;
@@ -111,11 +111,7 @@ function checkScroll() {
         if (isVisible && !hasVisibleClass) {
             // Si la tarjeta es visible y no tiene la clase 'visible', la agrega
             card.classList.add('visible');
-        } else if (!isVisible && hasVisibleClass) {
-            // Si la tarjeta no es visible pero tiene la clase 'visible', la elimina
-            card.classList.remove('visible');
-
-        }
+        } 
     });
 }
 
@@ -124,6 +120,11 @@ window.addEventListener('scroll', checkScroll);
 
 // Llama a la función inicialmente para verificar las tarjetas que ya están visibles al cargar la página
 checkScroll();
+
+
+
+
+
 
 // Los vengadores acompañando tu aventura 
 
@@ -135,4 +136,22 @@ parallax_vengadores.addEventListener("mousemove", (e) => {
         let y = (e.clientY * value) / 100;
         element.style.transform = `translateX(${x}px) translateY(${y}px)`;
     });
+});
+
+
+
+//Spritesheet 
+document.addEventListener("DOMContentLoaded", function () {
+    let currentImageIndex = 0;
+    const spritesheetImages = document.querySelectorAll('.spritesheet img');
+
+    function showNextImage() {
+        spritesheetImages[currentImageIndex].style.display = 'none';
+        currentImageIndex = (currentImageIndex + 1) % spritesheetImages.length;
+  
+        spritesheetImages[currentImageIndex].style.display = 'block';
+    }
+
+    // Cambia de imagen cada 1000 milisegundos (1 segundo)
+    setInterval(showNextImage, 200);
 });
