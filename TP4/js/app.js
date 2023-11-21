@@ -25,28 +25,28 @@ let duende = document.querySelector(".section__duende-pj");
 // Barra de navegacion
 window.addEventListener("scroll", function () {
 
-    if (this.window.scrollY > 0) {
-        // Pongo animaciones de entrada
-        layer_3.style.animation = animacionEntrada;
-        layer_5.style.animation = animacionEntrada;
-        layer_4.style.animation = animacionEntrada;
-        layer_2.style.animation = animacionEntrada;
-        layer_1.style.animation = animacionEntrada;
+    // if (this.window.scrollY > 0) {
+    //     // Pongo animaciones de entrada
+    //     layer_3.style.animation = animacionEntrada;
+    //     layer_5.style.animation = animacionEntrada;
+    //     layer_4.style.animation = animacionEntrada;
+    //     layer_2.style.animation = animacionEntrada;
+    //     layer_1.style.animation = animacionEntrada;
 
-        // Fijo la barra de navegacion
-        nav.classList.add("sticky");
-        nav.style.height = "103px";
-        logo.style.width = "133px";
-        logo.style.height = "68px";
-        contLogo.style.marginTop = "0px";
-    } else {
-        // Vuelvo la barra de navegacion a su estado original
-        nav.classList.remove("sticky");
-        nav.style.height = "227px";
-        logo.style.width = "590px";
-        logo.style.height = "301px";
-        contLogo.style.marginTop = "50px";
-    }
+    //     // Fijo la barra de navegacion
+    //     nav.classList.add("sticky");
+    //     nav.style.height = "103px";
+    //     logo.style.width = "133px";
+    //     logo.style.height = "68px";
+    //     contLogo.style.marginTop = "0px";
+    // } else {
+    //     // Vuelvo la barra de navegacion a su estado original
+    //     nav.classList.remove("sticky");
+    //     nav.style.height = "227px";
+    //     logo.style.width = "590px";
+    //     logo.style.height = "301px";
+    //     contLogo.style.marginTop = "50px";
+    // }
 
     // PARALLAX
     let value = window.scrollY;
@@ -111,7 +111,7 @@ function checkScroll() {
         if (isVisible && !hasVisibleClass) {
             // Si la tarjeta es visible y no tiene la clase 'visible', la agrega
             card.classList.add('visible');
-        } 
+        }
     });
 }
 
@@ -120,10 +120,6 @@ window.addEventListener('scroll', checkScroll);
 
 // Llama a la función inicialmente para verificar las tarjetas que ya están visibles al cargar la página
 checkScroll();
-
-
-
-
 
 
 // Los vengadores acompañando tu aventura 
@@ -148,10 +144,25 @@ document.addEventListener("DOMContentLoaded", function () {
     function showNextImage() {
         spritesheetImages[currentImageIndex].style.display = 'none';
         currentImageIndex = (currentImageIndex + 1) % spritesheetImages.length;
-  
+
         spritesheetImages[currentImageIndex].style.display = 'block';
     }
 
     // Cambia de imagen cada 1000 milisegundos (1 segundo)
     setInterval(showNextImage, 200);
+});
+
+window.addEventListener('scroll', function () {
+    var scrollPosition = window.scrollY;
+    var image = document.getElementById('sticky-image');
+
+    if (scrollPosition < 500) {
+        image.src = "img/marcos/marcoColumna1.png";
+    } else if (scrollPosition < 1000) {
+        image.src = "img/marcos/marcoColumna2.png";
+    } else if (scrollPosition < 1500) {
+        image.src = "img/marcos/marcoColumna3.png";
+    } else {
+        image.src = "img/marcos/marcoColumna4.png";
+    }
 });

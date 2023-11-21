@@ -446,10 +446,33 @@ body {
 
 /* Seccion Mas amigos, mas diversion */
 
-.section_masAmigos {
+.section__masAmigos {
     position: relative;
     top: -450px;
 }
+
+.cont {
+    position: absolute;
+    top: 0;
+}
+
+.columns {
+    display: flex;
+    height: 200vh;
+    /* Asegúrate de que .columns tiene suficiente altura */
+}
+
+.column-left {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    /* Asegúrate de que .column-left tiene una altura definida */
+}
+
+.column-right {
+    width: 50%;
+}
+
 
 /*Animacion menu hamburguesa*/
 
@@ -634,40 +657,47 @@ span {
 
 
 
-.spritesheet {
-  
-}
+.spritesheet {}
 
 .spritesheet img {
     position: relative;
     display: none;
     z-index: 3;
- 
+
 }
-#img1-1{
+
+#img1-1 {
     transform: translateX(20px) translateY(1000px);
 }
-#img1-2{
+
+#img1-2 {
     transform: translateX(100px) translateY(1000px);
 }
-#img1-3{
+
+#img1-3 {
     transform: translateX(150px) translateY(1000px);
 }
-#img1-4{
+
+#img1-4 {
     transform: translateX(250px) translateY(1000px);
 }
-#img1-5{
+
+#img1-5 {
     transform: translateX(350px) translateY(1000px);
 }
-#img1-6{
+
+#img1-6 {
     transform: translateX(480px) translateY(1000px);
 }
-#img1-7{
+
+#img1-7 {
     transform: translateX(700px) translateY(1000px);
 }
-#img1-8{
+
+#img1-8 {
     transform: translateX(850px) translateY(1000px);
 }
+
 #img1 {
     transform: translateX(1000px) translateY(1050px);
 }
@@ -731,4 +761,3 @@ span {
 #img16 {
     transform: translateX(1000px) translateY(945px);
 }
-
