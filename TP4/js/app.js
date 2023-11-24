@@ -86,7 +86,6 @@ window.addEventListener("scroll", function () {
                 img_column.src = "./img/marcos/marcoColumna1.png";
             }
             if (element.classList.contains("contenido2")) {
-
                 img_column.src = "./img/marcos/marcoColumna2.png";
             }
             if (element.classList.contains("contenido3")) {
@@ -190,5 +189,61 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Mas amigos mas diversion
+/*
+    Seccion de los 3 personajes
+*/
 
+let pjs = document.querySelectorAll(".section__3pjs-item");
+let fondos = document.querySelectorAll(".fondo_spiderman");
+let fondoBlanco = document.querySelector(".section__3pjs-fondo");
+
+pjs.forEach(element => {
+
+    //Recorro los pjs y les agrego el evento mouseover
+    element.addEventListener("mouseover", () => {
+        //Vuelvo a recorrer los pjs
+        pjs.forEach(el => {
+           
+            //Si el pj no es el que le hice hover, lo achico y le agrego blur
+            if (el != element) {
+                el.style.transform = "scale(0.8)";
+                el.style.filter = "blur(5px)";
+            }
+            //Si el pj es el que le hice hover, lo agrando y le saco el blur
+            if(el == element){
+                el.style.transform = "scale(1.4)";
+                el.style.filter = "blur(0px)";
+            }
+            //recorro los fondos
+            fondos.forEach(fondo => {
+                // Depende el pj que le hice hover, muestro el fondo correspondiente
+                if(el == element && el.classList.contains("section__3pjs-spidermanBlanco") && fondo.classList.contains("fondo_spidermanBlanco")){
+                    fondo.style.opacity = "1";
+                    fondoBlanco.style.opacity = "0";
+                }
+                if(el == element && el.classList.contains("section__3pjs-spiderman") && fondo.classList.contains("fondo_spidermanComun")){
+                    fondo.style.opacity = "1";
+                    fondoBlanco.style.opacity = "0";
+                }
+                if(el == element && el.classList.contains("section__3pjs-spidermanNegro") && fondo.classList.contains("fondo_spidermanNegro")){
+                    fondo.style.opacity = "1";
+                    fondoBlanco.style.opacity = "0";
+                }
+             
+            });
+        });
+    });
+
+    element.addEventListener("mouseleave", () => {
+        // Cuando saco el mouse de encima de los pjs, vuelvo a su estado original
+        pjs.forEach(el => {
+            el.style.transform = "scale(1)";
+            el.style.filter = "blur(0px)";
+            //Reinicio tambien los fondos
+            fondos.forEach(fondo => {
+                fondo.style.opacity = "0";
+                fondoBlanco.style.opacity = "1";
+            });
+        });
+    });
+});

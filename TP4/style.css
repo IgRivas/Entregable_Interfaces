@@ -387,12 +387,6 @@ body {
     top: -290px;
 }
 
-.section__venadores-cont {
-    /* position: absolute;
-    z-index: 2;
-    top: 3000px; */
-}
-
 .section__vengadores-titulo {
     width: 667px;
     margin-left: 104px;
@@ -449,6 +443,8 @@ body {
 .section__masAmigos {
     position: relative;
     top: -450px;
+    height: 2194.5px;
+
 }
 
 .cont {
@@ -479,8 +475,8 @@ body {
 
 .column-left {
     position: sticky;
-    top: 15%;
-    height: 37vh;
+    top: 25%;
+    height: 42vh;
     opacity: 1;
 }
 
@@ -539,6 +535,93 @@ body {
     opacity: 0;
 }
 
+/* ”un gran poder conlleva una gran responsabilidad” */
+
+.section__poder{
+  position: relative;
+  top: -450px;
+  margin-top: 25px;
+  margin-left: 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+.section__poder-titulo{
+    width: 816px;
+}
+.section__poder-titulo h1{
+    color: var(--color_blanco);
+    font-family: var(--font_family);
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.section__poder-btn{
+    width: 292px;
+    height: 50px;
+    border-radius: 111px;
+    border: 8px solid var(--2982-ff, #2982FF);
+    background: #FFE901;
+
+    box-shadow: 4px 5px 0px 0px #02187E;
+
+    color: #02187E;
+    font-family: var(--font_family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 94.5%; 
+    letter-spacing: 2.2px;
+}
+
+/* Section 3pjs */
+
+.section__3pjs{
+    position: relative;
+    top: -712px;
+    margin-top: 248px;
+}
+.section__3pjs-fondo{
+    transition: opacity 1s ease;
+}
+
+.section__3pjs-spidermanBlanco{
+    position: absolute;
+    top: 171.14px;
+    left: 190px;
+}
+
+.section__3pjs-spiderman{
+    position: absolute;
+    top: 180.14px;
+    left: 394px;
+}
+.section__3pjs-spidermanNegro{
+    position: absolute;
+    top: 180.14px;
+    left: 777px;
+}
+
+.section__3pjs-item:hover{
+    transform: scale(1.4);
+    transition: transform 1s ease;
+}
+
+.section__3pjs-item:not(:hover) {
+    transform: scale(1); 
+    transition: transform 1s ease;
+}
+
+.fondo_spiderman{
+    position: absolute;
+    top: -50px;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
 
 /*Animacion menu hamburguesa*/
 
@@ -577,6 +660,8 @@ body {
     margin-right: 5%;
     position: relative;
     z-index: 2;
+
+    margin-top: 1000px;
 }
 
 .cont_footer_tp4 {
@@ -673,42 +758,9 @@ span {
 
 .fondo img {
     width: 100%;
+    top: 0;
 }
 
-
-/*Mas amigos mas diversion*/
-
-.cont_CardAmigos {
-    display: flex;
-    background-color: white;
-    width: 1076px;
-    margin-top: 69px;
-    margin-left: 10%;
-    height: 302px;
-}
-
-.cont_info h3 {
-    font-size: 40px;
-    margin-bottom: 25px;
-}
-
-.cont_info p {
-    font-size: 17px;
-    margin-bottom: 45px;
-}
-
-.img_cardAmigos {
-    width: 552px;
-
-}
-
-.cont_info {
-    font-family: 'Lato';
-    margin: 10px;
-    margin-left: 57px;
-
-    width: 467px;
-}
 
 
 /* Spritesheet */
