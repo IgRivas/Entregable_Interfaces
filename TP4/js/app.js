@@ -25,28 +25,28 @@ let duende = document.querySelector(".section__duende-pj");
 // Barra de navegacion
 window.addEventListener("scroll", function () {
 
-    // if (this.window.scrollY > 0) {
-    //     // Pongo animaciones de entrada
-    //     layer_3.style.animation = animacionEntrada;
-    //     layer_5.style.animation = animacionEntrada;
-    //     layer_4.style.animation = animacionEntrada;
-    //     layer_2.style.animation = animacionEntrada;
-    //     layer_1.style.animation = animacionEntrada;
+    if (this.window.scrollY > 0) {
+        // Pongo animaciones de entrada
+        layer_3.style.animation = animacionEntrada;
+        layer_5.style.animation = animacionEntrada;
+        layer_4.style.animation = animacionEntrada;
+        layer_2.style.animation = animacionEntrada;
+        layer_1.style.animation = animacionEntrada;
 
-    //     // Fijo la barra de navegacion
-    //     nav.classList.add("sticky");
-    //     nav.style.height = "103px";
-    //     logo.style.width = "133px";
-    //     logo.style.height = "68px";
-    //     contLogo.style.marginTop = "0px";
-    // } else {
-    //     // Vuelvo la barra de navegacion a su estado original
-    //     nav.classList.remove("sticky");
-    //     nav.style.height = "227px";
-    //     logo.style.width = "590px";
-    //     logo.style.height = "301px";
-    //     contLogo.style.marginTop = "50px";
-    // }
+        // Fijo la barra de navegacion
+        nav.classList.add("sticky");
+        nav.style.height = "103px";
+        logo.style.width = "133px";
+        logo.style.height = "68px";
+        contLogo.style.marginTop = "0px";
+    } else {
+        // Vuelvo la barra de navegacion a su estado original
+        nav.classList.remove("sticky");
+        nav.style.height = "227px";
+        logo.style.width = "590px";
+        logo.style.height = "301px";
+        contLogo.style.marginTop = "50px";
+    }
 
     // PARALLAX
     let value = window.scrollY;
@@ -62,6 +62,43 @@ window.addEventListener("scroll", function () {
     layer_2.style.transform = `translateY(${value * -0.3}px)`;
     // Seccion "Conoce a Spidey y sus sorprendentes amigos"
     duende.style.transform = `translateY(${value * 0.10}px)`;
+
+
+    //Mas amigos, mas diversion
+    let cont_column_right = document.querySelectorAll(".cont_column-right");
+    let img_column = this.document.querySelector(".sticky-image");
+    cont_column_right.forEach(element => {
+        //Esto nos da informacion sobre las dimensiones y la posicion del elemento 
+        let rect = element.getBoundingClientRect();
+        if (rect.bottom <= this.window.innerHeight) {
+            // Restablecer todas las clases
+            cont_column_right.forEach(el => {
+                el.classList.remove("col_visible");
+                el.classList.add("col_noVisible");
+            });
+
+            // Aplicar las clases necesarias al elemento actual
+            element.classList.add("col_visible");
+            element.classList.remove("col_noVisible");
+
+            // Cambiar la imagen según la clase del elemento actual
+            if (element.classList.contains("contenido1")) {
+                img_column.src = "./img/marcos/marcoColumna1.png";
+            }
+            if (element.classList.contains("contenido2")) {
+
+                img_column.src = "./img/marcos/marcoColumna2.png";
+            }
+            if (element.classList.contains("contenido3")) {
+                img_column.src = "./img/marcos/marcoColumna3.png";
+            }
+            if (element.classList.contains("contenido4")) {
+                img_column.src = "./img/marcos/marcoColumna4.png";
+            }
+
+
+        }
+    });
 });
 
 
@@ -152,17 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showNextImage, 200);
 });
 
-window.addEventListener('scroll', function () {
-    var scrollPosition = window.scrollY;
-    var image = document.getElementById('sticky-image');
 
-    if (scrollPosition < 500) {
-        image.src = "img/marcos/marcoColumna1.png";
-    } else if (scrollPosition < 1000) {
-        image.src = "img/marcos/marcoColumna2.png";
-    } else if (scrollPosition < 1500) {
-        image.src = "img/marcos/marcoColumna3.png";
-    } else {
-        image.src = "img/marcos/marcoColumna4.png";
-    }
-});
+// Mas amigos mas diversion
+
