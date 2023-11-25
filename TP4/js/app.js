@@ -247,3 +247,22 @@ pjs.forEach(element => {
         });
     });
 });
+
+
+// Menu hamburguesa
+document.addEventListener('DOMContentLoaded', function () {
+    const navItem = document.querySelector('.nav-itemm');
+
+    navItem.addEventListener('click', function () {
+        const line1 = document.querySelector('.line1');
+        const line2 = document.querySelector('.line2');
+        const line3 = document.querySelector('.line3');
+        const nav = document.querySelector('.nav-itemm');
+
+
+        line1.classList.toggle('ocultar');
+        line2.classList.toggle('rotar');
+        line3.classList.toggle('rotar');
+        nav.classList.toggle('abrir');
+    });
+});

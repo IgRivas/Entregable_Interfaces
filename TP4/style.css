@@ -104,20 +104,132 @@ body {
     cursor: pointer;
 }
 
-.nav :nth-child(1),
-.nav :nth-child(3) {
+/* Excluyo a los items del menu hamburguesa */
+.nav > *:not(.nav-itemm) > :nth-child(1),
+.nav > *:not(.nav-itemm) > :nth-child(3) {
     margin-top: 5px;
 }
 
-.nav :nth-child(2) {
+
+.nav > *:not(.nav-itemm)> :nth-child(2) {
     margin-top: 50px;
 }
-
 .nav-btn_container {
     width: 200px;
     height: 50px;
 }
 
+/*Menu hamburguesa*/
+.nav-itemm i {
+    margin-top: 0px;
+    color: #FFE901;
+    border: solid 4px #2981FF;
+    border-radius: 30px;
+    width: 34px;
+    height: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.nav-itemm {
+    margin-top: 5px;
+    height: 50px;
+    cursor: pointer;
+    animation-duration: 1s;
+
+    animation-fill-mode: forwards;
+
+}
+
+.nav-itemm.abrir{
+    position: relative;
+    z-index: 7;
+    margin-right: 0px;    
+    width: 200px;
+    height: 500px;
+    animation-name: abrir;
+    animation-duration: 0.5s;
+    justify-content: start;
+  }
+
+.line1.ocultar {
+    animation-name: ocultar;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.line2.rotar {
+    animation-name: rotateline2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.line3.rotar {
+    animation-name: rotateLine3;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotateline2 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        border: 0;
+        color: red;
+        font-size: 40px;
+
+        transform: translateY(6px) rotate(-45deg);
+    }
+}
+
+@keyframes rotateLine3 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        border: 0;
+        color: red;
+        font-size: 40px;
+        transform: translateY(2px) rotate(45deg);
+    }
+}
+
+@keyframes ocultar {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes abrir {
+    0% {
+        position: relative;
+        left: -20px;
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    20% {
+        transform: translateX(20px);
+    }
+    40% {
+        transform: translateX(-20px);
+    }
+    60% {
+        transform: translateX(15px);
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+    100% {
+        left: 20px;
+        background-color: #2982FF;
+        opacity: 1;
+        transform: translateX(-20px);
+    }
+}
 /* Parallax header */
 
 .header {
@@ -623,45 +735,15 @@ body {
 }
 
 
-/*Animacion menu hamburguesa*/
-
-.nav-item {
-    cursor: pointer;
-}
-
-.line1,
-.line2,
-.line3 {
-    transition: transform 1.5s ease;
-    /* Agregamos una transición suave */
-}
-
-.open .line1 {
-    transform: rotate(405deg) translate(9px, -8px);
-}
-
-.open .line2 {
-    transition-delay: 0s;
-    opacity: 0;
-}
-
-.open .line3 {
-
-    transform: rotate(-405deg) translate(-20px, 2px);
-
-}
-
 /* Footer */
 
 .footer_tp4 {
     width: 100%;
     background-color: rgb(101, 101, 101);
-
     margin-right: 5%;
     position: relative;
     z-index: 2;
 
-    margin-top: 1000px;
 }
 
 .cont_footer_tp4 {
@@ -728,39 +810,127 @@ span {
     list-style: none;
 }
 
+
 .subscripcion {
     position: relative;
     bottom: 0;
     width: 100%;
-    height: 1080px;
-
-
+    height: 1280px;
+    background: linear-gradient(to top,#F7E3D8, #8FBEFC);
 }
-
-.cont_subscripcion {
-    position: relative;
-    height: 1296px;
-    background: linear-gradient(to top, #F7E3D8, #8FBEFC);
-    background-size: cover;
-    background-position: 10%;
-    /* Ajusta la posición del degradado en la parte superior */
-    z-index: 2;
-}
-
 
 .fondo {
     position: absolute;
     z-index: 3;
-    top: 34.5%;
+    top: 44.5%;
     width: 100%;
+    
 
 }
 
 .fondo img {
     width: 100%;
-    top: 0;
 }
 
+
+.cont_suscripcion{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 816px;
+    margin-left: 232px;
+    margin-right: 232px;
+    padding-top: 156px;
+
+}
+.cont_terminos{
+    font-size: 20px;
+    width: 578px;
+    margin-left: 52px;
+}
+.titulo_suscripcion{
+    font-size: 60px;
+    text-align: center;
+}
+.form{
+    display: flex;
+    width: 780px;
+    height: 100px;
+    font-size: 20px;
+    border-radius: 50px;
+    background-color: #2982FF;
+    }
+.button_sus{
+    width: 218px;
+    text-align: center;
+    align-items: center;
+    border: solid 10px #2982FF;
+    border-left: 0;
+    background-color:#FFE901;
+    border-top-right-radius:50px ;
+    border-bottom-right-radius:50px ;
+    font-weight: 900;
+    line-height: 94.5%;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+}
+.button_sus p{
+    font-weight: 1500;
+    color: #02187E;
+    margin-top: 31px ;
+   
+
+
+}
+
+.input_sus{
+    width: 562px;
+    padding-left: 52px;
+    border-top-left-radius:50px ;
+    border-bottom-left-radius:50px ;
+    border: solid 10px #2982FF;
+
+}
+.input_sus::placeholder{
+    font-size: 20px;
+}
+.img_suscripcion{
+    margin-left: 52px;
+}
+/*Mas amigos mas diversion*/
+
+.cont_CardAmigos {
+    display: flex;
+    background-color: white;
+    width: 1076px;
+    margin-top: 69px;
+    margin-left: 10%;
+    height: 302px;
+}
+
+.cont_info h3 {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.cont_info p {
+    font-size: 17px;
+    margin-bottom: 45px;
+}
+
+.img_cardAmigos {
+    width: 552px;
+
+}
+
+.cont_info {
+    font-family: 'Lato';
+    margin: 10px;
+    margin-left: 57px;
+
+    width: 467px;
+}
 
 
 /* Spritesheet */
@@ -770,12 +940,15 @@ span {
     position: absolute;
     top: 0;
     left: 0;
+
 }
 
 
 
 
-.spritesheet {}
+.spritesheet {
+    height: 0;
+}
 
 .spritesheet img {
     position: relative;
@@ -785,97 +958,196 @@ span {
 }
 
 #img1-1 {
-    transform: translateX(20px) translateY(1000px);
+    transform: translateX(30px) translateY(1200px);
 }
 
 #img1-2 {
-    transform: translateX(100px) translateY(1000px);
+    transform: translateX(60px) translateY(1200px);
 }
 
 #img1-3 {
-    transform: translateX(150px) translateY(1000px);
+    transform: translateX(90px) translateY(1200px);
 }
 
 #img1-4 {
-    transform: translateX(250px) translateY(1000px);
+    transform: translateX(120px) translateY(1200px);
 }
 
 #img1-5 {
-    transform: translateX(350px) translateY(1000px);
+    transform: translateX(150px) translateY(1200px);
 }
 
 #img1-6 {
-    transform: translateX(480px) translateY(1000px);
+    transform: translateX(180px) translateY(1200px);
 }
 
 #img1-7 {
-    transform: translateX(700px) translateY(1000px);
+    transform: translateX(210px) translateY(1200px);
 }
 
 #img1-8 {
-    transform: translateX(850px) translateY(1000px);
+    transform: translateX(240px) translateY(1200px);
+}
+
+#img1-9 {
+    transform: translateX(270px) translateY(1200px);
+}
+
+#img1-10 {
+    transform: translateX(300px) translateY(1200px);
+}
+
+#img1-11 {
+    transform: translateX(330px) translateY(1200px);
+}
+
+#img1-12 {
+    transform: translateX(360px) translateY(1200px);
+}
+
+#img1-13 {
+    transform: translateX(390px) translateY(1200px);
+}
+
+#img1-14 {
+    transform: translateX(420px) translateY(1200px);
+}
+
+#img1-15 {
+    transform: translateX(450px) translateY(1200px);
+}
+
+#img1-16 {
+    transform: translateX(480px) translateY(1200px);
+}
+
+#img1-17 {
+    transform: translateX(510px) translateY(1200px);
+}
+
+#img1-18 {
+    transform: translateX(540px) translateY(1200px);
+}
+
+#img1-19 {
+    transform: translateX(570px) translateY(1200px);
+}
+
+#img1-20 {
+    transform: translateX(600px) translateY(1200px);
+}
+
+#img1-21 {
+    transform: translateX(630px) translateY(1200px);
+}
+
+#img1-22 {
+    transform: translateX(660px) translateY(1200px);
+}
+
+#img1-23 {
+    transform: translateX(690px) translateY(1200px);
+}
+
+#img1-24 {
+    transform: translateX(720px) translateY(1200px);
+}
+
+#img1-25 {
+    transform: translateX(750px) translateY(1200px);
+}
+
+#img1-26 {
+    transform: translateX(780px) translateY(1200px);
+}
+
+#img1-27 {
+    transform: translateX(810px) translateY(1200px);
+}
+
+#img1-28 {
+    transform: translateX(840px) translateY(1200px);
+}
+
+#img1-29 {
+    transform: translateX(870px) translateY(1200px);
+}
+
+#img1-30 {
+    transform: translateX(900px) translateY(1200px);
+}
+
+#img1-31 {
+    transform: translateX(930px) translateY(1200px);
+}
+
+#img1-32 {
+    transform: translateX(960px) translateY(1200px);
 }
 
 #img1 {
-    transform: translateX(1000px) translateY(1050px);
+    transform: translateX(1000px) translateY(1200px);
+}
+#img17 {
+    transform: translateX(980px) translateY(1230px);
 }
 
 #img2 {
-    transform: translateX(1000px) translateY(1030px);
+    transform: translateX(1000px) translateY(1200px);
 }
 
 #img3 {
-    transform: translateX(1010px) translateY(1010px);
+    transform: translateX(1010px) translateY(1200px);
 }
 
 #img4 {
-    transform: translateX(1030px) translateY(980px);
+    transform: translateX(1030px) translateY(1180px);
 }
 
 #img5 {
-    transform: translateX(1050px) translateY(960px);
+    transform: translateX(1050px) translateY(1160px);
 }
 
 #img6 {
-    transform: translateX(1075px) translateY(940px);
+    transform: translateX(1075px) translateY(1140px);
 }
 
 #img7 {
-    transform: translateX(1100px) translateY(935px);
+    transform: translateX(1100px) translateY(1135px);
 }
 
 #img8 {
-    transform: translateX(1100px) translateY(915px);
+    transform: translateX(1100px) translateY(1115px);
 }
 
 #img9 {
-    transform: translateX(1100px) translateY(885px);
+    transform: translateX(1100px) translateY(1085px);
 }
 
 #img10 {
-    transform: translateX(1100px) translateY(875px);
+    transform: translateX(1100px) translateY(1075px);
 }
 
 #img11 {
-    transform: translateX(1075px) translateY(875px);
+    transform: translateX(1075px) translateY(1055px);
 }
 
 #img12 {
-    transform: translateX(1050px) translateY(885px);
+    transform: translateX(1050px) translateY(1035px);
 }
 
 #img13 {
-    transform: translateX(1035px) translateY(895px);
+    transform: translateX(1035px) translateY(1005px);
 }
 
 #img14 {
-    transform: translateX(1015px) translateY(905px);
+    transform: translateX(1000px) translateY(975px);
 }
 
 #img15 {
-    transform: translateX(1010px) translateY(905px);
+    transform: translateX(995px) translateY(973px);
 }
 
 #img16 {
-    transform: translateX(1000px) translateY(945px);
+    transform: translateX(995px) translateY(972px);
 }
