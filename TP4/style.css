@@ -102,6 +102,31 @@ body {
     line-height: 94.5%;
     letter-spacing: 2.2px;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+    z-index: 1;
+}
+
+.nav-btn span{
+    width: 100%;
+    height: 70px;
+    border-radius: 50%;
+    background: #be4ca3;
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    transition: .3s;
+    z-index: -1;
+}
+
+.nav-btn:hover span{
+    left: -10%;
+}
+
+.nav-btn:hover{
+    background: #FFE901;
+    color: var(--color_blanco);
 }
 
 /* Excluyo a los items del menu hamburguesa */
@@ -686,6 +711,33 @@ body {
     font-weight: 900;
     line-height: 94.5%; 
     letter-spacing: 2.2px;
+   
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+    z-index: 1;
+}
+
+.section__poder-btn span{
+    width: 100%;
+    height: 70px;
+    border-radius: 50%;
+    background: #be4ca3;
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    transition: .3s;
+    z-index: -1;
+}
+
+.section__poder-btn:hover span{
+    left: -10%;
+}
+
+.section__poder-btn:hover{
+    background: #FFE901;
+    color: var(--color_blanco);
 }
 
 /* Section 3pjs */
