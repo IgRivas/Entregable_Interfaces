@@ -1,4 +1,5 @@
-// "use strict"
+"use strict"
+
 const animacionEntrada = "opacidad 1s ease-in-out 0.5s forwards";
 
 // Parallax
@@ -265,4 +266,36 @@ document.addEventListener('DOMContentLoaded', function () {
         line3.classList.toggle('rotar');
         nav.classList.toggle('abrir');
     });
+
+
+    
+    // Loader
+
+    function actualizarCont() {
+        let loader_text = document.querySelector(".loader_text");
+        let cont_loader = document.querySelector(".cont_loader");
+        let body = document.body;
+        let count = 0;
+        const intervalo = 30;
+        const contadorIntervalo = setInterval(function () {
+            if (count == 100) {
+                clearInterval(contadorIntervalo);
+                cont_loader.style.display = "none";
+                body.style.overflow = "auto";
+                
+            } else {
+                count++;
+                loader_text.innerHTML = count + "%";
+            }
+        }, intervalo);
+
+        body.style.overflow = "hidden";
+    }
+
+    actualizarCont();
+    
+    window.addEventListener('beforeunload', function () {
+        window.scrollTo(0, 0);
+    });
 });
+
