@@ -252,20 +252,43 @@ pjs.forEach(element => {
 
 // Menu hamburguesa
 document.addEventListener('DOMContentLoaded', function () {
-    const navItem = document.querySelector('.nav-itemm');
+    const navItem = document.querySelector('.menu-hamburguesa');
 
     navItem.addEventListener('click', function () {
+        const desplegable = document.querySelector('.desplegable');
         const line1 = document.querySelector('.line1');
         const line2 = document.querySelector('.line2');
         const line3 = document.querySelector('.line3');
-        const nav = document.querySelector('.nav-itemm');
+        const item1 = document.querySelector('.item1');
+        const item2 = document.querySelector('.item2');
+        const item3 = document.querySelector('.item3');
+        const item4 = document.querySelector('.item4');
 
+        if(!line3.classList.contains('rotar') && (!line2.classList.contains('rotar'))||
+            (line2.classList.contains('volver')&& (line3.classList.contains('volver')))){
+            line1.classList.add('ocultar');
+            line1.classList.remove('volver');
+            line3.classList.remove('volver');
+            line2.classList.remove('volver');
+            line2.classList.add('rotar');
+            line3.classList.add('rotar');
+        }else 
+            if(line3.classList.contains('rotar') && (line2.classList.contains('rotar'))){
+                line1.classList.add('volver');
+                line1.classList.remove('ocultar');
+                line2.classList.add('volver');
+                line3.classList.add('volver');
+                line3.classList.remove('rotar');
+                line2.classList.remove('rotar');         
+             }
+             desplegable.classList.toggle('desplegado');     
+             item1.classList.toggle('abrir');
+             item2.classList.toggle('abrir');
+             item3.classList.toggle('abrir');
+             item4.classList.toggle('abrir');
 
-        line1.classList.toggle('ocultar');
-        line2.classList.toggle('rotar');
-        line3.classList.toggle('rotar');
-        nav.classList.toggle('abrir');
-    });
+            });
+});
 
 
     
@@ -297,5 +320,4 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('beforeunload', function () {
         window.scrollTo(0, 0);
     });
-});
 
