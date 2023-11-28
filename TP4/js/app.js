@@ -201,9 +201,9 @@ document.addEventListener("DOMContentLoaded", function () {
 let pjs = document.querySelectorAll(".section__3pjs-item");
 let fondos = document.querySelectorAll(".fondo_spiderman");
 let fondoBlanco = document.querySelector(".section__3pjs-fondo");
+let trapezoide = document.querySelector(".trapezoide");
 
 pjs.forEach(element => {
-
     //Recorro los pjs y les agrego el evento mouseover
     element.addEventListener("mouseover", () => {
         //Vuelvo a recorrer los pjs
@@ -221,6 +221,7 @@ pjs.forEach(element => {
             }
             //recorro los fondos
             fondos.forEach(fondo => {
+                trapezoide.style.background = "black";
                 // Depende el pj que le hice hover, muestro el fondo correspondiente
                 if(el == element && el.classList.contains("section__3pjs-spidermanBlanco") && fondo.classList.contains("fondo_spidermanBlanco")){
                     fondo.style.opacity = "1";
@@ -244,6 +245,7 @@ pjs.forEach(element => {
         pjs.forEach(el => {
             el.style.transform = "scale(1)";
             el.style.filter = "blur(0px)";
+            trapezoide.style.background = "white";
             //Reinicio tambien los fondos
             fondos.forEach(fondo => {
                 fondo.style.opacity = "0";
