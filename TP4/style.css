@@ -16,10 +16,6 @@
 
 }
 
-
-
-
-
 body {
     overflow-x: hidden;
     background-color: var(--color_negro);
@@ -35,7 +31,6 @@ body {
 
 
 /* Nav */
-
 
 .nav {
     width: 100%;
@@ -76,13 +71,13 @@ body {
     }
 }
 
-.nav-item {
-    margin: 0 80px;
 
-}
 
 .nav-divLogo {
     z-index: 2;
+    position: absolute;
+    left: 330px;
+    top: 91px;
 }
 
 
@@ -93,9 +88,7 @@ body {
     background-color: var(--color_amarilo);
     border: 8px solid var(--2982-ff, #2982FF);
     box-shadow: 4px 5px 0px 0px #02187E;
-
     color: var(--color_azul);
-
     font-family: var(--font_family);
     font-size: 20px;
     font-weight: 900;
@@ -106,6 +99,7 @@ body {
     overflow: hidden;
     transition: .3s;
     z-index: 1;
+    right: 100px;
 }
 
 .nav-btn span{
@@ -182,8 +176,6 @@ body {
     opacity: 0;
     padding-top: 40px;
 
-
-    
 }
 .desplegable li{
     color: white;
@@ -197,22 +189,22 @@ body {
 
 .desplegable.desplegado{
     animation: desplegar 1s forwards;
- 
 
 }
 .cont_menu_rapido{
     list-style: none;
 }
+
 .cont_menu_rapido i{
    margin-right: 15px;
 }
+
 @keyframes desplegar {
     0% {
         opacity: 0;
     }
     100%{
-            opacity: 1;  
-            
+        opacity: 1;         
     }
     
 }
@@ -221,7 +213,7 @@ body {
         
     animation:  aparecer 0.5s forwards;
     
-    }    
+}    
 
 
 .item1.abrir{
@@ -362,6 +354,7 @@ body {
         transform: translateY(0px)translateX(0px) rotate(deg);
     }
 }
+
 /* Parallax header */
 
 .header {
@@ -903,15 +896,15 @@ body {
     margin-right: 5%;
     position: relative;
     z-index: -1;
-    top: -750px;
+    top: -715px;
 }
-.cont_footer_tp4 {
 
+
+
+.cont_footer_tp4 {
     padding-top: 4%;
     padding-right: 25%;
     padding-left: 8%;
-
-
 }
 
 .cont_footer_tp4 p,
@@ -1056,39 +1049,6 @@ span {
 }
 .img_suscripcion{
     margin-left: 52px;
-}
-/*Mas amigos mas diversion*/
-
-.cont_CardAmigos {
-    display: flex;
-    background-color: white;
-    width: 1076px;
-    margin-top: 69px;
-    margin-left: 10%;
-    height: 302px;
-}
-
-.cont_info h3 {
-    font-size: 40px;
-    margin-bottom: 25px;
-}
-
-.cont_info p {
-    font-size: 17px;
-    margin-bottom: 45px;
-}
-
-.img_cardAmigos {
-    width: 552px;
-
-}
-
-.cont_info {
-    font-family: 'Lato';
-    margin: 10px;
-    margin-left: 57px;
-
-    width: 467px;
 }
 
 

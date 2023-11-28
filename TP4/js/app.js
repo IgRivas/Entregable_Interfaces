@@ -39,6 +39,8 @@ window.addEventListener("scroll", function () {
         nav.style.height = "103px";
         logo.style.width = "133px";
         logo.style.height = "68px";
+        contLogo.style.left = "574px";
+        contLogo.style.top = "0";
         contLogo.style.marginTop = "0px";
     } else {
         // Vuelvo la barra de navegacion a su estado original
@@ -46,6 +48,8 @@ window.addEventListener("scroll", function () {
         nav.style.height = "227px";
         logo.style.width = "590px";
         logo.style.height = "301px";
+        contLogo.style.left = "330px";
+
         contLogo.style.marginTop = "50px";
     }
 
@@ -304,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (count == 100) {
                 clearInterval(contadorIntervalo);
                 cont_loader.style.display = "none";
-                body.style.overflow = "auto";
+                body.style.overflowY = "auto";
                 
             } else {
                 count++;
