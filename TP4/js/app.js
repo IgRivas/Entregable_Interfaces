@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
         spritesheetImages[currentImageIndex].style.display = 'block';
     }
 
-    // Cambia de imagen cada 1000 milisegundos (1 segundo)
+    // Cambia de imagen cada 1 segundo
     setInterval(showNextImage, 200);
 });
 
